@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3A1B1C0024AB6953004D024C /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A1B1BFF24AB6953004D024C /* Task.swift */; };
+		3A1B1C0224AB7772004D024C /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A1B1C0124AB7772004D024C /* Category.swift */; };
 		3A309BBA24AA0BB1000C103B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A309BB924AA0BB1000C103B /* AppDelegate.swift */; };
 		3A309BBC24AA0BB1000C103B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A309BBB24AA0BB1000C103B /* SceneDelegate.swift */; };
 		3A309BBE24AA0BB1000C103B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A309BBD24AA0BB1000C103B /* ViewController.swift */; };
@@ -15,6 +17,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3A1B1BFF24AB6953004D024C /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
+		3A1B1C0124AB7772004D024C /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		3A309BB624AA0BB1000C103B /* AnyTask.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AnyTask.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A309BB924AA0BB1000C103B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3A309BBB24AA0BB1000C103B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -72,6 +76,8 @@
 		3A1B1BFC24AB66FA004D024C /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				3A1B1BFF24AB6953004D024C /* Task.swift */,
+				3A1B1C0124AB7772004D024C /* Category.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -183,6 +189,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				3A309BBE24AA0BB1000C103B /* ViewController.swift in Sources */,
+				3A1B1C0224AB7772004D024C /* Category.swift in Sources */,
+				3A1B1C0024AB6953004D024C /* Task.swift in Sources */,
 				3A309BBA24AA0BB1000C103B /* AppDelegate.swift in Sources */,
 				3A309BBC24AA0BB1000C103B /* SceneDelegate.swift in Sources */,
 			);
