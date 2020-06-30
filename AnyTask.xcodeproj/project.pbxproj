@@ -35,6 +35,54 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3A1B1BF824AB6634004D024C /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				3A309BC424AA0BB4000C103B /* LaunchScreen.storyboard */,
+				3A309BC724AA0BB4000C103B /* Info.plist */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		3A1B1BF924AB66B4004D024C /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				3A309BC224AA0BB4000C103B /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		3A1B1BFA24AB66C9004D024C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				3A309BBD24AA0BB1000C103B /* ViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		3A1B1BFB24AB66D1004D024C /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				3A309BB924AA0BB1000C103B /* AppDelegate.swift */,
+				3A309BBB24AA0BB1000C103B /* SceneDelegate.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		3A1B1BFC24AB66FA004D024C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		3A1B1BFD24AB6711004D024C /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		3A309BAD24AA0BB1000C103B = {
 			isa = PBXGroup;
 			children = (
@@ -54,12 +102,12 @@
 		3A309BB824AA0BB1000C103B /* AnyTask */ = {
 			isa = PBXGroup;
 			children = (
-				3A309BB924AA0BB1000C103B /* AppDelegate.swift */,
-				3A309BBB24AA0BB1000C103B /* SceneDelegate.swift */,
-				3A309BBD24AA0BB1000C103B /* ViewController.swift */,
-				3A309BC224AA0BB4000C103B /* Assets.xcassets */,
-				3A309BC424AA0BB4000C103B /* LaunchScreen.storyboard */,
-				3A309BC724AA0BB4000C103B /* Info.plist */,
+				3A1B1BFB24AB66D1004D024C /* Application */,
+				3A1B1BFA24AB66C9004D024C /* View */,
+				3A1B1BFC24AB66FA004D024C /* Model */,
+				3A1B1BFD24AB6711004D024C /* ViewModel */,
+				3A1B1BF924AB66B4004D024C /* Resources */,
+				3A1B1BF824AB6634004D024C /* Supporting Files */,
 			);
 			path = AnyTask;
 			sourceTree = "<group>";
@@ -274,7 +322,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = J3B68N99HN;
-				INFOPLIST_FILE = AnyTask/Info.plist;
+				INFOPLIST_FILE = "AnyTask/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -292,7 +340,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = J3B68N99HN;
-				INFOPLIST_FILE = AnyTask/Info.plist;
+				INFOPLIST_FILE = "AnyTask/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
