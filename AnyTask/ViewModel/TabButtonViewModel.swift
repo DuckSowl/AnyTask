@@ -12,6 +12,6 @@ struct TabButtonViewModel: TabBarButtonViewModel {
     let tab: Tab
     
     var icon: UIImage? { UIImage(named: "\(basePath)-\(tab.rawValue)") }
-    var iconSize: CGSize { CGSize(width: 30, height: 30) }
+    var iconSize: CGSize { CGSize(width: 25, height: 25) }
     var backgroundColor: UIColor? { nil }
 }

@@ -36,4 +36,15 @@ class TabBarButtonView: UIButton {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+    func getTab() -> Tab? {
+        return (viewModel as? TabButtonViewModel)?.tab
+    }
+    
+    override var isSelected: Bool {
+        willSet {
+            self.tintColor = newValue ? viewModel.iconSelectedColor
+                                      : viewModel.iconColor
+        }
+    }
 }

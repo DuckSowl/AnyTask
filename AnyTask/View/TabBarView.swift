@@ -10,7 +10,10 @@ import UIKit
 
 class TabBarView: UIView {
     
+    weak var delegate: TabBarDelegate?
+    
     private typealias ViewModel = TabBarViewModel
+    private var selectedTabButton: TabBarButtonView?
     
     init() {
         super.init(frame: CGRect.zero)
@@ -24,11 +27,19 @@ class TabBarView: UIView {
         
         var buttons: [TabBarButtonView] = Tab.allCases.map { tab in
             let tabButtonViewModel = TabButtonViewModel(tab: tab)
-            return TabBarButtonView(tabButtonViewModel)
+            let tabButtonView = TabBarButtonView(tabButtonViewModel)
+            tabButtonView.addTarget(self, action: #selector(didSelectTab),
+                                    for: .touchDown)
+            return tabButtonView
         }
+        
+        // Pre-select first tab
+        self.didSelectTab(sender: buttons.first!)
         
         let addButtonViewModel = AddButtonViewModel()
         let addButtonView = TabBarButtonView(addButtonViewModel)
+        addButtonView.addTarget(self, action: #selector(didPressAdd),
+                                for: .touchUpInside)
         buttons.insert(addButtonView, at: 2) // In the middle
         
         let stack = UIStackView(arrangedSubviews: buttons)
@@ -52,4 +63,30 @@ class TabBarView: UIView {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+    @objc private func didSelectTab(sender: UIButton) {
+        guard sender != selectedTabButton else { return }
+        
+        if let selectedTabButton = selectedTabButton {
+            selectedTabButton.isSelected = false
+        }
+        sender.isSelected = true
+        
+        if let tabButton = sender as? TabBarButtonView,
+            let tab = tabButton.getTab() {
+            self.selectedTabButton = tabButton
+            self.delegate?.didSelect(tab: tab)
+        }
+    }
+    
+    @objc private func didPressAdd(sender: UIButton) {
+        delegate?.didPressAdd()
+        print(sender.bounds)
+        print(sender.frame)
+    }
+}
+
+protocol TabBarDelegate: AnyObject {
+    func didSelect(tab: Tab)
+    func didPressAdd()
 }
