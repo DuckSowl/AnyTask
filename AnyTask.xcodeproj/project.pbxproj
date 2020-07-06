@@ -21,6 +21,7 @@
 		3AEEFFBE24AE33CE006251C8 /* Tab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AEEFFBD24AE33CE006251C8 /* Tab.swift */; };
 		3AEEFFC024AE3412006251C8 /* TabButtonViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AEEFFBF24AE3412006251C8 /* TabButtonViewModel.swift */; };
 		3AEEFFC224AE3426006251C8 /* AddButtonViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AEEFFC124AE3426006251C8 /* AddButtonViewModel.swift */; };
+		3AEEFFC924B3519C006251C8 /* Date+Week.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AEEFFC824B3519C006251C8 /* Date+Week.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		3AEEFFBD24AE33CE006251C8 /* Tab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Tab.swift; path = AnyTask/ViewModel/Tab.swift; sourceTree = SOURCE_ROOT; };
 		3AEEFFBF24AE3412006251C8 /* TabButtonViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabButtonViewModel.swift; sourceTree = "<group>"; };
 		3AEEFFC124AE3426006251C8 /* AddButtonViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddButtonViewModel.swift; sourceTree = "<group>"; };
+		3AEEFFC824B3519C006251C8 /* Date+Week.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Date+Week.swift"; path = "AnyTask/Extensions/Date+Week.swift"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,10 +135,19 @@
 				3A1B1BFA24AB66C9004D024C /* View */,
 				3A1B1BFC24AB66FA004D024C /* Model */,
 				3A1B1BFD24AB6711004D024C /* ViewModel */,
+				3AEEFFCA24B351A4006251C8 /* Extensions */,
 				3A1B1BF924AB66B4004D024C /* Resources */,
 				3A1B1BF824AB6634004D024C /* Supporting Files */,
 			);
 			path = AnyTask;
+			sourceTree = "<group>";
+		};
+		3AEEFFCA24B351A4006251C8 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				3AEEFFC824B3519C006251C8 /* Date+Week.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -221,6 +232,7 @@
 				3AEEFFBE24AE33CE006251C8 /* Tab.swift in Sources */,
 				3A1B1C0C24AC9933004D024C /* TabBarViewModel.swift in Sources */,
 				3A309BBC24AA0BB1000C103B /* SceneDelegate.swift in Sources */,
+				3AEEFFC924B3519C006251C8 /* Date+Week.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
