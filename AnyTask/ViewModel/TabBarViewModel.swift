@@ -11,6 +11,8 @@ import UIKit
 enum TabBarViewModel {
     static let backgroundColor = UIColor(red: 56/255, green: 56/255, blue: 56/255, alpha: 1)
     static let cornerRadius = CGFloat(18)
-    static let sideAnchorConstant = CGFloat(30)
-    static let topAnchorConstant = CGFloat(-8)
+    static let sideAnchor = CGFloat(30)
+    static let addButtonOffset = CGFloat(8)
+    // Fix for iPhones with and without cornered edges
+    static let heightAnchor = CGFloat(85)
 }

@@ -10,21 +10,52 @@ import UIKit
 
 class TabBarView: UIView {
     
+    // MARK: - Properties
+    
     weak var delegate: TabBarDelegate?
     
     private typealias ViewModel = TabBarViewModel
     private var selectedTabButton: TabBarButtonView?
     
+    // MARK: - Initializers
+    
     init() {
         super.init(frame: CGRect.zero)
-        setupView()
+        setupViews()
     }
     
-    private func setupView() {
-        self.backgroundColor = ViewModel.backgroundColor
-        // TODO: fix for iPhones without rounded corners
-        self.layer.cornerRadius = ViewModel.cornerRadius
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    // MARK: - Setup Views
+    
+    private func setupViews() {
+        setupBackgroundView()
+        let buttons = self.buttons
+        setupStackView(with: buttons)
+    }
+    
+    private func setupBackgroundView() {
+        let backgroundView = UIView()
+        backgroundView.backgroundColor = ViewModel.backgroundColor
         
+        // TODO: fix for iPhones without rounded corners
+        backgroundView.layer.cornerRadius = ViewModel.cornerRadius
+        
+        self.addSubview(backgroundView)
+        backgroundView.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint
+            .activateFrom(insets: UIEdgeInsets(top: ViewModel.addButtonOffset,
+                                               leading: 0,
+                                               bottom: ViewModel.addButtonOffset,
+                                               trailing: 0),
+                          subview: backgroundView,
+                          superview: self)
+    }
+    
+    private var buttons: [TabBarButtonView] {
+        // Tab buttons
         var buttons: [TabBarButtonView] = Tab.allCases.map { tab in
             let tabButtonViewModel = TabButtonViewModel(tab: tab)
             let tabButtonView = TabBarButtonView(tabButtonViewModel)
@@ -33,15 +64,20 @@ class TabBarView: UIView {
             return tabButtonView
         }
         
-        // Pre-select first tab
-        self.didSelectTab(sender: buttons.first!)
-        
+        // `Add` button
         let addButtonViewModel = AddButtonViewModel()
         let addButtonView = TabBarButtonView(addButtonViewModel)
         addButtonView.addTarget(self, action: #selector(didPressAdd),
                                 for: .touchUpInside)
         buttons.insert(addButtonView, at: 2) // In the middle
         
+        // Pre-select first tab
+        self.didSelectTab(sender: buttons.first!)
+        
+        return buttons
+    }
+    
+    private func setupStackView(with buttons: [TabBarButtonView]) {
         let stack = UIStackView(arrangedSubviews: buttons)
         self.addSubview(stack)
         stack.distribution = .equalSpacing
@@ -49,20 +85,16 @@ class TabBarView: UIView {
         
         stack.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            // Offset top so that plus button slightly over the edge
-            // TODO: fix inability to tap on that excessing top part
-            stack.topAnchor.constraint(equalTo: topAnchor,
-                                       constant: ViewModel.topAnchorConstant),
+            heightAnchor.constraint(equalToConstant: ViewModel.heightAnchor),
+            stack.topAnchor.constraint(equalTo: topAnchor),
             stack.leadingAnchor.constraint(equalTo: leadingAnchor,
-                                           constant: ViewModel.sideAnchorConstant),
+                                           constant: ViewModel.sideAnchor),
             stack.trailingAnchor.constraint(equalTo: trailingAnchor,
-                                            constant: -ViewModel.sideAnchorConstant),
+                                            constant: -ViewModel.sideAnchor),
         ])
     }
     
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
+    // MARK: - Button Actions
     
     @objc private func didSelectTab(sender: UIButton) {
         guard sender != selectedTabButton else { return }
