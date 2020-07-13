@@ -9,7 +9,7 @@
 import Foundation
 
 struct Task: Identifiable {
-    let id = UUID()
+    let id: UUID
     
     var title: String
     var comment: String
@@ -20,6 +20,16 @@ struct Task: Identifiable {
     var completed: Bool
     
     var time: Time
+    
+    internal init(title: String, comment: String, deadline: Date? = nil, project: Project, completed: Bool, time: Task.Time) {
+        self.id = UUID()
+        self.title = title
+        self.comment = comment
+        self.deadline = deadline
+        self.project = project
+        self.completed = completed
+        self.time = time
+    }
 }
 
 extension Task {

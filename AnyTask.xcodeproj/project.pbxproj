@@ -18,6 +18,8 @@
 		3A309BC624AA0BB4000C103B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A309BC424AA0BB4000C103B /* LaunchScreen.storyboard */; };
 		3A95C34124BC8838003A52B9 /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3A95C33F24BC8838003A52B9 /* DataModel.xcdatamodeld */; };
 		3A95C34324BC8A62003A52B9 /* UUID+DataConvertable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A95C34224BC8A61003A52B9 /* UUID+DataConvertable.swift */; };
+		3A95C34524BC8B1C003A52B9 /* TaskCoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A95C34424BC8B1C003A52B9 /* TaskCoreDataManager.swift */; };
+		3A95C34724BC8B69003A52B9 /* TaskManagable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A95C34624BC8B69003A52B9 /* TaskManagable.swift */; };
 		3A9E7CC724B71A8800670864 /* NSLayoutConstraints+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9E7CC624B71A8800670864 /* NSLayoutConstraints+Helpers.swift */; };
 		3AEEFFBA24ADCC89006251C8 /* TabBarButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AEEFFB924ADCC89006251C8 /* TabBarButtonView.swift */; };
 		3AEEFFBC24ADCD3A006251C8 /* TabBarButtonViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AEEFFBB24ADCD3A006251C8 /* TabBarButtonViewModel.swift */; };
@@ -47,6 +49,8 @@
 		3A309BC724AA0BB4000C103B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3A95C34024BC8838003A52B9 /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
 		3A95C34224BC8A61003A52B9 /* UUID+DataConvertable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "UUID+DataConvertable.swift"; path = "AnyTask/Extensions/UUID+DataConvertable.swift"; sourceTree = SOURCE_ROOT; };
+		3A95C34424BC8B1C003A52B9 /* TaskCoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskCoreDataManager.swift; sourceTree = "<group>"; };
+		3A95C34624BC8B69003A52B9 /* TaskManagable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskManagable.swift; sourceTree = "<group>"; };
 		3A9E7CC624B71A8800670864 /* NSLayoutConstraints+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "NSLayoutConstraints+Helpers.swift"; path = "AnyTask/View/NSLayoutConstraints+Helpers.swift"; sourceTree = SOURCE_ROOT; };
 		3AEEFFB924ADCC89006251C8 /* TabBarButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarButtonView.swift; sourceTree = "<group>"; };
 		3AEEFFBB24ADCD3A006251C8 /* TabBarButtonViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarButtonViewModel.swift; sourceTree = "<group>"; };
@@ -117,6 +121,7 @@
 				3AEEFFBD24AE33CE006251C8 /* Tab.swift */,
 				3A1B1BFF24AB6953004D024C /* Task.swift */,
 				3A1B1C0124AB7772004D024C /* Project.swift */,
+				3A95C34824BC8B73003A52B9 /* CoreData */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -161,6 +166,15 @@
 				3A1B1BF824AB6634004D024C /* Supporting Files */,
 			);
 			path = AnyTask;
+			sourceTree = "<group>";
+		};
+		3A95C34824BC8B73003A52B9 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				3A95C34624BC8B69003A52B9 /* TaskManagable.swift */,
+				3A95C34424BC8B1C003A52B9 /* TaskCoreDataManager.swift */,
+			);
+			path = CoreData;
 			sourceTree = "<group>";
 		};
 		3AEEFFCA24B351A4006251C8 /* Extensions */ = {
@@ -265,12 +279,14 @@
 			files = (
 				3A309BBE24AA0BB1000C103B /* ViewController.swift in Sources */,
 				3AEEFFC024AE3412006251C8 /* TabButtonViewModel.swift in Sources */,
+				3A95C34524BC8B1C003A52B9 /* TaskCoreDataManager.swift in Sources */,
 				3A1B1C0224AB7772004D024C /* Project.swift in Sources */,
 				3A95C34124BC8838003A52B9 /* DataModel.xcdatamodeld in Sources */,
 				3A1B1C0024AB6953004D024C /* Task.swift in Sources */,
 				3A309BBA24AA0BB1000C103B /* AppDelegate.swift in Sources */,
 				3A1B1C0A24ABC03C004D024C /* TabBarView.swift in Sources */,
 				3AEEFFE724B35F30006251C8 /* CalendarViewModel.swift in Sources */,
+				3A95C34724BC8B69003A52B9 /* TaskManagable.swift in Sources */,
 				3A95C34324BC8A62003A52B9 /* UUID+DataConvertable.swift in Sources */,
 				3AEEFFE824B35F30006251C8 /* DayViewModel.swift in Sources */,
 				3AEEFFE124B35F17006251C8 /* DayView.swift in Sources */,
