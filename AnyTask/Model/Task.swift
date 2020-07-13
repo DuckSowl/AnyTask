@@ -15,7 +15,7 @@ struct Task: Identifiable {
     var comment: String
     
     var deadline: Date?
-    var category: Category
+    var project: Project
     
     var completed: Bool
     

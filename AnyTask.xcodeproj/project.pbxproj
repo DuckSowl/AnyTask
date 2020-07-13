@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3A1B1C0024AB6953004D024C /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A1B1BFF24AB6953004D024C /* Task.swift */; };
-		3A1B1C0224AB7772004D024C /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A1B1C0124AB7772004D024C /* Category.swift */; };
+		3A1B1C0224AB7772004D024C /* Project.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A1B1C0124AB7772004D024C /* Project.swift */; };
 		3A1B1C0A24ABC03C004D024C /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A1B1C0924ABC03C004D024C /* TabBarView.swift */; };
 		3A1B1C0C24AC9933004D024C /* TabBarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A1B1C0B24AC9933004D024C /* TabBarViewModel.swift */; };
 		3A309BBA24AA0BB1000C103B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A309BB924AA0BB1000C103B /* AppDelegate.swift */; };
@@ -33,7 +33,7 @@
 
 /* Begin PBXFileReference section */
 		3A1B1BFF24AB6953004D024C /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
-		3A1B1C0124AB7772004D024C /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
+		3A1B1C0124AB7772004D024C /* Project.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Project.swift; sourceTree = "<group>"; };
 		3A1B1C0924ABC03C004D024C /* TabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
 		3A1B1C0B24AC9933004D024C /* TabBarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewModel.swift; sourceTree = "<group>"; };
 		3A309BB624AA0BB1000C103B /* AnyTask.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AnyTask.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -111,7 +111,7 @@
 			children = (
 				3AEEFFBD24AE33CE006251C8 /* Tab.swift */,
 				3A1B1BFF24AB6953004D024C /* Task.swift */,
-				3A1B1C0124AB7772004D024C /* Category.swift */,
+				3A1B1C0124AB7772004D024C /* Project.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -259,7 +259,7 @@
 			files = (
 				3A309BBE24AA0BB1000C103B /* ViewController.swift in Sources */,
 				3AEEFFC024AE3412006251C8 /* TabButtonViewModel.swift in Sources */,
-				3A1B1C0224AB7772004D024C /* Category.swift in Sources */,
+				3A1B1C0224AB7772004D024C /* Project.swift in Sources */,
 				3A1B1C0024AB6953004D024C /* Task.swift in Sources */,
 				3A309BBA24AA0BB1000C103B /* AppDelegate.swift in Sources */,
 				3A1B1C0A24ABC03C004D024C /* TabBarView.swift in Sources */,

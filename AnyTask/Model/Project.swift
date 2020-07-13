@@ -1,5 +1,5 @@
 //
-//  Category.swift
+//  Project.swift
 //  AnyTask
 //
 //  Created by Anton Tolstov on 30.06.2020.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Category: Identifiable {
+struct Project: Identifiable {
     let id = UUID()
     
     var name: String
