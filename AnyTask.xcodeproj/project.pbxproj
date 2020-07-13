@@ -16,6 +16,7 @@
 		3A309BBE24AA0BB1000C103B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A309BBD24AA0BB1000C103B /* ViewController.swift */; };
 		3A309BC324AA0BB4000C103B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A309BC224AA0BB4000C103B /* Assets.xcassets */; };
 		3A309BC624AA0BB4000C103B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A309BC424AA0BB4000C103B /* LaunchScreen.storyboard */; };
+		3A95C34124BC8838003A52B9 /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3A95C33F24BC8838003A52B9 /* DataModel.xcdatamodeld */; };
 		3A9E7CC724B71A8800670864 /* NSLayoutConstraints+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9E7CC624B71A8800670864 /* NSLayoutConstraints+Helpers.swift */; };
 		3AEEFFBA24ADCC89006251C8 /* TabBarButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AEEFFB924ADCC89006251C8 /* TabBarButtonView.swift */; };
 		3AEEFFBC24ADCD3A006251C8 /* TabBarButtonViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AEEFFBB24ADCD3A006251C8 /* TabBarButtonViewModel.swift */; };
@@ -43,6 +44,7 @@
 		3A309BC224AA0BB4000C103B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3A309BC524AA0BB4000C103B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3A309BC724AA0BB4000C103B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3A95C34024BC8838003A52B9 /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
 		3A9E7CC624B71A8800670864 /* NSLayoutConstraints+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "NSLayoutConstraints+Helpers.swift"; path = "AnyTask/View/NSLayoutConstraints+Helpers.swift"; sourceTree = SOURCE_ROOT; };
 		3AEEFFB924ADCC89006251C8 /* TabBarButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarButtonView.swift; sourceTree = "<group>"; };
 		3AEEFFBB24ADCD3A006251C8 /* TabBarButtonViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarButtonViewModel.swift; sourceTree = "<group>"; };
@@ -82,6 +84,7 @@
 			isa = PBXGroup;
 			children = (
 				3A309BC224AA0BB4000C103B /* Assets.xcassets */,
+				3A95C33F24BC8838003A52B9 /* DataModel.xcdatamodeld */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -260,6 +263,7 @@
 				3A309BBE24AA0BB1000C103B /* ViewController.swift in Sources */,
 				3AEEFFC024AE3412006251C8 /* TabButtonViewModel.swift in Sources */,
 				3A1B1C0224AB7772004D024C /* Project.swift in Sources */,
+				3A95C34124BC8838003A52B9 /* DataModel.xcdatamodeld in Sources */,
 				3A1B1C0024AB6953004D024C /* Task.swift in Sources */,
 				3A309BBA24AA0BB1000C103B /* AppDelegate.swift in Sources */,
 				3A1B1C0A24ABC03C004D024C /* TabBarView.swift in Sources */,
@@ -468,6 +472,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		3A95C33F24BC8838003A52B9 /* DataModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				3A95C34024BC8838003A52B9 /* DataModel.xcdatamodel */,
+			);
+			currentVersion = 3A95C34024BC8838003A52B9 /* DataModel.xcdatamodel */;
+			path = DataModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 3A309BAE24AA0BB1000C103B /* Project object */;
 }
