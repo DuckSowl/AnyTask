@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3A1B1C0024AB6953004D024C /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A1B1BFF24AB6953004D024C /* Task.swift */; };
 		3A1B1C0224AB7772004D024C /* Project.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A1B1C0124AB7772004D024C /* Project.swift */; };
 		3A1B1C0A24ABC03C004D024C /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A1B1C0924ABC03C004D024C /* TabBarView.swift */; };
 		3A1B1C0C24AC9933004D024C /* TabBarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A1B1C0B24AC9933004D024C /* TabBarViewModel.swift */; };
@@ -17,17 +16,18 @@
 		3A309BC324AA0BB4000C103B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A309BC224AA0BB4000C103B /* Assets.xcassets */; };
 		3A309BC624AA0BB4000C103B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A309BC424AA0BB4000C103B /* LaunchScreen.storyboard */; };
 		3A7BF94B24BDADCE00558675 /* TaskViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7BF94A24BDADCE00558675 /* TaskViewModel.swift */; };
-		3A7BF94D24BE2B6800558675 /* UIFont+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7BF94C24BE2B6800558675 /* UIFont+.swift */; };
 		3A7BF95224BE3EBA00558675 /* TaskTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7BF95024BE3EB900558675 /* TaskTableViewCell.swift */; };
 		3A7BF95324BE3EBA00558675 /* TaskTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7BF95124BE3EBA00558675 /* TaskTableViewController.swift */; };
+		3A7BF95D24BE429B00558675 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7BF95C24BE429B00558675 /* Task.swift */; };
+		3A7BF96024BE42C900558675 /* NSLayoutConstraints+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7BF95E24BE42C800558675 /* NSLayoutConstraints+Helpers.swift */; };
+		3A7BF96124BE42C900558675 /* UIFont+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7BF95F24BE42C900558675 /* UIFont+.swift */; };
+		3A7BF96324BE42EA00558675 /* Tab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7BF96224BE42EA00558675 /* Tab.swift */; };
 		3A95C34124BC8838003A52B9 /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3A95C33F24BC8838003A52B9 /* DataModel.xcdatamodeld */; };
 		3A95C34324BC8A62003A52B9 /* UUID+DataConvertable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A95C34224BC8A61003A52B9 /* UUID+DataConvertable.swift */; };
 		3A95C34524BC8B1C003A52B9 /* TaskCoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A95C34424BC8B1C003A52B9 /* TaskCoreDataManager.swift */; };
 		3A95C34724BC8B69003A52B9 /* TaskManagable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A95C34624BC8B69003A52B9 /* TaskManagable.swift */; };
-		3A9E7CC724B71A8800670864 /* NSLayoutConstraints+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9E7CC624B71A8800670864 /* NSLayoutConstraints+Helpers.swift */; };
 		3AEEFFBA24ADCC89006251C8 /* TabBarButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AEEFFB924ADCC89006251C8 /* TabBarButtonView.swift */; };
 		3AEEFFBC24ADCD3A006251C8 /* TabBarButtonViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AEEFFBB24ADCD3A006251C8 /* TabBarButtonViewModel.swift */; };
-		3AEEFFBE24AE33CE006251C8 /* Tab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AEEFFBD24AE33CE006251C8 /* Tab.swift */; };
 		3AEEFFC024AE3412006251C8 /* TabButtonViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AEEFFBF24AE3412006251C8 /* TabButtonViewModel.swift */; };
 		3AEEFFC224AE3426006251C8 /* AddButtonViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AEEFFC124AE3426006251C8 /* AddButtonViewModel.swift */; };
 		3AEEFFC924B3519C006251C8 /* Date+Week.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AEEFFC824B3519C006251C8 /* Date+Week.swift */; };
@@ -40,7 +40,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		3A1B1BFF24AB6953004D024C /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
 		3A1B1C0124AB7772004D024C /* Project.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Project.swift; sourceTree = "<group>"; };
 		3A1B1C0924ABC03C004D024C /* TabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
 		3A1B1C0B24AC9933004D024C /* TabBarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewModel.swift; sourceTree = "<group>"; };
@@ -52,17 +51,18 @@
 		3A309BC524AA0BB4000C103B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3A309BC724AA0BB4000C103B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3A7BF94A24BDADCE00558675 /* TaskViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskViewModel.swift; sourceTree = "<group>"; };
-		3A7BF94C24BE2B6800558675 /* UIFont+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "UIFont+.swift"; path = "AnyTask/View/UIFont+.swift"; sourceTree = SOURCE_ROOT; };
 		3A7BF95024BE3EB900558675 /* TaskTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskTableViewCell.swift; sourceTree = "<group>"; };
 		3A7BF95124BE3EBA00558675 /* TaskTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskTableViewController.swift; sourceTree = "<group>"; };
+		3A7BF95C24BE429B00558675 /* Task.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
+		3A7BF95E24BE42C800558675 /* NSLayoutConstraints+Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSLayoutConstraints+Helpers.swift"; sourceTree = "<group>"; };
+		3A7BF95F24BE42C900558675 /* UIFont+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIFont+.swift"; sourceTree = "<group>"; };
+		3A7BF96224BE42EA00558675 /* Tab.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tab.swift; sourceTree = "<group>"; };
 		3A95C34024BC8838003A52B9 /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
 		3A95C34224BC8A61003A52B9 /* UUID+DataConvertable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "UUID+DataConvertable.swift"; path = "AnyTask/Extensions/UUID+DataConvertable.swift"; sourceTree = SOURCE_ROOT; };
 		3A95C34424BC8B1C003A52B9 /* TaskCoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskCoreDataManager.swift; sourceTree = "<group>"; };
 		3A95C34624BC8B69003A52B9 /* TaskManagable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskManagable.swift; sourceTree = "<group>"; };
-		3A9E7CC624B71A8800670864 /* NSLayoutConstraints+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "NSLayoutConstraints+Helpers.swift"; path = "AnyTask/View/NSLayoutConstraints+Helpers.swift"; sourceTree = SOURCE_ROOT; };
 		3AEEFFB924ADCC89006251C8 /* TabBarButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarButtonView.swift; sourceTree = "<group>"; };
 		3AEEFFBB24ADCD3A006251C8 /* TabBarButtonViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarButtonViewModel.swift; sourceTree = "<group>"; };
-		3AEEFFBD24AE33CE006251C8 /* Tab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Tab.swift; path = AnyTask/ViewModel/Tab.swift; sourceTree = SOURCE_ROOT; };
 		3AEEFFBF24AE3412006251C8 /* TabButtonViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabButtonViewModel.swift; sourceTree = "<group>"; };
 		3AEEFFC124AE3426006251C8 /* AddButtonViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddButtonViewModel.swift; sourceTree = "<group>"; };
 		3AEEFFC824B3519C006251C8 /* Date+Week.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Date+Week.swift"; path = "AnyTask/Extensions/Date+Week.swift"; sourceTree = SOURCE_ROOT; };
@@ -127,8 +127,8 @@
 		3A1B1BFC24AB66FA004D024C /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				3AEEFFBD24AE33CE006251C8 /* Tab.swift */,
-				3A1B1BFF24AB6953004D024C /* Task.swift */,
+				3A7BF96224BE42EA00558675 /* Tab.swift */,
+				3A7BF95C24BE429B00558675 /* Task.swift */,
 				3A1B1C0124AB7772004D024C /* Project.swift */,
 				3A95C34824BC8B73003A52B9 /* CoreData */,
 			);
@@ -207,9 +207,9 @@
 		3AEEFFCA24B351A4006251C8 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				3A7BF94C24BE2B6800558675 /* UIFont+.swift */,
+				3A7BF95E24BE42C800558675 /* NSLayoutConstraints+Helpers.swift */,
+				3A7BF95F24BE42C900558675 /* UIFont+.swift */,
 				3A95C34224BC8A61003A52B9 /* UUID+DataConvertable.swift */,
-				3A9E7CC624B71A8800670864 /* NSLayoutConstraints+Helpers.swift */,
 				3AEEFFC824B3519C006251C8 /* Date+Week.swift */,
 			);
 			path = Extensions;
@@ -313,26 +313,26 @@
 				3A1B1C0224AB7772004D024C /* Project.swift in Sources */,
 				3A7BF95224BE3EBA00558675 /* TaskTableViewCell.swift in Sources */,
 				3A95C34124BC8838003A52B9 /* DataModel.xcdatamodeld in Sources */,
-				3A1B1C0024AB6953004D024C /* Task.swift in Sources */,
+				3A7BF96024BE42C900558675 /* NSLayoutConstraints+Helpers.swift in Sources */,
 				3A309BBA24AA0BB1000C103B /* AppDelegate.swift in Sources */,
 				3A1B1C0A24ABC03C004D024C /* TabBarView.swift in Sources */,
 				3AEEFFE724B35F30006251C8 /* CalendarViewModel.swift in Sources */,
+				3A7BF95D24BE429B00558675 /* Task.swift in Sources */,
 				3A95C34724BC8B69003A52B9 /* TaskManagable.swift in Sources */,
 				3A95C34324BC8A62003A52B9 /* UUID+DataConvertable.swift in Sources */,
 				3AEEFFE824B35F30006251C8 /* DayViewModel.swift in Sources */,
 				3AEEFFE124B35F17006251C8 /* DayView.swift in Sources */,
 				3AEEFFBA24ADCC89006251C8 /* TabBarButtonView.swift in Sources */,
-				3A7BF94D24BE2B6800558675 /* UIFont+.swift in Sources */,
 				3AEEFFE024B35F17006251C8 /* CalendarView.swift in Sources */,
-				3A9E7CC724B71A8800670864 /* NSLayoutConstraints+Helpers.swift in Sources */,
 				3AEEFFBC24ADCD3A006251C8 /* TabBarButtonViewModel.swift in Sources */,
 				3AEEFFC224AE3426006251C8 /* AddButtonViewModel.swift in Sources */,
 				3AEEFFE624B35F30006251C8 /* WeekCellViewModel.swift in Sources */,
 				3AEEFFE224B35F17006251C8 /* WeekCellView.swift in Sources */,
-				3AEEFFBE24AE33CE006251C8 /* Tab.swift in Sources */,
+				3A7BF96124BE42C900558675 /* UIFont+.swift in Sources */,
 				3A1B1C0C24AC9933004D024C /* TabBarViewModel.swift in Sources */,
 				3A309BBC24AA0BB1000C103B /* SceneDelegate.swift in Sources */,
 				3AEEFFC924B3519C006251C8 /* Date+Week.swift in Sources */,
+				3A7BF96324BE42EA00558675 /* Tab.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
