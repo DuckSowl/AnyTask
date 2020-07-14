@@ -108,9 +108,8 @@
 			children = (
 				3A7BF94F24BE3E9200558675 /* TaskTable */,
 				3A309BBD24AA0BB1000C103B /* ViewController.swift */,
-				3A1B1C0924ABC03C004D024C /* TabBarView.swift */,
+				3A7BF96424BE43E400558675 /* Tab */,
 				3AEEFFD124B35BA7006251C8 /* Calendar */,
-				3AEEFFB924ADCC89006251C8 /* TabBarButtonView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -140,10 +139,7 @@
 			children = (
 				3A7BF94E24BE3E7F00558675 /* TaskTable */,
 				3AEEFFD624B35C12006251C8 /* Calendar */,
-				3A1B1C0B24AC9933004D024C /* TabBarViewModel.swift */,
-				3AEEFFBB24ADCD3A006251C8 /* TabBarButtonViewModel.swift */,
-				3AEEFFBF24AE3412006251C8 /* TabButtonViewModel.swift */,
-				3AEEFFC124AE3426006251C8 /* AddButtonViewModel.swift */,
+				3A7BF96524BE43F300558675 /* Tab */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -193,6 +189,26 @@
 				3A7BF95124BE3EBA00558675 /* TaskTableViewController.swift */,
 			);
 			path = TaskTable;
+			sourceTree = "<group>";
+		};
+		3A7BF96424BE43E400558675 /* Tab */ = {
+			isa = PBXGroup;
+			children = (
+				3A1B1C0924ABC03C004D024C /* TabBarView.swift */,
+				3AEEFFB924ADCC89006251C8 /* TabBarButtonView.swift */,
+			);
+			path = Tab;
+			sourceTree = "<group>";
+		};
+		3A7BF96524BE43F300558675 /* Tab */ = {
+			isa = PBXGroup;
+			children = (
+				3A1B1C0B24AC9933004D024C /* TabBarViewModel.swift */,
+				3AEEFFBB24ADCD3A006251C8 /* TabBarButtonViewModel.swift */,
+				3AEEFFBF24AE3412006251C8 /* TabButtonViewModel.swift */,
+				3AEEFFC124AE3426006251C8 /* AddButtonViewModel.swift */,
+			);
+			path = Tab;
 			sourceTree = "<group>";
 		};
 		3A95C34824BC8B73003A52B9 /* CoreData */ = {
