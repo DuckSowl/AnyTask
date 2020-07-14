@@ -30,6 +30,21 @@ struct Task: Identifiable {
         self.completed = completed
         self.time = time
     }
+    
+    #if DEBUG
+    static var example: Task {
+        Task(title: Array(repeating: "This is example title. ",
+                          count: Int.random(in: 1...3)).joined(),
+             comment: Array(repeating: "This is example comment. ",
+                            count: Int.random(in: 1...10)).joined(),
+             deadline: Calendar.current.date(byAdding: .hour,
+                                             value: Int.random(in: -100...100),
+                                             to: Date()) ,
+             project: Project(name: "Development"),
+             completed: false,
+             time: Time(expected: UInt.random(in: 1...10)))
+    }
+    #endif
 }
 
 extension Task {
