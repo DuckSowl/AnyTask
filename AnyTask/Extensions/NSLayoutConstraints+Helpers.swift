@@ -28,6 +28,10 @@ extension UIEdgeInsets {
         self.init(top: top, left: leading, bottom: bottom, right: trailing)
     }
     
+    init(same value: CGFloat) {
+        self.init(top: value, leading: value, bottom: value, trailing: value)
+    }
+    
     static let zero = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
     
     fileprivate var leading: CGFloat { left }
