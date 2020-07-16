@@ -9,24 +9,54 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
+    var addTaskViewController: AddTaskViewController!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
         
-        view.backgroundColor = .white
+        view.backgroundColor = .gray
         
-        let weekView = CalendarView(viewModel: CalendarViewModel())
-                
-        view.addSubview(weekView)
-        weekView.translatesAutoresizingMaskIntoConstraints = false
+        let tabBarView = TabBarView()
+        tabBarView.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(tabBarView)
+        
         NSLayoutConstraint.activate([
-            weekView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            weekView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
-            weekView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            weekView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            weekView.heightAnchor.constraint(equalToConstant: 80)
+            tabBarView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            tabBarView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            tabBarView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
         ])
+        
+        let taskViewController = TaskTableViewController()
+        guard let taskView = taskViewController.view else { return }
+        self.addChild(taskViewController)
+        view.insertSubview(taskView, at: 0)
+        taskViewController.didMove(toParent: self)
+        
+        taskView.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            taskView.topAnchor.constraint(equalTo: view.topAnchor),
+            taskView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            taskView.bottomAnchor.constraint(equalTo: tabBarView.topAnchor),
+            taskView.trailingAnchor.constraint(equalTo: view.trailingAnchor)
+        ])
+        
+        tabBarView.delegate = self
     }
+    
+    
 }
 
+extension ViewController: TabBarDelegate {
+    func didSelect(tab: Tab) {
+        view.backgroundColor = UIColor(red: CGFloat.random(in: 0.2...0.8), green: CGFloat.random(in: 0.2...0.8), blue: CGFloat.random(in: 0.2...0.8), alpha: 1)
+    }
+    
+    func didPressAdd() {
+        addTaskViewController = AddTaskViewController()
+        addTaskViewController.view.frame = view.frame
+        self.addChild(addTaskViewController)
+        view.addSubview(addTaskViewController.view)
+        addTaskViewController.didMove(toParent: self)
+    }
+}
