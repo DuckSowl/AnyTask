@@ -26,11 +26,7 @@ class TabBarButtonView: UIButton {
         self.layer.cornerRadius = viewModel.cornerRadius
         self.backgroundColor = viewModel.backgroundColor
         
-        self.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([
-            heightAnchor.constraint(equalToConstant: viewModel.iconSize.height),
-            widthAnchor.constraint(equalToConstant: viewModel.iconSize.width)
-        ])
+        self.pin.size(viewModel.iconSize).activate
     }
     
     required init?(coder: NSCoder) {

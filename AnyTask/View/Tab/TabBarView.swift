@@ -44,14 +44,10 @@ class TabBarView: UIView {
         backgroundView.layer.cornerRadius = ViewModel.cornerRadius
         
         self.addSubview(backgroundView)
-        backgroundView.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint
-            .activateFrom(insets: UIEdgeInsets(top: ViewModel.addButtonOffset,
-                                               leading: 0,
-                                               bottom: ViewModel.addButtonOffset,
-                                               trailing: 0),
-                          subview: backgroundView,
-                          superview: self)
+        backgroundView.pin
+            .top(ViewModel.addButtonOffset)
+            .bottom(-ViewModel.addButtonOffset)
+            .sides().activate
     }
     
     private var buttons: [TabBarButtonView] {
@@ -83,15 +79,9 @@ class TabBarView: UIView {
         stack.distribution = .equalSpacing
         stack.alignment = .bottom
         
-        stack.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([
-            heightAnchor.constraint(equalToConstant: ViewModel.heightAnchor),
-            stack.topAnchor.constraint(equalTo: topAnchor),
-            stack.leadingAnchor.constraint(equalTo: leadingAnchor,
-                                           constant: ViewModel.sideAnchor),
-            stack.trailingAnchor.constraint(equalTo: trailingAnchor,
-                                            constant: -ViewModel.sideAnchor),
-        ])
+        self.pin.height(ViewModel.heightAnchor).activate
+        stack.pin.sides(ViewModel.sideAnchor)
+            .top().activate
     }
     
     // MARK: - Button Actions

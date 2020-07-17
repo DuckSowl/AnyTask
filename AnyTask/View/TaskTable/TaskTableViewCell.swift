@@ -79,74 +79,45 @@ class TaskTableViewCell: UITableViewCell {
         guard let backgroundView = backgroundView else { return }
         
         backgroundView.backgroundColor = .white
-        backgroundView.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activateFrom(insets: ViewModel.backgroundInsets,
-                                        subview: backgroundView,
-                                        superview: self)
+        backgroundView.pin
+            .sides(ViewModel.backgroundSides)
+            .topBottom(ViewModel.backgroundTopButton)
+            .activate
+        
         backgroundView.layer.cornerRadius = ViewModel.cornerRadius
     }
     
     private func setupViewConstraints() {
         guard let backgroundView = backgroundView else { return }
-
-        NSLayoutConstraint.activate([
-            // Title
-            titleLabel.leadingAnchor
-                .constraint(equalTo: backgroundView.leadingAnchor,
-                            constant: ViewModel.sideAnchor),
-            titleLabel.topAnchor
-                .constraint(equalTo: backgroundView.topAnchor,
-                            constant: ViewModel.topAnchor),
-            
-            // ExpectedTime
-            expectedTimeLabel.trailingAnchor
-                .constraint(equalTo: backgroundView.trailingAnchor,
-                            constant: -ViewModel.sideAnchor),
-            expectedTimeLabel.topAnchor
-                .constraint(equalTo: backgroundView.topAnchor,
-                            constant: ViewModel.topAnchor),
-            
-            // Title - ExpectedTime
-            titleLabel.trailingAnchor
-                .constraint(lessThanOrEqualTo: expectedTimeLabel.leadingAnchor,
-                            constant: -ViewModel.sideAnchor),
-            
-            // Comment
-            commentLabel.leadingAnchor
-                .constraint(equalTo: backgroundView.leadingAnchor,
-                            constant: ViewModel.sideAnchor),
-            commentLabel.trailingAnchor
-                .constraint(equalTo: backgroundView.trailingAnchor,
-                            constant: -ViewModel.sideAnchor),
-            commentLabel.topAnchor
-                .constraint(equalTo: titleLabel.bottomAnchor,
-                            constant: ViewModel.topAnchor),
-            commentLabel.bottomAnchor
-                .constraint(equalTo: deadlineLabel.topAnchor,
-                            constant: -ViewModel.bottomAnchor),
-            
-            // Deadline
-            deadlineLabel.leadingAnchor
-                .constraint(equalTo: backgroundView.leadingAnchor,
-                            constant: ViewModel.sideAnchor),
-            deadlineLabel.bottomAnchor
-                .constraint(equalTo: backgroundView.bottomAnchor,
-                            constant: -ViewModel.bottomAnchor),
-            
-            // Deadline - Project
-            deadlineLabel.trailingAnchor
-                .constraint(lessThanOrEqualTo: projectLabel.leadingAnchor,
-                            constant: -ViewModel.sideAnchor),
-            
-            // Project
-            projectLabel.trailingAnchor
-                .constraint(equalTo: backgroundView.trailingAnchor,
-                            constant: -ViewModel.sideAnchor),
-            projectLabel.bottomAnchor
-                .constraint(equalTo: backgroundView.bottomAnchor,
-                            constant: -ViewModel.topAnchor),
-        ])
+           
+        titleLabel.pin
+            .top(ViewModel.topAnchor)
+            .left(ViewModel.sideAnchor)
+            .before(expectedTimeLabel, be: .less, ViewModel.sideAnchor)
+            .activate
         
+        expectedTimeLabel.pin
+            .top(ViewModel.topAnchor)
+            .right(ViewModel.sideAnchor)
+            .activate
+        
+        commentLabel.pin
+            .sides(to: backgroundView, ViewModel.sideAnchor)
+            .below(titleLabel, ViewModel.topAnchor)
+            .above(deadlineLabel, ViewModel.bottomAnchor)
+            .activate
+        
+        deadlineLabel.pin
+            .left(ViewModel.sideAnchor)
+            .bottom(ViewModel.bottomAnchor)
+            .before(projectLabel, be: .less, ViewModel.sideAnchor)
+            .activate
+        
+        projectLabel.pin
+            .right(ViewModel.sideAnchor)
+            .bottom(ViewModel.bottomAnchor)
+            .activate
+                
         // Prevent expectedTimeLabel from shrinking
         expectedTimeLabel
             .setContentCompressionResistancePriority(.required, for: .horizontal)
@@ -158,7 +129,6 @@ class TaskTableViewCell: UITableViewCell {
         let label = UILabel()
         label.font = font
         
-        label.translatesAutoresizingMaskIntoConstraints = false
         label.adjustsFontForContentSizeCategory = true
 
         backgroundView?.addSubview(label)

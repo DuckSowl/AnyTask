@@ -20,13 +20,13 @@
 		3A7BF95224BE3EBA00558675 /* TaskTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7BF95024BE3EB900558675 /* TaskTableViewCell.swift */; };
 		3A7BF95324BE3EBA00558675 /* TaskTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7BF95124BE3EBA00558675 /* TaskTableViewController.swift */; };
 		3A7BF95D24BE429B00558675 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7BF95C24BE429B00558675 /* Task.swift */; };
-		3A7BF96024BE42C900558675 /* NSLayoutConstraints+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7BF95E24BE42C800558675 /* NSLayoutConstraints+Helpers.swift */; };
 		3A7BF96124BE42C900558675 /* UIFont+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7BF95F24BE42C900558675 /* UIFont+.swift */; };
 		3A7BF96324BE42EA00558675 /* Tab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7BF96224BE42EA00558675 /* Tab.swift */; };
 		3A95C34124BC8838003A52B9 /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3A95C33F24BC8838003A52B9 /* DataModel.xcdatamodeld */; };
 		3A95C34324BC8A62003A52B9 /* UUID+DataConvertable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A95C34224BC8A61003A52B9 /* UUID+DataConvertable.swift */; };
 		3A95C34524BC8B1C003A52B9 /* TaskCoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A95C34424BC8B1C003A52B9 /* TaskCoreDataManager.swift */; };
 		3A95C34724BC8B69003A52B9 /* TaskManagable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A95C34624BC8B69003A52B9 /* TaskManagable.swift */; };
+		3A9B9D3724C1DDB10092DC25 /* UIEdgeInsets+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9B9D3624C1DDB10092DC25 /* UIEdgeInsets+.swift */; };
 		3AE9ADFA24C056D900670C72 /* AddTaskViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE9ADF924C056D900670C72 /* AddTaskViewModel.swift */; };
 		3AE9ADFE24C0981600670C72 /* Array+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE9ADFD24C0981600670C72 /* Array+.swift */; };
 		3AE9AE0024C0996C00670C72 /* AddTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE9ADFF24C0996C00670C72 /* AddTaskViewController.swift */; };
@@ -59,13 +59,13 @@
 		3A7BF95024BE3EB900558675 /* TaskTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskTableViewCell.swift; sourceTree = "<group>"; };
 		3A7BF95124BE3EBA00558675 /* TaskTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskTableViewController.swift; sourceTree = "<group>"; };
 		3A7BF95C24BE429B00558675 /* Task.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
-		3A7BF95E24BE42C800558675 /* NSLayoutConstraints+Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSLayoutConstraints+Helpers.swift"; sourceTree = "<group>"; };
 		3A7BF95F24BE42C900558675 /* UIFont+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIFont+.swift"; sourceTree = "<group>"; };
 		3A7BF96224BE42EA00558675 /* Tab.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tab.swift; sourceTree = "<group>"; };
 		3A95C34024BC8838003A52B9 /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
 		3A95C34224BC8A61003A52B9 /* UUID+DataConvertable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "UUID+DataConvertable.swift"; path = "AnyTask/Extensions/UUID+DataConvertable.swift"; sourceTree = SOURCE_ROOT; };
 		3A95C34424BC8B1C003A52B9 /* TaskCoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskCoreDataManager.swift; sourceTree = "<group>"; };
 		3A95C34624BC8B69003A52B9 /* TaskManagable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskManagable.swift; sourceTree = "<group>"; };
+		3A9B9D3624C1DDB10092DC25 /* UIEdgeInsets+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIEdgeInsets+.swift"; sourceTree = "<group>"; };
 		3AE9ADF924C056D900670C72 /* AddTaskViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTaskViewModel.swift; sourceTree = "<group>"; };
 		3AE9ADFD24C0981600670C72 /* Array+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Array+.swift"; path = "AnyTask/View/Array+.swift"; sourceTree = SOURCE_ROOT; };
 		3AE9ADFF24C0996C00670C72 /* AddTaskViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddTaskViewController.swift; sourceTree = "<group>"; };
@@ -234,8 +234,8 @@
 		3AEEFFCA24B351A4006251C8 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				3A9B9D3624C1DDB10092DC25 /* UIEdgeInsets+.swift */,
 				3AE9ADFD24C0981600670C72 /* Array+.swift */,
-				3A7BF95E24BE42C800558675 /* NSLayoutConstraints+Helpers.swift */,
 				3A7BF95F24BE42C900558675 /* UIFont+.swift */,
 				3A95C34224BC8A61003A52B9 /* UUID+DataConvertable.swift */,
 				3AEEFFC824B3519C006251C8 /* Date+Week.swift */,
@@ -342,7 +342,6 @@
 				3A1B1C0224AB7772004D024C /* Project.swift in Sources */,
 				3A7BF95224BE3EBA00558675 /* TaskTableViewCell.swift in Sources */,
 				3A95C34124BC8838003A52B9 /* DataModel.xcdatamodeld in Sources */,
-				3A7BF96024BE42C900558675 /* NSLayoutConstraints+Helpers.swift in Sources */,
 				3A309BBA24AA0BB1000C103B /* AppDelegate.swift in Sources */,
 				3A29EF6424C1D1AF0073E15A /* Pin.swift in Sources */,
 				3A1B1C0A24ABC03C004D024C /* TabBarView.swift in Sources */,
@@ -353,6 +352,7 @@
 				3A95C34324BC8A62003A52B9 /* UUID+DataConvertable.swift in Sources */,
 				3AEEFFE824B35F30006251C8 /* DayViewModel.swift in Sources */,
 				3AEEFFE124B35F17006251C8 /* DayView.swift in Sources */,
+				3A9B9D3724C1DDB10092DC25 /* UIEdgeInsets+.swift in Sources */,
 				3AEEFFBA24ADCC89006251C8 /* TabBarButtonView.swift in Sources */,
 				3AE9AE0024C0996C00670C72 /* AddTaskViewController.swift in Sources */,
 				3AEEFFE024B35F17006251C8 /* CalendarView.swift in Sources */,

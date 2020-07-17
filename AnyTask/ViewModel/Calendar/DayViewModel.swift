@@ -19,7 +19,7 @@ struct DayViewModel {
     let backgroundColor: UIColor = .darkGray
     
     let widthAnchorConstant = CGFloat(36)
-    let anhcorConstants = UIEdgeInsets(top: 12, left: 10, bottom: -12, right: -10)
+    let stackInsets = UIEdgeInsets(top: 12, left: 10, bottom: 12, right: 10)
     
     let weekSymbolFontSize = CGFloat(15)
     let dateStringFontSize = CGFloat(12)

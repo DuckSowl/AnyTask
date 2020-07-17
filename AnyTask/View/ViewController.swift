@@ -18,14 +18,9 @@ class ViewController: UIViewController {
         view.backgroundColor = .gray
         
         let tabBarView = TabBarView()
-        tabBarView.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(tabBarView)
         
-        NSLayoutConstraint.activate([
-            tabBarView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            tabBarView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            tabBarView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
-        ])
+        tabBarView.pin.sides().bottom().activate
         
         let taskViewController = TaskTableViewController()
         guard let taskView = taskViewController.view else { return }
@@ -33,18 +28,10 @@ class ViewController: UIViewController {
         view.insertSubview(taskView, at: 0)
         taskViewController.didMove(toParent: self)
         
-        taskView.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([
-            taskView.topAnchor.constraint(equalTo: view.topAnchor),
-            taskView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            taskView.bottomAnchor.constraint(equalTo: tabBarView.topAnchor),
-            taskView.trailingAnchor.constraint(equalTo: view.trailingAnchor)
-        ])
+        taskView.pin.sides().top().bottom(to: tabBarView).activate
         
         tabBarView.delegate = self
     }
-    
-    
 }
 
 extension ViewController: TabBarDelegate {

@@ -15,15 +15,7 @@ final class WeekCellView: UICollectionViewCell {
         stackView.distribution = .equalSpacing
         
         addSubview(stackView)
-        stackView.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([
-            stackView.topAnchor.constraint(equalTo: topAnchor),
-            stackView.leadingAnchor.constraint(equalTo: leadingAnchor,
-                                               constant: viewModel.sideAnchor),
-            stackView.trailingAnchor.constraint(equalTo: trailingAnchor,
-                                                constant: -viewModel.sideAnchor),
-            stackView.bottomAnchor.constraint(equalTo: bottomAnchor)
-        ])
+        stackView.pin.topBottom().sides(viewModel.sideAnchor).activate
         
         return stackView
     }()

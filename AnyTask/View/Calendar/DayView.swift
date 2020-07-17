@@ -46,18 +46,8 @@ final class DayView: UIView {
         stack.axis = .vertical
         
         addSubview(stack)
-        
-        stack.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([
-            widthAnchor.constraint(equalToConstant: viewModel.widthAnchorConstant),
-            stack.topAnchor.constraint(equalTo: topAnchor,
-                                       constant: viewModel.anhcorConstants.top),
-            stack.leadingAnchor.constraint(equalTo: leadingAnchor,
-                                           constant: viewModel.anhcorConstants.left),
-            stack.trailingAnchor.constraint(equalTo: trailingAnchor,
-                                            constant: viewModel.anhcorConstants.right),
-            stack.bottomAnchor.constraint(equalTo: bottomAnchor,
-                                          constant: viewModel.anhcorConstants.bottom)
-        ])
+    
+        self.pin.width(viewModel.widthAnchorConstant).activate
+        stack.pin.all(insets: viewModel.stackInsets).activate
     }
 }

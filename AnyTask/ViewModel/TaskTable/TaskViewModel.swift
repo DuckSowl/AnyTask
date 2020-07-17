@@ -23,7 +23,7 @@ struct TaskViewModel {
     static let sideAnchor = CGFloat(15)
     static let topAnchor = CGFloat(10)
     static let bottomAnchor = CGFloat(10)
-    static let backgroundInsets = UIEdgeInsets(top: 5, leading: 10,
-                                               bottom: -5, trailing: -10)
+    static let backgroundSides = CGFloat(10)
+    static let backgroundTopButton = CGFloat(5)
     static let cornerRadius = CGFloat(14)
 }

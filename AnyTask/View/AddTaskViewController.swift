@@ -50,7 +50,6 @@ class AddTaskViewController: UIViewController {
         addButton.contentEdgeInsets = ViewModel.addButtonContentEdgeInsets
         
         addButton.addTarget(self, action: #selector(addTask), for: .touchUpInside)
-        addButton.translatesAutoresizingMaskIntoConstraints = false
         return addButton
     }()
     
@@ -69,16 +68,14 @@ class AddTaskViewController: UIViewController {
             // Add corners for iOS 10
         }
         
-        heightConstraint = backgroundView.heightAnchor
-            .constraint(equalToConstant: backgroundContentHeight)
+        heightConstraint = backgroundView.pin
+            .height(backgroundContentHeight)
+            .constraints.first
         
-        backgroundView.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([
-            backgroundView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            backgroundView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            backgroundView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
-            heightConstraint
-        ])
+        backgroundView.pin
+            .left().right().bottom()
+            .add(heightConstraint)
+            .activate
                 
         return backgroundView
     }()
@@ -104,44 +101,32 @@ class AddTaskViewController: UIViewController {
         subviews.forEach { textScrollView.addSubview($0) }
         
         backgroundView.addSubview(textScrollView)
-        textScrollView.translatesAutoresizingMaskIntoConstraints = false
         return textScrollView
     }
     
+   
+    
     private func setupViewConstraints(with textScrollView: UIScrollView) {
-        NSLayoutConstraint.activate([
-            // TitleTextView
-            titleTextView.topAnchor.constraint(equalTo: textScrollView.topAnchor),
-            titleTextView.leadingAnchor.constraint(equalTo: textScrollView.leadingAnchor),
-            titleTextView.trailingAnchor.constraint(equalTo: textScrollView.trailingAnchor),
-            titleTextView.leadingAnchor.constraint(equalTo: backgroundView.leadingAnchor,
-                                                   constant: ViewModel.sideAnchor),
-            titleTextView.trailingAnchor.constraint(equalTo: backgroundView.trailingAnchor,
-                                                    constant: -ViewModel.sideAnchor),
-            
-            // CommentTextView
-            commentTextView.topAnchor.constraint(equalTo: titleTextView.bottomAnchor,
-                                                 constant: ViewModel.textSeparatorAnchor),
-            commentTextView.leadingAnchor.constraint(equalTo: textScrollView.leadingAnchor),
-            commentTextView.trailingAnchor.constraint(equalTo: textScrollView.trailingAnchor),
-            commentTextView.bottomAnchor.constraint(equalTo: textScrollView.bottomAnchor),
-            
-            // ScrollView
-            textScrollView.leadingAnchor.constraint(equalTo: backgroundView.leadingAnchor,
-                                                    constant: ViewModel.sideAnchor),
-            textScrollView.trailingAnchor.constraint(equalTo: backgroundView.trailingAnchor,
-                                                     constant: -ViewModel.sideAnchor),
-            textScrollView.topAnchor.constraint(equalTo: backgroundView.topAnchor,
-                                                constant: ViewModel.topAnchor),
-            textScrollView.bottomAnchor.constraint(equalTo: addButton.topAnchor,
-                                                   constant: -ViewModel.bottomAnchor),
-            
-            // AddButton
-            addButton.trailingAnchor.constraint(equalTo: backgroundView.trailingAnchor,
-                                                constant: -ViewModel.sideAnchor),
-            addButton.bottomAnchor.constraint(equalTo: backgroundView.bottomAnchor,
-                                              constant: -ViewModel.bottomAnchor),
-        ])
+        titleTextView.pin
+            .top().sides()
+            .sides(to: backgroundView, ViewModel.sideAnchor)
+            .activate
+
+        commentTextView.pin
+            .left().right().bottom()
+            .below(titleTextView, ViewModel.textSeparatorAnchor)
+            .activate
+        
+        textScrollView.pin
+            .sides(ViewModel.sideAnchor)
+            .top(ViewModel.topAnchor)
+            .above(addButton, ViewModel.bottomAnchor)
+            .activate
+        
+        addButton.pin
+            .right(ViewModel.sideAnchor)
+            .bottom(ViewModel.bottomAnchor)
+            .activate
     }
 
     // MARK: - Private Methods
@@ -153,7 +138,6 @@ class AddTaskViewController: UIViewController {
         textView.isScrollEnabled = false
         
         textView.delegate = self
-        textView.translatesAutoresizingMaskIntoConstraints = false
         
         return textView
     }
@@ -225,3 +209,4 @@ extension AddTaskViewController: UITextViewDelegate {
 
     // TODO: - Add placeholder
 }
+
