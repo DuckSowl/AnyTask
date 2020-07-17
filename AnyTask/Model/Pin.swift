@@ -148,27 +148,35 @@ extension Pin {
             .topBottom(to: other, be: relation, constant)
     }
     
+    func all(to other: UIView? = nil, be relation: Relation = .equal,
+             insets: UIEdgeInsets) -> Pin {
+        self.top(to: other, be: relation, insets.top)
+            .left(to: other, be: relation, insets.left)
+            .right(to: other, be: relation, insets.right)
+            .bottom(to: other, be: relation, insets.bottom)
+    }
+    
     // MARK: - Edges relative to other views
     
-    func below(of other: UIView, be relation: Relation = .equal,
+    func below(_ other: UIView, be relation: Relation = .equal,
                _ constant: CGFloat = 0) -> Pin {
         addConstraint(toView: other, from: \.topAnchor,  to: \.bottomAnchor,
                       with: relation, constant: constant)
     }
     
-    func above(of other: UIView, be relation: Relation = .equal,
+    func above(_ other: UIView, be relation: Relation = .equal,
                _ constant: CGFloat = 0) -> Pin {
         addConstraint(toView: other, from: \.bottomAnchor, to: \.topAnchor,
                       with: relation, constant: -constant)
     }
     
-    func before(of other: UIView, be relation: Relation = .equal,
+    func before(_ other: UIView, be relation: Relation = .equal,
                 _ constant: CGFloat = 0) -> Pin {
         addConstraint(toView: other, from: \.rightAnchor, to: \.leftAnchor,
                       with: relation, constant: constant)
     }
     
-    func after(of other: UIView, be relation: Relation = .equal,
+    func after(_ other: UIView, be relation: Relation = .equal,
                _ constant: CGFloat = 0) -> Pin {
         addConstraint(toView: other, from: \.leftAnchor, to: \.rightAnchor,
                       with: relation, constant: constant)
@@ -186,6 +194,10 @@ extension Pin {
     
     func size(be relation: Relation = .equal, _ constant: CGFloat) -> Pin {
         width(be: relation, constant).height(be: relation, constant)
+    }
+    
+    func size(be relation: Relation = .equal, _ constant: CGSize) -> Pin {
+        width(be: relation, constant.width).height(be: relation, constant.height)
     }
     
     // MARK: - Aspect ratio (width / height)
