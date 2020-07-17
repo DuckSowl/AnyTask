@@ -10,6 +10,7 @@
 		3A1B1C0224AB7772004D024C /* Project.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A1B1C0124AB7772004D024C /* Project.swift */; };
 		3A1B1C0A24ABC03C004D024C /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A1B1C0924ABC03C004D024C /* TabBarView.swift */; };
 		3A1B1C0C24AC9933004D024C /* TabBarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A1B1C0B24AC9933004D024C /* TabBarViewModel.swift */; };
+		3A29EF6424C1D1AF0073E15A /* Pin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A29EF6324C1D1AF0073E15A /* Pin.swift */; };
 		3A309BBA24AA0BB1000C103B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A309BB924AA0BB1000C103B /* AppDelegate.swift */; };
 		3A309BBC24AA0BB1000C103B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A309BBB24AA0BB1000C103B /* SceneDelegate.swift */; };
 		3A309BBE24AA0BB1000C103B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A309BBD24AA0BB1000C103B /* ViewController.swift */; };
@@ -46,6 +47,7 @@
 		3A1B1C0124AB7772004D024C /* Project.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Project.swift; sourceTree = "<group>"; };
 		3A1B1C0924ABC03C004D024C /* TabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
 		3A1B1C0B24AC9933004D024C /* TabBarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewModel.swift; sourceTree = "<group>"; };
+		3A29EF6324C1D1AF0073E15A /* Pin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pin.swift; sourceTree = "<group>"; };
 		3A309BB624AA0BB1000C103B /* AnyTask.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AnyTask.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A309BB924AA0BB1000C103B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3A309BBB24AA0BB1000C103B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -133,6 +135,7 @@
 		3A1B1BFC24AB66FA004D024C /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				3A29EF6324C1D1AF0073E15A /* Pin.swift */,
 				3A7BF96224BE42EA00558675 /* Tab.swift */,
 				3A7BF95C24BE429B00558675 /* Task.swift */,
 				3A1B1C0124AB7772004D024C /* Project.swift */,
@@ -341,6 +344,7 @@
 				3A95C34124BC8838003A52B9 /* DataModel.xcdatamodeld in Sources */,
 				3A7BF96024BE42C900558675 /* NSLayoutConstraints+Helpers.swift in Sources */,
 				3A309BBA24AA0BB1000C103B /* AppDelegate.swift in Sources */,
+				3A29EF6424C1D1AF0073E15A /* Pin.swift in Sources */,
 				3A1B1C0A24ABC03C004D024C /* TabBarView.swift in Sources */,
 				3AEEFFE724B35F30006251C8 /* CalendarViewModel.swift in Sources */,
 				3A7BF95D24BE429B00558675 /* Task.swift in Sources */,
