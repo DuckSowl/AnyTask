@@ -9,9 +9,8 @@
 import UIKit
 
 enum AddTaskViewModel {
-    static let backgroundColor = UIColor(red: 0.962, green: 0.962,
-                                         blue: 0.962, alpha: 1)
-    static let shadeColor = UIColor.black.withAlphaComponent(0.2)
+    static let backgroundColor = Color.background
+    static let shadeColor = Color.shade
     
     static let titleFont = UIFont
         .preferredFont(forTextStyle: .title3)
@@ -29,7 +28,7 @@ enum AddTaskViewModel {
     static let addButtonContentEdgeInsets = UIEdgeInsets(same: 5)
     static let cornerRadius = CGFloat(10)
     
-    static let secondColor = UIColor(red: 0.962, green: 0.962, blue: 0.962, alpha: 1)
+    static let secondColor = Color.background
     
     static let textSeparatorAnchor = CGFloat(5)
     static let sideAnchor = CGFloat(15)

@@ -19,8 +19,8 @@ class TaskTableViewController: UITableViewController, UIGestureRecognizerDelegat
         tableView.register(TaskTableViewCell.self, forCellReuseIdentifier: "cell")
         tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = 600
-        tableView.backgroundColor = UIColor(red: 0.962, green: 0.962, blue: 0.962, alpha: 1)
-        tableView.separatorColor = .clear
+        tableView.backgroundColor = Color.background
+        tableView.separatorColor = Color.clear
     }
 
     // MARK: - UITableViewDataSourse

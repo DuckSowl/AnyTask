@@ -73,12 +73,12 @@ class TaskTableViewCell: UITableViewCell {
     }
     
     private func setupBackgroundView() {
-        backgroundColor = .clear
+        backgroundColor = Color.clear
         backgroundView = UIView()
         
         guard let backgroundView = backgroundView else { return }
         
-        backgroundView.backgroundColor = .white
+        backgroundView.backgroundColor = Color.light
         backgroundView.pin
             .sides(ViewModel.backgroundSides)
             .topBottom(ViewModel.backgroundTopButton)
