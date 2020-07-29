@@ -9,7 +9,9 @@
 import UIKit
 
 enum TabBarViewModel {
-    static let backgroundColor = UIColor(red: 56/255, green: 56/255, blue: 56/255, alpha: 1)
+    typealias Constants = TabBarViewModel
+    
+    static let backgroundColor = Color.gray
     static let cornerRadius = CGFloat(18)
     static let sideAnchor = CGFloat(30)
     static let addButtonOffset = CGFloat(8)

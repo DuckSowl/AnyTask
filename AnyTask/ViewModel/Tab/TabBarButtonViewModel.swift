@@ -21,7 +21,7 @@ protocol TabBarButtonViewModel {
 extension TabBarButtonViewModel {
     var basePath: String { "tabbar-icon" }
     
-    var iconColor: UIColor { .white }
-    var iconSelectedColor: UIColor { .black }
+    var iconColor: UIColor { Color.light }
+    var iconSelectedColor: UIColor { Color.dark }
     var cornerRadius: CGFloat { iconSize.height / 2 }
 }

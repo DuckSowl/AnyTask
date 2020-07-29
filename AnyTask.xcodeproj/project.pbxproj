@@ -11,11 +11,14 @@
 		3A1B1C0A24ABC03C004D024C /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A1B1C0924ABC03C004D024C /* TabBarView.swift */; };
 		3A1B1C0C24AC9933004D024C /* TabBarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A1B1C0B24AC9933004D024C /* TabBarViewModel.swift */; };
 		3A29EF6424C1D1AF0073E15A /* Pin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A29EF6324C1D1AF0073E15A /* Pin.swift */; };
+		3A305FD524CF21F400CD7A77 /* UIColor+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A305FD424CF21F400CD7A77 /* UIColor+.swift */; };
 		3A309BBA24AA0BB1000C103B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A309BB924AA0BB1000C103B /* AppDelegate.swift */; };
 		3A309BBC24AA0BB1000C103B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A309BBB24AA0BB1000C103B /* SceneDelegate.swift */; };
 		3A309BBE24AA0BB1000C103B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A309BBD24AA0BB1000C103B /* ViewController.swift */; };
 		3A309BC324AA0BB4000C103B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A309BC224AA0BB4000C103B /* Assets.xcassets */; };
 		3A309BC624AA0BB4000C103B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A309BC424AA0BB4000C103B /* LaunchScreen.storyboard */; };
+		3A742AEF24D063D500C37684 /* Int+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A742AEE24D063D500C37684 /* Int+.swift */; };
+		3A742AF124D0645C00C37684 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A742AF024D0645C00C37684 /* Color.swift */; };
 		3A7BF94B24BDADCE00558675 /* TaskViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7BF94A24BDADCE00558675 /* TaskViewModel.swift */; };
 		3A7BF95224BE3EBA00558675 /* TaskTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7BF95024BE3EB900558675 /* TaskTableViewCell.swift */; };
 		3A7BF95324BE3EBA00558675 /* TaskTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7BF95124BE3EBA00558675 /* TaskTableViewController.swift */; };
@@ -48,6 +51,7 @@
 		3A1B1C0924ABC03C004D024C /* TabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
 		3A1B1C0B24AC9933004D024C /* TabBarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewModel.swift; sourceTree = "<group>"; };
 		3A29EF6324C1D1AF0073E15A /* Pin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pin.swift; sourceTree = "<group>"; };
+		3A305FD424CF21F400CD7A77 /* UIColor+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "UIColor+.swift"; path = "AnyTask/Extensions/UIColor+.swift"; sourceTree = SOURCE_ROOT; };
 		3A309BB624AA0BB1000C103B /* AnyTask.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AnyTask.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A309BB924AA0BB1000C103B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3A309BBB24AA0BB1000C103B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -55,6 +59,8 @@
 		3A309BC224AA0BB4000C103B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3A309BC524AA0BB4000C103B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3A309BC724AA0BB4000C103B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3A742AEE24D063D500C37684 /* Int+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Int+.swift"; sourceTree = "<group>"; };
+		3A742AF024D0645C00C37684 /* Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		3A7BF94A24BDADCE00558675 /* TaskViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskViewModel.swift; sourceTree = "<group>"; };
 		3A7BF95024BE3EB900558675 /* TaskTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskTableViewCell.swift; sourceTree = "<group>"; };
 		3A7BF95124BE3EBA00558675 /* TaskTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskTableViewController.swift; sourceTree = "<group>"; };
@@ -138,6 +144,7 @@
 				3A29EF6324C1D1AF0073E15A /* Pin.swift */,
 				3A7BF96224BE42EA00558675 /* Tab.swift */,
 				3A7BF95C24BE429B00558675 /* Task.swift */,
+				3A742AF024D0645C00C37684 /* Color.swift */,
 				3A1B1C0124AB7772004D024C /* Project.swift */,
 				3A95C34824BC8B73003A52B9 /* CoreData */,
 			);
@@ -234,9 +241,11 @@
 		3AEEFFCA24B351A4006251C8 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				3A742AEE24D063D500C37684 /* Int+.swift */,
+				3A305FD424CF21F400CD7A77 /* UIColor+.swift */,
 				3A9B9D3624C1DDB10092DC25 /* UIEdgeInsets+.swift */,
-				3AE9ADFD24C0981600670C72 /* Array+.swift */,
 				3A7BF95F24BE42C900558675 /* UIFont+.swift */,
+				3AE9ADFD24C0981600670C72 /* Array+.swift */,
 				3A95C34224BC8A61003A52B9 /* UUID+DataConvertable.swift */,
 				3AEEFFC824B3519C006251C8 /* Date+Week.swift */,
 			);
@@ -345,6 +354,7 @@
 				3A309BBA24AA0BB1000C103B /* AppDelegate.swift in Sources */,
 				3A29EF6424C1D1AF0073E15A /* Pin.swift in Sources */,
 				3A1B1C0A24ABC03C004D024C /* TabBarView.swift in Sources */,
+				3A742AEF24D063D500C37684 /* Int+.swift in Sources */,
 				3AEEFFE724B35F30006251C8 /* CalendarViewModel.swift in Sources */,
 				3A7BF95D24BE429B00558675 /* Task.swift in Sources */,
 				3AE9ADFA24C056D900670C72 /* AddTaskViewModel.swift in Sources */,
@@ -355,9 +365,11 @@
 				3A9B9D3724C1DDB10092DC25 /* UIEdgeInsets+.swift in Sources */,
 				3AEEFFBA24ADCC89006251C8 /* TabBarButtonView.swift in Sources */,
 				3AE9AE0024C0996C00670C72 /* AddTaskViewController.swift in Sources */,
+				3A742AF124D0645C00C37684 /* Color.swift in Sources */,
 				3AEEFFE024B35F17006251C8 /* CalendarView.swift in Sources */,
 				3AEEFFBC24ADCD3A006251C8 /* TabBarButtonViewModel.swift in Sources */,
 				3AEEFFC224AE3426006251C8 /* AddButtonViewModel.swift in Sources */,
+				3A305FD524CF21F400CD7A77 /* UIColor+.swift in Sources */,
 				3AEEFFE624B35F30006251C8 /* WeekCellViewModel.swift in Sources */,
 				3AEEFFE224B35F17006251C8 /* WeekCellView.swift in Sources */,
 				3A7BF96124BE42C900558675 /* UIFont+.swift in Sources */,
