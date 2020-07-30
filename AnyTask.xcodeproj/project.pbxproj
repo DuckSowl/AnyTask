@@ -3,12 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		3A1B1C0224AB7772004D024C /* Project.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A1B1C0124AB7772004D024C /* Project.swift */; };
-		3A29EF6424C1D1AF0073E15A /* Pin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A29EF6324C1D1AF0073E15A /* Pin.swift */; };
 		3A309BBA24AA0BB1000C103B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A309BB924AA0BB1000C103B /* AppDelegate.swift */; };
 		3A309BBC24AA0BB1000C103B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A309BBB24AA0BB1000C103B /* SceneDelegate.swift */; };
 		3A309BC324AA0BB4000C103B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A309BC224AA0BB4000C103B /* Assets.xcassets */; };
@@ -43,12 +42,12 @@
 		3AAB33F124D2972A00586F99 /* AddTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AAB33DF24D2972A00586F99 /* AddTaskViewController.swift */; };
 		3AAB33F324D2977500586F99 /* Array+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AAB33F224D2977500586F99 /* Array+.swift */; };
 		3AAB33F724D2984A00586F99 /* UIColor+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AAB33F624D2984A00586F99 /* UIColor+.swift */; };
+		3AAB33FA24D2997100586F99 /* Pin in Frameworks */ = {isa = PBXBuildFile; productRef = 3AAB33F924D2997100586F99 /* Pin */; };
 		3AEEFFC924B3519C006251C8 /* Date+Week.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AEEFFC824B3519C006251C8 /* Date+Week.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		3A1B1C0124AB7772004D024C /* Project.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Project.swift; sourceTree = "<group>"; };
-		3A29EF6324C1D1AF0073E15A /* Pin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pin.swift; sourceTree = "<group>"; };
 		3A309BB624AA0BB1000C103B /* AnyTask.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AnyTask.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A309BB924AA0BB1000C103B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3A309BBB24AA0BB1000C103B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -93,6 +92,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3AAB33FA24D2997100586F99 /* Pin in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -129,7 +129,6 @@
 		3A1B1BFC24AB66FA004D024C /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				3A29EF6324C1D1AF0073E15A /* Pin.swift */,
 				3A7BF96224BE42EA00558675 /* Tab.swift */,
 				3A742AF024D0645C00C37684 /* Color.swift */,
 				3AAB33F424D297F600586F99 /* Task */,
@@ -352,6 +351,9 @@
 			dependencies = (
 			);
 			name = AnyTask;
+			packageProductDependencies = (
+				3AAB33F924D2997100586F99 /* Pin */,
+			);
 			productName = AnyTask;
 			productReference = 3A309BB624AA0BB1000C103B /* AnyTask.app */;
 			productType = "com.apple.product-type.application";
@@ -380,6 +382,9 @@
 				Base,
 			);
 			mainGroup = 3A309BAD24AA0BB1000C103B;
+			packageReferences = (
+				3AAB33F824D2997100586F99 /* XCRemoteSwiftPackageReference "LittlePin" */,
+			);
 			productRefGroup = 3A309BB724AA0BB1000C103B /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -415,7 +420,6 @@
 				3A95C34124BC8838003A52B9 /* DataModel.xcdatamodeld in Sources */,
 				3AAB33F024D2972A00586F99 /* AddTaskViewModel.swift in Sources */,
 				3A309BBA24AA0BB1000C103B /* AppDelegate.swift in Sources */,
-				3A29EF6424C1D1AF0073E15A /* Pin.swift in Sources */,
 				3A742AEF24D063D500C37684 /* Int+.swift in Sources */,
 				3AAB33EB24D2972A00586F99 /* TabBarButtonViewModel.swift in Sources */,
 				3AAB33E424D2972A00586F99 /* CalendarViewModel.swift in Sources */,
@@ -632,6 +636,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		3AAB33F824D2997100586F99 /* XCRemoteSwiftPackageReference "LittlePin" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/DuckSowl/LittlePin.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		3AAB33F924D2997100586F99 /* Pin */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3AAB33F824D2997100586F99 /* XCRemoteSwiftPackageReference "LittlePin" */;
+			productName = Pin;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		3A95C33F24BC8838003A52B9 /* DataModel.xcdatamodeld */ = {

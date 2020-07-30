@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreData
+import Pin
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
