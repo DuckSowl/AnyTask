@@ -20,7 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if #available(iOS 13, *) { }
         else {
             window = UIWindow(frame: UIScreen.main.bounds)
-            window!.rootViewController = ViewController()
+            window!.rootViewController = TabViewController()
             window?.makeKeyAndVisible()
         }
         return true

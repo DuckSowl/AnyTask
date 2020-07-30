@@ -1,5 +1,5 @@
 //
-//  TaskViewModel.swift
+//  TaskCellViewModel.swift
 //  AnyTask
 //
 //  Created by Anton Tolstov on 14.07.2020.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-struct TaskViewModel {
+struct TaskCellViewModel {
     let task: Task
     
     var title: String { task.title }

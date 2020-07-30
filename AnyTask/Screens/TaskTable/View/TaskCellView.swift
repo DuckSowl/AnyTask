@@ -1,5 +1,5 @@
 //
-//  TaskTableViewCell.swift
+//  TaskCellView.swift
 //  AnyTask
 //
 //  Created by Anton Tolstov on 13.07.2020.
@@ -8,13 +8,13 @@
 
 import UIKit
 
-class TaskTableViewCell: UITableViewCell {
+class TaskCellView: UITableViewCell {
     
     // MARK: - ViewModel
     
-    typealias ViewModel = TaskViewModel
+    typealias ViewModel = TaskCellViewModel
     
-    var viewModel: TaskViewModel? {
+    var viewModel: TaskCellViewModel? {
         didSet {
             guard let viewModel = viewModel else { return }
                 

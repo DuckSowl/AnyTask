@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  TabViewController.swift
 //  AnyTask
 //
 //  Created by Anton Tolstov on 29.06.2020.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class TabViewController: UIViewController {
     
     var addTaskViewController: AddTaskViewController!
     
@@ -34,7 +34,7 @@ class ViewController: UIViewController {
     }
 }
 
-extension ViewController: TabBarDelegate {
+extension TabViewController: TabBarDelegate {
     func didSelect(tab: Tab) {
         view.backgroundColor = UIColor(red: CGFloat.random(in: 0.2...0.8), green: CGFloat.random(in: 0.2...0.8), blue: CGFloat.random(in: 0.2...0.8), alpha: 1)
     }

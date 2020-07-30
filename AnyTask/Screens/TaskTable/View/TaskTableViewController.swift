@@ -16,7 +16,7 @@ class TaskTableViewController: UITableViewController, UIGestureRecognizerDelegat
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        tableView.register(TaskTableViewCell.self, forCellReuseIdentifier: "cell")
+        tableView.register(TaskCellView.self, forCellReuseIdentifier: "cell")
         tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = 600
         tableView.backgroundColor = Color.background
@@ -32,9 +32,9 @@ class TaskTableViewController: UITableViewController, UIGestureRecognizerDelegat
     override func tableView(_ tableView: UITableView,
                             cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell",
-                                                 for: indexPath) as! TaskTableViewCell
+                                                 for: indexPath) as! TaskCellView
 
-        cell.viewModel = TaskViewModel(task: tasks[indexPath.row])
+        cell.viewModel = TaskCellViewModel(task: tasks[indexPath.row])
 
         return cell
     }
