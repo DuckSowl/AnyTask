@@ -21,8 +21,8 @@ struct Task: Identifiable {
     
     var time: Time
     
-    internal init(title: String, comment: String, deadline: Date? = nil, project: Project, completed: Bool, time: Task.Time) {
-        self.id = UUID()
+    internal init(id: UUID = UUID(), title: String, comment: String, deadline: Date? = nil, project: Project, completed: Bool, time: Task.Time) {
+        self.id = id
         self.title = title
         self.comment = comment
         self.deadline = deadline
@@ -40,7 +40,7 @@ struct Task: Identifiable {
              deadline: Calendar.current.date(byAdding: .hour,
                                              value: Int.random(in: -100...100),
                                              to: Date()) ,
-             project: Project(name: "Development"),
+        project: Project(name: "Development"),
              completed: false,
              time: Time(expected: UInt.random(in: 1...10)))
     }
