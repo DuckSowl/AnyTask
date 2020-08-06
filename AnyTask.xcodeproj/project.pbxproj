@@ -17,6 +17,8 @@
 		3A7A898224DBD41D009C7D3D /* Task(MO)+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7A898124DBD41D009C7D3D /* Task(MO)+.swift */; };
 		3A7A898524DBD58D009C7D3D /* Project(MO)+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7A898424DBD58D009C7D3D /* Project(MO)+.swift */; };
 		3A7A898724DBD828009C7D3D /* CoreDataManageable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7A898624DBD828009C7D3D /* CoreDataManageable.swift */; };
+		3A7A898F24DBE23B009C7D3D /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7A898E24DBE23B009C7D3D /* UIView+.swift */; };
+		3A7A899224DBE247009C7D3D /* Corner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7A899124DBE247009C7D3D /* Corner.swift */; };
 		3A7BF95D24BE429B00558675 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7BF95C24BE429B00558675 /* Task.swift */; };
 		3A7BF96124BE42C900558675 /* UIFont+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7BF95F24BE42C900558675 /* UIFont+.swift */; };
 		3A7BF96324BE42EA00558675 /* Tab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7BF96224BE42EA00558675 /* Tab.swift */; };
@@ -66,6 +68,8 @@
 		3A7A898124DBD41D009C7D3D /* Task(MO)+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Task(MO)+.swift"; sourceTree = "<group>"; };
 		3A7A898424DBD58D009C7D3D /* Project(MO)+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Project(MO)+.swift"; sourceTree = "<group>"; };
 		3A7A898624DBD828009C7D3D /* CoreDataManageable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataManageable.swift; sourceTree = "<group>"; };
+		3A7A898E24DBE23B009C7D3D /* UIView+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
+		3A7A899124DBE247009C7D3D /* Corner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Corner.swift; sourceTree = "<group>"; };
 		3A7BF95C24BE429B00558675 /* Task.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
 		3A7BF95F24BE42C900558675 /* UIFont+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIFont+.swift"; sourceTree = "<group>"; };
 		3A7BF96224BE42EA00558675 /* Tab.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tab.swift; sourceTree = "<group>"; };
@@ -174,6 +178,7 @@
 				3AAB33C024D2972A00586F99 /* Screens */,
 				3A1B1BFC24AB66FA004D024C /* Model */,
 				3AEEFFCA24B351A4006251C8 /* Extensions */,
+				3A7A899024DBE247009C7D3D /* Helpers */,
 				3A1B1BF924AB66B4004D024C /* Resources */,
 				3A1B1BF824AB6634004D024C /* Supporting Files */,
 			);
@@ -197,6 +202,15 @@
 			);
 			path = ProjectCoreDataManager;
 			sourceTree = "<group>";
+		};
+		3A7A899024DBE247009C7D3D /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				3A7A899124DBE247009C7D3D /* Corner.swift */,
+			);
+			name = Helpers;
+			path = AnyTask/Helpers;
+			sourceTree = SOURCE_ROOT;
 		};
 		3A95C34824BC8B73003A52B9 /* CoreData */ = {
 			isa = PBXGroup;
@@ -353,6 +367,7 @@
 				3AAB33F624D2984A00586F99 /* UIColor+.swift */,
 				3A9B9D3624C1DDB10092DC25 /* UIEdgeInsets+.swift */,
 				3A7BF95F24BE42C900558675 /* UIFont+.swift */,
+				3A7A898E24DBE23B009C7D3D /* UIView+.swift */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -472,6 +487,7 @@
 				3AAB33E424D2972A00586F99 /* CalendarViewModel.swift in Sources */,
 				3A7A898224DBD41D009C7D3D /* Task(MO)+.swift in Sources */,
 				3A7A898724DBD828009C7D3D /* CoreDataManageable.swift in Sources */,
+				3A7A899224DBE247009C7D3D /* Corner.swift in Sources */,
 				3AAB33E224D2972A00586F99 /* TaskTableViewController.swift in Sources */,
 				3AAB33E324D2972A00586F99 /* DayViewModel.swift in Sources */,
 				3A7BF95D24BE429B00558675 /* Task.swift in Sources */,
@@ -486,6 +502,7 @@
 				3AAB340E24D30E7600586F99 /* ManagedObjectInitializable.swift in Sources */,
 				3A9B9D3724C1DDB10092DC25 /* UIEdgeInsets+.swift in Sources */,
 				3A742AF124D0645C00C37684 /* Color.swift in Sources */,
+				3A7A898F24DBE23B009C7D3D /* UIView+.swift in Sources */,
 				3A7BF96124BE42C900558675 /* UIFont+.swift in Sources */,
 				3A309BBC24AA0BB1000C103B /* SceneDelegate.swift in Sources */,
 				3AAB33E624D2972A00586F99 /* WeekCellView.swift in Sources */,
