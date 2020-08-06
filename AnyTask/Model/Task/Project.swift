@@ -9,7 +9,12 @@
 import Foundation
 
 struct Project: Identifiable {
-    let id = UUID()
+    let id: UUID
+    
+    init(id: UUID = UUID(), name: String) {
+        self.id = id
+        self.name = name
+    }
     
     var name: String
 }

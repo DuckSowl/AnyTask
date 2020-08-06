@@ -14,13 +14,16 @@
 		3A309BC624AA0BB4000C103B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A309BC424AA0BB4000C103B /* LaunchScreen.storyboard */; };
 		3A742AEF24D063D500C37684 /* Int+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A742AEE24D063D500C37684 /* Int+.swift */; };
 		3A742AF124D0645C00C37684 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A742AF024D0645C00C37684 /* Color.swift */; };
+		3A7A898224DBD41D009C7D3D /* Task(MO)+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7A898124DBD41D009C7D3D /* Task(MO)+.swift */; };
+		3A7A898524DBD58D009C7D3D /* Project(MO)+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7A898424DBD58D009C7D3D /* Project(MO)+.swift */; };
+		3A7A898724DBD828009C7D3D /* CoreDataManageable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7A898624DBD828009C7D3D /* CoreDataManageable.swift */; };
 		3A7BF95D24BE429B00558675 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7BF95C24BE429B00558675 /* Task.swift */; };
 		3A7BF96124BE42C900558675 /* UIFont+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7BF95F24BE42C900558675 /* UIFont+.swift */; };
 		3A7BF96324BE42EA00558675 /* Tab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7BF96224BE42EA00558675 /* Tab.swift */; };
 		3A95C34124BC8838003A52B9 /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3A95C33F24BC8838003A52B9 /* DataModel.xcdatamodeld */; };
 		3A95C34324BC8A62003A52B9 /* UUID+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A95C34224BC8A61003A52B9 /* UUID+.swift */; };
 		3A95C34524BC8B1C003A52B9 /* TaskCoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A95C34424BC8B1C003A52B9 /* TaskCoreDataManager.swift */; };
-		3A95C34724BC8B69003A52B9 /* TaskManagable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A95C34624BC8B69003A52B9 /* TaskManagable.swift */; };
+		3A95C34724BC8B69003A52B9 /* DataManageable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A95C34624BC8B69003A52B9 /* DataManageable.swift */; };
 		3A9B9D3724C1DDB10092DC25 /* UIEdgeInsets+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9B9D3624C1DDB10092DC25 /* UIEdgeInsets+.swift */; };
 		3AAB33E024D2972A00586F99 /* TaskCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AAB33C324D2972A00586F99 /* TaskCellViewModel.swift */; };
 		3AAB33E124D2972A00586F99 /* TaskCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AAB33C524D2972A00586F99 /* TaskCellView.swift */; };
@@ -43,6 +46,10 @@
 		3AAB33F324D2977500586F99 /* Array+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AAB33F224D2977500586F99 /* Array+.swift */; };
 		3AAB33F724D2984A00586F99 /* UIColor+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AAB33F624D2984A00586F99 /* UIColor+.swift */; };
 		3AAB33FA24D2997100586F99 /* Pin in Frameworks */ = {isa = PBXBuildFile; productRef = 3AAB33F924D2997100586F99 /* Pin */; };
+		3AAB340724D2A94E00586F99 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AAB340624D2A94E00586F99 /* CoreDataManager.swift */; };
+		3AAB340924D2AA0200586F99 /* ProjectCoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AAB340824D2AA0200586F99 /* ProjectCoreDataManager.swift */; };
+		3AAB340C24D3056A00586F99 /* IdentifiableObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AAB340B24D3056A00586F99 /* IdentifiableObject.swift */; };
+		3AAB340E24D30E7600586F99 /* ManagedObjectInitializable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AAB340D24D30E7600586F99 /* ManagedObjectInitializable.swift */; };
 		3AEEFFC924B3519C006251C8 /* Date+Week.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AEEFFC824B3519C006251C8 /* Date+Week.swift */; };
 /* End PBXBuildFile section */
 
@@ -56,13 +63,16 @@
 		3A309BC724AA0BB4000C103B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3A742AEE24D063D500C37684 /* Int+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Int+.swift"; sourceTree = "<group>"; };
 		3A742AF024D0645C00C37684 /* Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		3A7A898124DBD41D009C7D3D /* Task(MO)+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Task(MO)+.swift"; sourceTree = "<group>"; };
+		3A7A898424DBD58D009C7D3D /* Project(MO)+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Project(MO)+.swift"; sourceTree = "<group>"; };
+		3A7A898624DBD828009C7D3D /* CoreDataManageable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataManageable.swift; sourceTree = "<group>"; };
 		3A7BF95C24BE429B00558675 /* Task.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
 		3A7BF95F24BE42C900558675 /* UIFont+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIFont+.swift"; sourceTree = "<group>"; };
 		3A7BF96224BE42EA00558675 /* Tab.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tab.swift; sourceTree = "<group>"; };
 		3A95C34024BC8838003A52B9 /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
 		3A95C34224BC8A61003A52B9 /* UUID+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "UUID+.swift"; path = "AnyTask/Extensions/UUID+.swift"; sourceTree = SOURCE_ROOT; };
 		3A95C34424BC8B1C003A52B9 /* TaskCoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskCoreDataManager.swift; sourceTree = "<group>"; };
-		3A95C34624BC8B69003A52B9 /* TaskManagable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskManagable.swift; sourceTree = "<group>"; };
+		3A95C34624BC8B69003A52B9 /* DataManageable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManageable.swift; sourceTree = "<group>"; };
 		3A9B9D3624C1DDB10092DC25 /* UIEdgeInsets+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIEdgeInsets+.swift"; sourceTree = "<group>"; };
 		3AAB33C324D2972A00586F99 /* TaskCellViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskCellViewModel.swift; sourceTree = "<group>"; };
 		3AAB33C524D2972A00586F99 /* TaskCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskCellView.swift; sourceTree = "<group>"; };
@@ -84,6 +94,10 @@
 		3AAB33DF24D2972A00586F99 /* AddTaskViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddTaskViewController.swift; sourceTree = "<group>"; };
 		3AAB33F224D2977500586F99 /* Array+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+.swift"; sourceTree = "<group>"; };
 		3AAB33F624D2984A00586F99 /* UIColor+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+.swift"; sourceTree = "<group>"; };
+		3AAB340624D2A94E00586F99 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		3AAB340824D2AA0200586F99 /* ProjectCoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectCoreDataManager.swift; sourceTree = "<group>"; };
+		3AAB340B24D3056A00586F99 /* IdentifiableObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdentifiableObject.swift; sourceTree = "<group>"; };
+		3AAB340D24D30E7600586F99 /* ManagedObjectInitializable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManagedObjectInitializable.swift; sourceTree = "<group>"; };
 		3AEEFFC824B3519C006251C8 /* Date+Week.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Date+Week.swift"; path = "AnyTask/Extensions/Date+Week.swift"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
@@ -166,11 +180,31 @@
 			path = AnyTask;
 			sourceTree = "<group>";
 		};
+		3A7A898024DBD3BD009C7D3D /* TaskCoreDataManager */ = {
+			isa = PBXGroup;
+			children = (
+				3A95C34424BC8B1C003A52B9 /* TaskCoreDataManager.swift */,
+				3A7A898124DBD41D009C7D3D /* Task(MO)+.swift */,
+			);
+			path = TaskCoreDataManager;
+			sourceTree = "<group>";
+		};
+		3A7A898324DBD55F009C7D3D /* ProjectCoreDataManager */ = {
+			isa = PBXGroup;
+			children = (
+				3AAB340824D2AA0200586F99 /* ProjectCoreDataManager.swift */,
+				3A7A898424DBD58D009C7D3D /* Project(MO)+.swift */,
+			);
+			path = ProjectCoreDataManager;
+			sourceTree = "<group>";
+		};
 		3A95C34824BC8B73003A52B9 /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
-				3A95C34624BC8B69003A52B9 /* TaskManagable.swift */,
-				3A95C34424BC8B1C003A52B9 /* TaskCoreDataManager.swift */,
+				3AAB340A24D2ABCE00586F99 /* Protocols */,
+				3AAB340624D2A94E00586F99 /* CoreDataManager.swift */,
+				3A7A898024DBD3BD009C7D3D /* TaskCoreDataManager */,
+				3A7A898324DBD55F009C7D3D /* ProjectCoreDataManager */,
 			);
 			path = CoreData;
 			sourceTree = "<group>";
@@ -323,6 +357,17 @@
 			path = UIKit;
 			sourceTree = "<group>";
 		};
+		3AAB340A24D2ABCE00586F99 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				3A7A898624DBD828009C7D3D /* CoreDataManageable.swift */,
+				3A95C34624BC8B69003A52B9 /* DataManageable.swift */,
+				3AAB340D24D30E7600586F99 /* ManagedObjectInitializable.swift */,
+				3AAB340B24D3056A00586F99 /* IdentifiableObject.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
 		3AEEFFCA24B351A4006251C8 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -414,24 +459,31 @@
 				3AAB33E924D2972A00586F99 /* TabBarViewModel.swift in Sources */,
 				3A95C34524BC8B1C003A52B9 /* TaskCoreDataManager.swift in Sources */,
 				3AAB33E824D2972A00586F99 /* DayView.swift in Sources */,
+				3A7A898524DBD58D009C7D3D /* Project(MO)+.swift in Sources */,
 				3A1B1C0224AB7772004D024C /* Project.swift in Sources */,
 				3AAB33E724D2972A00586F99 /* CalendarView.swift in Sources */,
 				3AAB33E524D2972A00586F99 /* WeekCellViewModel.swift in Sources */,
 				3A95C34124BC8838003A52B9 /* DataModel.xcdatamodeld in Sources */,
 				3AAB33F024D2972A00586F99 /* AddTaskViewModel.swift in Sources */,
 				3A309BBA24AA0BB1000C103B /* AppDelegate.swift in Sources */,
+				3AAB340C24D3056A00586F99 /* IdentifiableObject.swift in Sources */,
 				3A742AEF24D063D500C37684 /* Int+.swift in Sources */,
 				3AAB33EB24D2972A00586F99 /* TabBarButtonViewModel.swift in Sources */,
 				3AAB33E424D2972A00586F99 /* CalendarViewModel.swift in Sources */,
+				3A7A898224DBD41D009C7D3D /* Task(MO)+.swift in Sources */,
+				3A7A898724DBD828009C7D3D /* CoreDataManageable.swift in Sources */,
 				3AAB33E224D2972A00586F99 /* TaskTableViewController.swift in Sources */,
 				3AAB33E324D2972A00586F99 /* DayViewModel.swift in Sources */,
 				3A7BF95D24BE429B00558675 /* Task.swift in Sources */,
-				3A95C34724BC8B69003A52B9 /* TaskManagable.swift in Sources */,
+				3AAB340924D2AA0200586F99 /* ProjectCoreDataManager.swift in Sources */,
+				3A95C34724BC8B69003A52B9 /* DataManageable.swift in Sources */,
 				3AAB33E024D2972A00586F99 /* TaskCellViewModel.swift in Sources */,
 				3A95C34324BC8A62003A52B9 /* UUID+.swift in Sources */,
 				3AAB33EF24D2972A00586F99 /* TabBarView.swift in Sources */,
 				3AAB33EE24D2972A00586F99 /* TabBarButtonView.swift in Sources */,
 				3AAB33ED24D2972A00586F99 /* TabViewController.swift in Sources */,
+				3AAB340724D2A94E00586F99 /* CoreDataManager.swift in Sources */,
+				3AAB340E24D30E7600586F99 /* ManagedObjectInitializable.swift in Sources */,
 				3A9B9D3724C1DDB10092DC25 /* UIEdgeInsets+.swift in Sources */,
 				3A742AF124D0645C00C37684 /* Color.swift in Sources */,
 				3A7BF96124BE42C900558675 /* UIFont+.swift in Sources */,
