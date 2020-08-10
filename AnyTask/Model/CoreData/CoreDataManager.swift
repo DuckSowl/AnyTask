@@ -12,7 +12,7 @@ import CoreData
 class CoreDataManager<ManagedObject, Object>: CoreDataManageable where
     ManagedObject: NSManagedObject,
     ManagedObject: IdentifiableObject,
-    ManagedObject.IdentityType == Data?
+    ManagedObject.IdentityType == Data
 {
             
     // MARK: - Properties
@@ -40,6 +40,6 @@ class CoreDataManager<ManagedObject, Object>: CoreDataManageable where
 
     func fetch(with id: UUID) -> ManagedObject? {
         guard let objects = fetchAll() else { return nil }
-        return objects.first(where: { $0.id?.unsafeUUID() == id })
+        return objects.first(where: { $0.id.unsafeUUID() == id })
     }
 }

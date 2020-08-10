@@ -12,8 +12,8 @@ extension Project: IdentifiableObject { }
 
 extension Project: ManagedObjectInitializable {
     init(managedObject projectMO: ProjectMO) {
-        id = projectMO.id!.unsafeUUID()
-        name = projectMO.title!
+        id = projectMO.id.unsafeUUID()
+        name = projectMO.title
     }
 }
 

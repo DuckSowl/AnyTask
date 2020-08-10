@@ -8,7 +8,21 @@
 
 import CoreData
 
-final class ProjectCoreDataManager: CoreDataManager<ProjectMO, Project> { }
+final class ProjectCoreDataManager: CoreDataManager<ProjectMO, Project> {
+    let taskDataManager: TaskCoreDataManager
+    
+    override init?() {
+        guard let taskDataManager = TaskCoreDataManager() else {
+            return nil
+        }
+        
+        self.taskDataManager = taskDataManager
+        
+        super.init()
+        
+        taskDataManager.projectCoreDataManager = self
+    }
+}
 
 // MARK: - DataManageable
 

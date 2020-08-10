@@ -59,14 +59,9 @@ class AddTaskViewController: UIViewController {
         
         backgroundView.backgroundColor = ViewModel.backgroundColor
         
-        if #available(iOS 11.0, *) {
-            backgroundView.layer.maskedCorners = [.layerMaxXMinYCorner,
-                                                  .layerMinXMinYCorner]
-            backgroundView.clipsToBounds = true
-            backgroundView.layer.cornerRadius = ViewModel.cornerRadius
-        } else {
-            // Add corners for iOS 10
-        }
+        backgroundView.setCorner(radius: ViewModel.cornerRadius,
+                                 for: [.topLeft, .topRight])
+        backgroundView.clipsToBounds = true
         
         heightConstraint = backgroundView.pin
             .height(backgroundContentHeight)
@@ -159,6 +154,7 @@ class AddTaskViewController: UIViewController {
     @objc private func addTask() {
         if let title = titleTextView.text,
             title.count > 0 {
+            
             print("Implement task adding to model")
             moveToParent()
         }

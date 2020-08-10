@@ -8,7 +8,9 @@
 
 import CoreData
 
-final class TaskCoreDataManager: CoreDataManager<TaskMO, Task> { }
+final class TaskCoreDataManager: CoreDataManager<TaskMO, Task> {
+    weak var projectCoreDataManager: ProjectCoreDataManager?
+}
 
 // MARK: - DataManageable
 
@@ -23,7 +25,18 @@ extension TaskCoreDataManager: DataManageable {
         newTaskMO.expectedTime = task.time.expectedForMO
         newTaskMO.spentTime = task.time.spentForMO
         
+        if let projectId = task.project?.id {
+            let projectMO = projectCoreDataManager?.fetch(with: projectId)
+            
+            newTaskMO.project = projectMO
+            projectMO?.addToTasks(newTaskMO)
+        }
+        
         saveContext()
+    }
+    
+    func getAll(for project: Project) -> [Task] {
+        getAll().filter { $0.project?.id == project.id }
     }
     
     func update(_ newTask: Task) {

@@ -24,4 +24,11 @@ enum Color {
     static let shade = 0x000000.color(alpha: 0.2)
     
     static let clear = UIColor.clear
+    
+    static var random: UIColor {
+        .init(red: CGFloat.random(in: 0.2...0.8),
+              green: CGFloat.random(in: 0.2...0.8),
+              blue: CGFloat.random(in: 0.2...0.8),
+              alpha: 1)
+    }
 }

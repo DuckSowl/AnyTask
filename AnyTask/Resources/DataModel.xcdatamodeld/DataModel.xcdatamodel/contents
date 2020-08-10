@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="16119" systemVersion="19F101" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
-    <entity name="Project" representedClassName=".ProjectMO" syncable="YES" codeGenerationType="class">
+    <entity name="Project" representedClassName=".ProjectMO" syncable="YES">
+        <attribute name="color" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="id" optional="YES" attributeType="Binary"/>
         <attribute name="title" optional="YES" attributeType="String"/>
-        <relationship name="subproject" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Project" inverseName="superproject" inverseEntity="Project"/>
-        <relationship name="superproject" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Project" inverseName="subproject" inverseEntity="Project"/>
         <relationship name="tasks" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="Task" inverseName="project" inverseEntity="Task"/>
     </entity>
-    <entity name="Task" representedClassName=".TaskMO" syncable="YES" codeGenerationType="class">
+    <entity name="Task" representedClassName=".TaskMO" syncable="YES">
         <attribute name="comment" optional="YES" attributeType="String"/>
         <attribute name="completed" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="deadline" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
@@ -18,7 +17,7 @@
         <relationship name="project" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Project" inverseName="tasks" inverseEntity="Project"/>
     </entity>
     <elements>
+        <element name="Project" positionX="-55.92578125" positionY="-27.0390625" width="128" height="103"/>
         <element name="Task" positionX="-260.234375" positionY="-85.67578125" width="128" height="163"/>
-        <element name="Project" positionX="-55.92578125" positionY="-27.0390625" width="128" height="118"/>
     </elements>
 </model>
