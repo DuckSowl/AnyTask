@@ -154,6 +154,7 @@ class AddTaskViewController: UIViewController {
     @objc private func addTask() {
         if let title = titleTextView.text,
             title.count > 0 {
+            
             print("Implement task adding to model")
             moveToParent()
         }

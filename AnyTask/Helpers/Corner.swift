@@ -13,6 +13,10 @@ enum Corner {
     case topRight
     case bottomLeft
     case bottomRight
+    case left
+    case right
+    case top
+    case bottom
     
     fileprivate var mask: CACornerMask {
         switch self {
@@ -20,6 +24,12 @@ enum Corner {
         case .topRight: return .layerMaxXMinYCorner
         case .bottomLeft: return .layerMinXMaxYCorner
         case .bottomRight: return .layerMaxXMaxYCorner
+            
+        case .left: return [Corner.topLeft, .bottomLeft].mask
+        case .right: return [Corner.topRight, .bottomRight].mask
+            
+        case .top: return [Corner.topLeft, .topRight].mask
+        case .bottom: return [Corner.bottomLeft, .bottomRight].mask
         }
     }
 }

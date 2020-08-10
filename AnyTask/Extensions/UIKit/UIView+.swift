@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Pin
 
 extension UIView {
     func setCorner(radius: CGFloat, for corners: [Corner]) {
@@ -17,4 +18,29 @@ extension UIView {
             // Add corners for iOS 10
         }
     }
+    
+    func withBackgroundColor(_ color: UIColor) -> UIView {
+        self.backgroundColor = color
+        return self
+    }
+    
+    // TODO: - Move to Little Pin
+    func pin(superView: UIView) -> Pin {
+        if !self.isDescendant(of: superView) {
+            superView.addSubview(self)
+        }
+        
+        return self.pin
+    }
+    
+    #if DEBUG
+    
+    func notImplementedAlert() {
+        UIApplication
+            .shared.windows.first?
+            .rootViewController?
+            .notImplementedAlert()
+    }
+    
+    #endif
 }

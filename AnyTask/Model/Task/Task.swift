@@ -12,10 +12,10 @@ struct Task: Identifiable {
     let id: UUID
     
     var title: String
-    var comment: String
+    var comment: String?
     
     var deadline: Date?
-    var project: Project
+    var project: Project?
     
     var completed: Bool
     

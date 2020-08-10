@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		3A1B1C0224AB7772004D024C /* Project.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A1B1C0124AB7772004D024C /* Project.swift */; };
 		3A309BBA24AA0BB1000C103B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A309BB924AA0BB1000C103B /* AppDelegate.swift */; };
-		3A309BBC24AA0BB1000C103B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A309BBB24AA0BB1000C103B /* SceneDelegate.swift */; };
 		3A309BC324AA0BB4000C103B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A309BC224AA0BB4000C103B /* Assets.xcassets */; };
 		3A309BC624AA0BB4000C103B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A309BC424AA0BB4000C103B /* LaunchScreen.storyboard */; };
 		3A742AEF24D063D500C37684 /* Int+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A742AEE24D063D500C37684 /* Int+.swift */; };
@@ -19,6 +18,25 @@
 		3A7A898724DBD828009C7D3D /* CoreDataManageable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7A898624DBD828009C7D3D /* CoreDataManageable.swift */; };
 		3A7A898F24DBE23B009C7D3D /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7A898E24DBE23B009C7D3D /* UIView+.swift */; };
 		3A7A899224DBE247009C7D3D /* Corner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7A899124DBE247009C7D3D /* Corner.swift */; };
+		3A7A899824DBE318009C7D3D /* TopBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7A899624DBE318009C7D3D /* TopBarView.swift */; };
+		3A7A899924DBE318009C7D3D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7A899724DBE318009C7D3D /* ContentView.swift */; };
+		3A7A899B24DBE428009C7D3D /* UIViewController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7A899A24DBE428009C7D3D /* UIViewController+.swift */; };
+		3A7A89A224DBEAA9009C7D3D /* ProjectsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7A89A124DBEAA9009C7D3D /* ProjectsViewController.swift */; };
+		3A7A89A424DBEAD7009C7D3D /* ProjectsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7A89A324DBEAD7009C7D3D /* ProjectsViewModel.swift */; };
+		3A7A89A624DBEAFB009C7D3D /* ProjectViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7A89A524DBEAFB009C7D3D /* ProjectViewModel.swift */; };
+		3A7A89B824DF1BA8009C7D3D /* ContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7A89B724DF1BA8009C7D3D /* ContentViewModel.swift */; };
+		3A7A89BB24E1226A009C7D3D /* BackDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7A89BA24E1226A009C7D3D /* BackDelegate.swift */; };
+		3A7A89C424E12F8E009C7D3D /* ProjectTopBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7A89C324E12F8E009C7D3D /* ProjectTopBarView.swift */; };
+		3A7A89CA24E14336009C7D3D /* ProjectMO+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7A89C624E14336009C7D3D /* ProjectMO+CoreDataProperties.swift */; };
+		3A7A89CB24E14336009C7D3D /* ProjectMO+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7A89C724E14336009C7D3D /* ProjectMO+CoreDataClass.swift */; };
+		3A7A89CC24E14336009C7D3D /* TaskMO+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7A89C824E14336009C7D3D /* TaskMO+CoreDataProperties.swift */; };
+		3A7A89CD24E14336009C7D3D /* TaskMO+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7A89C924E14336009C7D3D /* TaskMO+CoreDataClass.swift */; };
+		3A7A89D924E18736009C7D3D /* ProjectsViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7A89D824E18736009C7D3D /* ProjectsViewControllerDelegate.swift */; };
+		3A7A89DB24E1979D009C7D3D /* UIImage+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7A89DA24E1979D009C7D3D /* UIImage+.swift */; };
+		3A7A89DD24E197CC009C7D3D /* UIButton+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7A89DC24E197CC009C7D3D /* UIButton+.swift */; };
+		3A7A89DF24E197E8009C7D3D /* ProjectViewSelectionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7A89DE24E197E7009C7D3D /* ProjectViewSelectionDelegate.swift */; };
+		3A7A89E124E19892009C7D3D /* SearchDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7A89E024E19892009C7D3D /* SearchDelegate.swift */; };
+		3A7A89E324E198F1009C7D3D /* VerticalInsets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7A89E224E198F1009C7D3D /* VerticalInsets.swift */; };
 		3A7BF95D24BE429B00558675 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7BF95C24BE429B00558675 /* Task.swift */; };
 		3A7BF96124BE42C900558675 /* UIFont+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7BF95F24BE42C900558675 /* UIFont+.swift */; };
 		3A7BF96324BE42EA00558675 /* Tab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7BF96224BE42EA00558675 /* Tab.swift */; };
@@ -29,20 +47,13 @@
 		3A9B9D3724C1DDB10092DC25 /* UIEdgeInsets+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9B9D3624C1DDB10092DC25 /* UIEdgeInsets+.swift */; };
 		3AAB33E024D2972A00586F99 /* TaskCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AAB33C324D2972A00586F99 /* TaskCellViewModel.swift */; };
 		3AAB33E124D2972A00586F99 /* TaskCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AAB33C524D2972A00586F99 /* TaskCellView.swift */; };
-		3AAB33E224D2972A00586F99 /* TaskTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AAB33C624D2972A00586F99 /* TaskTableViewController.swift */; };
+		3AAB33E224D2972A00586F99 /* ProjectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AAB33C624D2972A00586F99 /* ProjectViewController.swift */; };
 		3AAB33E324D2972A00586F99 /* DayViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AAB33C924D2972A00586F99 /* DayViewModel.swift */; };
 		3AAB33E424D2972A00586F99 /* CalendarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AAB33CA24D2972A00586F99 /* CalendarViewModel.swift */; };
 		3AAB33E524D2972A00586F99 /* WeekCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AAB33CB24D2972A00586F99 /* WeekCellViewModel.swift */; };
 		3AAB33E624D2972A00586F99 /* WeekCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AAB33CD24D2972A00586F99 /* WeekCellView.swift */; };
 		3AAB33E724D2972A00586F99 /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AAB33CE24D2972A00586F99 /* CalendarView.swift */; };
 		3AAB33E824D2972A00586F99 /* DayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AAB33CF24D2972A00586F99 /* DayView.swift */; };
-		3AAB33E924D2972A00586F99 /* TabBarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AAB33D224D2972A00586F99 /* TabBarViewModel.swift */; };
-		3AAB33EA24D2972A00586F99 /* TabButtonViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AAB33D424D2972A00586F99 /* TabButtonViewModel.swift */; };
-		3AAB33EB24D2972A00586F99 /* TabBarButtonViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AAB33D524D2972A00586F99 /* TabBarButtonViewModel.swift */; };
-		3AAB33EC24D2972A00586F99 /* AddButtonViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AAB33D624D2972A00586F99 /* AddButtonViewModel.swift */; };
-		3AAB33ED24D2972A00586F99 /* TabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AAB33D824D2972A00586F99 /* TabViewController.swift */; };
-		3AAB33EE24D2972A00586F99 /* TabBarButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AAB33D924D2972A00586F99 /* TabBarButtonView.swift */; };
-		3AAB33EF24D2972A00586F99 /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AAB33DA24D2972A00586F99 /* TabBarView.swift */; };
 		3AAB33F024D2972A00586F99 /* AddTaskViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AAB33DD24D2972A00586F99 /* AddTaskViewModel.swift */; };
 		3AAB33F124D2972A00586F99 /* AddTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AAB33DF24D2972A00586F99 /* AddTaskViewController.swift */; };
 		3AAB33F324D2977500586F99 /* Array+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AAB33F224D2977500586F99 /* Array+.swift */; };
@@ -59,7 +70,6 @@
 		3A1B1C0124AB7772004D024C /* Project.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Project.swift; sourceTree = "<group>"; };
 		3A309BB624AA0BB1000C103B /* AnyTask.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AnyTask.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A309BB924AA0BB1000C103B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		3A309BBB24AA0BB1000C103B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		3A309BC224AA0BB4000C103B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3A309BC524AA0BB4000C103B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3A309BC724AA0BB4000C103B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -70,6 +80,25 @@
 		3A7A898624DBD828009C7D3D /* CoreDataManageable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataManageable.swift; sourceTree = "<group>"; };
 		3A7A898E24DBE23B009C7D3D /* UIView+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
 		3A7A899124DBE247009C7D3D /* Corner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Corner.swift; sourceTree = "<group>"; };
+		3A7A899624DBE318009C7D3D /* TopBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopBarView.swift; sourceTree = "<group>"; };
+		3A7A899724DBE318009C7D3D /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		3A7A899A24DBE428009C7D3D /* UIViewController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+.swift"; sourceTree = "<group>"; };
+		3A7A89A124DBEAA9009C7D3D /* ProjectsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectsViewController.swift; sourceTree = "<group>"; };
+		3A7A89A324DBEAD7009C7D3D /* ProjectsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectsViewModel.swift; sourceTree = "<group>"; };
+		3A7A89A524DBEAFB009C7D3D /* ProjectViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectViewModel.swift; sourceTree = "<group>"; };
+		3A7A89B724DF1BA8009C7D3D /* ContentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewModel.swift; sourceTree = "<group>"; };
+		3A7A89BA24E1226A009C7D3D /* BackDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackDelegate.swift; sourceTree = "<group>"; };
+		3A7A89C324E12F8E009C7D3D /* ProjectTopBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ProjectTopBarView.swift; path = AnyTask/Screens/Project/View/ProjectTopBarView.swift; sourceTree = SOURCE_ROOT; };
+		3A7A89C624E14336009C7D3D /* ProjectMO+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ProjectMO+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		3A7A89C724E14336009C7D3D /* ProjectMO+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ProjectMO+CoreDataClass.swift"; sourceTree = "<group>"; };
+		3A7A89C824E14336009C7D3D /* TaskMO+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TaskMO+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		3A7A89C924E14336009C7D3D /* TaskMO+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TaskMO+CoreDataClass.swift"; sourceTree = "<group>"; };
+		3A7A89D824E18736009C7D3D /* ProjectsViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ProjectsViewControllerDelegate.swift; path = AnyTask/Screens/Projects/View/ProjectsViewControllerDelegate.swift; sourceTree = SOURCE_ROOT; };
+		3A7A89DA24E1979D009C7D3D /* UIImage+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+.swift"; sourceTree = "<group>"; };
+		3A7A89DC24E197CC009C7D3D /* UIButton+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton+.swift"; sourceTree = "<group>"; };
+		3A7A89DE24E197E7009C7D3D /* ProjectViewSelectionDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectViewSelectionDelegate.swift; sourceTree = "<group>"; };
+		3A7A89E024E19892009C7D3D /* SearchDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SearchDelegate.swift; path = AnyTask/Screens/Projects/Delegates/SearchDelegate.swift; sourceTree = SOURCE_ROOT; };
+		3A7A89E224E198F1009C7D3D /* VerticalInsets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerticalInsets.swift; sourceTree = "<group>"; };
 		3A7BF95C24BE429B00558675 /* Task.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
 		3A7BF95F24BE42C900558675 /* UIFont+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIFont+.swift"; sourceTree = "<group>"; };
 		3A7BF96224BE42EA00558675 /* Tab.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tab.swift; sourceTree = "<group>"; };
@@ -80,20 +109,13 @@
 		3A9B9D3624C1DDB10092DC25 /* UIEdgeInsets+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIEdgeInsets+.swift"; sourceTree = "<group>"; };
 		3AAB33C324D2972A00586F99 /* TaskCellViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskCellViewModel.swift; sourceTree = "<group>"; };
 		3AAB33C524D2972A00586F99 /* TaskCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskCellView.swift; sourceTree = "<group>"; };
-		3AAB33C624D2972A00586F99 /* TaskTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskTableViewController.swift; sourceTree = "<group>"; };
+		3AAB33C624D2972A00586F99 /* ProjectViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectViewController.swift; sourceTree = "<group>"; };
 		3AAB33C924D2972A00586F99 /* DayViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DayViewModel.swift; sourceTree = "<group>"; };
 		3AAB33CA24D2972A00586F99 /* CalendarViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarViewModel.swift; sourceTree = "<group>"; };
 		3AAB33CB24D2972A00586F99 /* WeekCellViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeekCellViewModel.swift; sourceTree = "<group>"; };
 		3AAB33CD24D2972A00586F99 /* WeekCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeekCellView.swift; sourceTree = "<group>"; };
 		3AAB33CE24D2972A00586F99 /* CalendarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
 		3AAB33CF24D2972A00586F99 /* DayView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DayView.swift; sourceTree = "<group>"; };
-		3AAB33D224D2972A00586F99 /* TabBarViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarViewModel.swift; sourceTree = "<group>"; };
-		3AAB33D424D2972A00586F99 /* TabButtonViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabButtonViewModel.swift; sourceTree = "<group>"; };
-		3AAB33D524D2972A00586F99 /* TabBarButtonViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarButtonViewModel.swift; sourceTree = "<group>"; };
-		3AAB33D624D2972A00586F99 /* AddButtonViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddButtonViewModel.swift; sourceTree = "<group>"; };
-		3AAB33D824D2972A00586F99 /* TabViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabViewController.swift; sourceTree = "<group>"; };
-		3AAB33D924D2972A00586F99 /* TabBarButtonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarButtonView.swift; sourceTree = "<group>"; };
-		3AAB33DA24D2972A00586F99 /* TabBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
 		3AAB33DD24D2972A00586F99 /* AddTaskViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddTaskViewModel.swift; sourceTree = "<group>"; };
 		3AAB33DF24D2972A00586F99 /* AddTaskViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddTaskViewController.swift; sourceTree = "<group>"; };
 		3AAB33F224D2977500586F99 /* Array+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+.swift"; sourceTree = "<group>"; };
@@ -139,7 +161,6 @@
 			isa = PBXGroup;
 			children = (
 				3A309BB924AA0BB1000C103B /* AppDelegate.swift */,
-				3A309BBB24AA0BB1000C103B /* SceneDelegate.swift */,
 			);
 			path = Application;
 			sourceTree = "<group>";
@@ -207,14 +228,130 @@
 			isa = PBXGroup;
 			children = (
 				3A7A899124DBE247009C7D3D /* Corner.swift */,
+				3A7A89E224E198F1009C7D3D /* VerticalInsets.swift */,
 			);
 			name = Helpers;
 			path = AnyTask/Helpers;
 			sourceTree = SOURCE_ROOT;
 		};
+		3A7A899424DBE318009C7D3D /* Content */ = {
+			isa = PBXGroup;
+			children = (
+				3A7A899C24DBE9A0009C7D3D /* View */,
+				3A7A899D24DBE9C3009C7D3D /* ViewModel */,
+			);
+			path = Content;
+			sourceTree = "<group>";
+		};
+		3A7A899C24DBE9A0009C7D3D /* View */ = {
+			isa = PBXGroup;
+			children = (
+				3A7A899724DBE318009C7D3D /* ContentView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		3A7A899D24DBE9C3009C7D3D /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				3A7A89B724DF1BA8009C7D3D /* ContentViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		3A7A899E24DBEA23009C7D3D /* Projects */ = {
+			isa = PBXGroup;
+			children = (
+				3A7A899F24DBEA31009C7D3D /* View */,
+				3A7A89A024DBEA36009C7D3D /* ViewModel */,
+				3A7A89D524E186F2009C7D3D /* Delegates */,
+			);
+			path = Projects;
+			sourceTree = "<group>";
+		};
+		3A7A899F24DBEA31009C7D3D /* View */ = {
+			isa = PBXGroup;
+			children = (
+				3A7A89A124DBEAA9009C7D3D /* ProjectsViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		3A7A89A024DBEA36009C7D3D /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				3A7A89A324DBEAD7009C7D3D /* ProjectsViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		3A7A89B924E1224A009C7D3D /* Delegates */ = {
+			isa = PBXGroup;
+			children = (
+				3A7A89BA24E1226A009C7D3D /* BackDelegate.swift */,
+				3A7A89E024E19892009C7D3D /* SearchDelegate.swift */,
+			);
+			path = Delegates;
+			sourceTree = "<group>";
+		};
+		3A7A89C024E12F39009C7D3D /* All */ = {
+			isa = PBXGroup;
+			children = (
+				3A7A89C124E12F4F009C7D3D /* TopBar */,
+				3A7A89B924E1224A009C7D3D /* Delegates */,
+			);
+			path = All;
+			sourceTree = "<group>";
+		};
+		3A7A89C124E12F4F009C7D3D /* TopBar */ = {
+			isa = PBXGroup;
+			children = (
+				3A7A89C224E12F5C009C7D3D /* View */,
+			);
+			path = TopBar;
+			sourceTree = "<group>";
+		};
+		3A7A89C224E12F5C009C7D3D /* View */ = {
+			isa = PBXGroup;
+			children = (
+				3A7A899624DBE318009C7D3D /* TopBarView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		3A7A89C524E142A7009C7D3D /* ManagedObjects */ = {
+			isa = PBXGroup;
+			children = (
+				3A7A89C724E14336009C7D3D /* ProjectMO+CoreDataClass.swift */,
+				3A7A89C624E14336009C7D3D /* ProjectMO+CoreDataProperties.swift */,
+				3A7A89C924E14336009C7D3D /* TaskMO+CoreDataClass.swift */,
+				3A7A89C824E14336009C7D3D /* TaskMO+CoreDataProperties.swift */,
+			);
+			path = ManagedObjects;
+			sourceTree = "<group>";
+		};
+		3A7A89D024E16C02009C7D3D /* Project */ = {
+			isa = PBXGroup;
+			children = (
+				3AAB33C424D2972A00586F99 /* View */,
+				3AAB33C224D2972A00586F99 /* ViewModel */,
+			);
+			path = Project;
+			sourceTree = "<group>";
+		};
+		3A7A89D524E186F2009C7D3D /* Delegates */ = {
+			isa = PBXGroup;
+			children = (
+				3A7A89D824E18736009C7D3D /* ProjectsViewControllerDelegate.swift */,
+				3A7A89DE24E197E7009C7D3D /* ProjectViewSelectionDelegate.swift */,
+			);
+			path = Delegates;
+			sourceTree = "<group>";
+		};
 		3A95C34824BC8B73003A52B9 /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
+				3A7A89C524E142A7009C7D3D /* ManagedObjects */,
 				3AAB340A24D2ABCE00586F99 /* Protocols */,
 				3AAB340624D2A94E00586F99 /* CoreDataManager.swift */,
 				3A7A898024DBD3BD009C7D3D /* TaskCoreDataManager */,
@@ -226,26 +363,20 @@
 		3AAB33C024D2972A00586F99 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
-				3AAB33D024D2972A00586F99 /* Tab */,
-				3AAB33C124D2972A00586F99 /* TaskTable */,
+				3A7A89C024E12F39009C7D3D /* All */,
+				3A7A899424DBE318009C7D3D /* Content */,
+				3A7A899E24DBEA23009C7D3D /* Projects */,
+				3A7A89D024E16C02009C7D3D /* Project */,
 				3AAB33C724D2972A00586F99 /* Calendar */,
 				3AAB33DB24D2972A00586F99 /* AddTask */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
 		};
-		3AAB33C124D2972A00586F99 /* TaskTable */ = {
-			isa = PBXGroup;
-			children = (
-				3AAB33C424D2972A00586F99 /* View */,
-				3AAB33C224D2972A00586F99 /* ViewModel */,
-			);
-			path = TaskTable;
-			sourceTree = "<group>";
-		};
 		3AAB33C224D2972A00586F99 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				3A7A89A524DBEAFB009C7D3D /* ProjectViewModel.swift */,
 				3AAB33C324D2972A00586F99 /* TaskCellViewModel.swift */,
 			);
 			path = ViewModel;
@@ -254,7 +385,8 @@
 		3AAB33C424D2972A00586F99 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				3AAB33C624D2972A00586F99 /* TaskTableViewController.swift */,
+				3AAB33C624D2972A00586F99 /* ProjectViewController.swift */,
+				3A7A89C324E12F8E009C7D3D /* ProjectTopBarView.swift */,
 				3AAB33C524D2972A00586F99 /* TaskCellView.swift */,
 			);
 			path = View;
@@ -285,44 +417,6 @@
 				3AAB33CF24D2972A00586F99 /* DayView.swift */,
 				3AAB33CD24D2972A00586F99 /* WeekCellView.swift */,
 				3AAB33CE24D2972A00586F99 /* CalendarView.swift */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		3AAB33D024D2972A00586F99 /* Tab */ = {
-			isa = PBXGroup;
-			children = (
-				3AAB33D724D2972A00586F99 /* View */,
-				3AAB33D124D2972A00586F99 /* ViewModel */,
-			);
-			path = Tab;
-			sourceTree = "<group>";
-		};
-		3AAB33D124D2972A00586F99 /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-				3AAB33D224D2972A00586F99 /* TabBarViewModel.swift */,
-				3AAB33D324D2972A00586F99 /* TabBarButton */,
-			);
-			path = ViewModel;
-			sourceTree = "<group>";
-		};
-		3AAB33D324D2972A00586F99 /* TabBarButton */ = {
-			isa = PBXGroup;
-			children = (
-				3AAB33D524D2972A00586F99 /* TabBarButtonViewModel.swift */,
-				3AAB33D624D2972A00586F99 /* AddButtonViewModel.swift */,
-				3AAB33D424D2972A00586F99 /* TabButtonViewModel.swift */,
-			);
-			path = TabBarButton;
-			sourceTree = "<group>";
-		};
-		3AAB33D724D2972A00586F99 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				3AAB33D824D2972A00586F99 /* TabViewController.swift */,
-				3AAB33DA24D2972A00586F99 /* TabBarView.swift */,
-				3AAB33D924D2972A00586F99 /* TabBarButtonView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -364,10 +458,13 @@
 		3AAB33F524D2981E00586F99 /* UIKit */ = {
 			isa = PBXGroup;
 			children = (
+				3A7A89DC24E197CC009C7D3D /* UIButton+.swift */,
 				3AAB33F624D2984A00586F99 /* UIColor+.swift */,
 				3A9B9D3624C1DDB10092DC25 /* UIEdgeInsets+.swift */,
+				3A7A89DA24E1979D009C7D3D /* UIImage+.swift */,
 				3A7BF95F24BE42C900558675 /* UIFont+.swift */,
 				3A7A898E24DBE23B009C7D3D /* UIView+.swift */,
+				3A7A899A24DBE428009C7D3D /* UIViewController+.swift */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -471,47 +568,58 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3AAB33E924D2972A00586F99 /* TabBarViewModel.swift in Sources */,
 				3A95C34524BC8B1C003A52B9 /* TaskCoreDataManager.swift in Sources */,
 				3AAB33E824D2972A00586F99 /* DayView.swift in Sources */,
 				3A7A898524DBD58D009C7D3D /* Project(MO)+.swift in Sources */,
 				3A1B1C0224AB7772004D024C /* Project.swift in Sources */,
+				3A7A89E124E19892009C7D3D /* SearchDelegate.swift in Sources */,
 				3AAB33E724D2972A00586F99 /* CalendarView.swift in Sources */,
 				3AAB33E524D2972A00586F99 /* WeekCellViewModel.swift in Sources */,
 				3A95C34124BC8838003A52B9 /* DataModel.xcdatamodeld in Sources */,
 				3AAB33F024D2972A00586F99 /* AddTaskViewModel.swift in Sources */,
+				3A7A899924DBE318009C7D3D /* ContentView.swift in Sources */,
 				3A309BBA24AA0BB1000C103B /* AppDelegate.swift in Sources */,
+				3A7A89C424E12F8E009C7D3D /* ProjectTopBarView.swift in Sources */,
 				3AAB340C24D3056A00586F99 /* IdentifiableObject.swift in Sources */,
 				3A742AEF24D063D500C37684 /* Int+.swift in Sources */,
-				3AAB33EB24D2972A00586F99 /* TabBarButtonViewModel.swift in Sources */,
 				3AAB33E424D2972A00586F99 /* CalendarViewModel.swift in Sources */,
 				3A7A898224DBD41D009C7D3D /* Task(MO)+.swift in Sources */,
+				3A7A899824DBE318009C7D3D /* TopBarView.swift in Sources */,
 				3A7A898724DBD828009C7D3D /* CoreDataManageable.swift in Sources */,
+				3A7A89B824DF1BA8009C7D3D /* ContentViewModel.swift in Sources */,
+				3A7A89A224DBEAA9009C7D3D /* ProjectsViewController.swift in Sources */,
+				3A7A89CD24E14336009C7D3D /* TaskMO+CoreDataClass.swift in Sources */,
 				3A7A899224DBE247009C7D3D /* Corner.swift in Sources */,
-				3AAB33E224D2972A00586F99 /* TaskTableViewController.swift in Sources */,
+				3A7A89CB24E14336009C7D3D /* ProjectMO+CoreDataClass.swift in Sources */,
+				3AAB33E224D2972A00586F99 /* ProjectViewController.swift in Sources */,
 				3AAB33E324D2972A00586F99 /* DayViewModel.swift in Sources */,
 				3A7BF95D24BE429B00558675 /* Task.swift in Sources */,
+				3A7A89DF24E197E8009C7D3D /* ProjectViewSelectionDelegate.swift in Sources */,
 				3AAB340924D2AA0200586F99 /* ProjectCoreDataManager.swift in Sources */,
 				3A95C34724BC8B69003A52B9 /* DataManageable.swift in Sources */,
+				3A7A89DD24E197CC009C7D3D /* UIButton+.swift in Sources */,
 				3AAB33E024D2972A00586F99 /* TaskCellViewModel.swift in Sources */,
 				3A95C34324BC8A62003A52B9 /* UUID+.swift in Sources */,
-				3AAB33EF24D2972A00586F99 /* TabBarView.swift in Sources */,
-				3AAB33EE24D2972A00586F99 /* TabBarButtonView.swift in Sources */,
-				3AAB33ED24D2972A00586F99 /* TabViewController.swift in Sources */,
 				3AAB340724D2A94E00586F99 /* CoreDataManager.swift in Sources */,
 				3AAB340E24D30E7600586F99 /* ManagedObjectInitializable.swift in Sources */,
+				3A7A89DB24E1979D009C7D3D /* UIImage+.swift in Sources */,
 				3A9B9D3724C1DDB10092DC25 /* UIEdgeInsets+.swift in Sources */,
+				3A7A89A624DBEAFB009C7D3D /* ProjectViewModel.swift in Sources */,
 				3A742AF124D0645C00C37684 /* Color.swift in Sources */,
 				3A7A898F24DBE23B009C7D3D /* UIView+.swift in Sources */,
+				3A7A89D924E18736009C7D3D /* ProjectsViewControllerDelegate.swift in Sources */,
 				3A7BF96124BE42C900558675 /* UIFont+.swift in Sources */,
-				3A309BBC24AA0BB1000C103B /* SceneDelegate.swift in Sources */,
+				3A7A89CC24E14336009C7D3D /* TaskMO+CoreDataProperties.swift in Sources */,
+				3A7A89A424DBEAD7009C7D3D /* ProjectsViewModel.swift in Sources */,
 				3AAB33E624D2972A00586F99 /* WeekCellView.swift in Sources */,
 				3AEEFFC924B3519C006251C8 /* Date+Week.swift in Sources */,
 				3AAB33F124D2972A00586F99 /* AddTaskViewController.swift in Sources */,
+				3A7A89CA24E14336009C7D3D /* ProjectMO+CoreDataProperties.swift in Sources */,
+				3A7A89E324E198F1009C7D3D /* VerticalInsets.swift in Sources */,
 				3A7BF96324BE42EA00558675 /* Tab.swift in Sources */,
+				3A7A899B24DBE428009C7D3D /* UIViewController+.swift in Sources */,
 				3AAB33E124D2972A00586F99 /* TaskCellView.swift in Sources */,
-				3AAB33EC24D2972A00586F99 /* AddButtonViewModel.swift in Sources */,
-				3AAB33EA24D2972A00586F99 /* TabButtonViewModel.swift in Sources */,
+				3A7A89BB24E1226A009C7D3D /* BackDelegate.swift in Sources */,
 				3AAB33F324D2977500586F99 /* Array+.swift in Sources */,
 				3AAB33F724D2984A00586F99 /* UIColor+.swift in Sources */,
 			);
