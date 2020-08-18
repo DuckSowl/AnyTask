@@ -8,32 +8,33 @@
 
 import UIKit
 
-enum AddTaskViewModel {
-    static let backgroundColor = Color.background
-    static let shadeColor = Color.shade
+protocol AddTaskViewModelDelegate: AnyObject {
+    func itemsDidChange()
+}
+
+class AddTaskViewModel {
     
-    static let titleFont = UIFont
-        .preferredFont(forTextStyle: .title3)
-        .roundedIfAvailable()
+    // MARK: - Properties
     
-    static let smallFont = UIFont
-        .preferredFont(forTextStyle: .subheadline)
-        .roundedIfAvailable()
+    let projectViewModel: ProjectViewModel?
     
-    static let textColor = UIColor.black
-   
+    weak var delegate: AddTaskViewModelDelegate?
     
-    static let addButtonText = "Add"
-    static let addButtonCornerRadius = CGFloat(10)
-    static let addButtonContentEdgeInsets = UIEdgeInsets(same: 5)
-    static let cornerRadius = CGFloat(10)
+    var items = AddTaskCollectionItemModel.ItemType.allCases.map {
+        AddTaskCollectionItemViewModel(.init(type: $0,
+                                             chosen: Bool.random(),
+                                             comment: "\($0.rawValue)"))
+        } {
+        didSet {
+            delegate?.itemsDidChange()
+        }
+    }
     
-    static let secondColor = Color.background
+    static let maxTitleLength = 128
     
-    static let textSeparatorAnchor = CGFloat(5)
-    static let sideAnchor = CGFloat(15)
-    static let topAnchor = CGFloat(15)
-    static let bottomAnchor = CGFloat(15)
+    // MARK: - Initializers
     
-    static let topOffset = CGFloat(50)
+    init(_ viewModel: ProjectViewModel?) {
+        projectViewModel = viewModel
+    }
 }

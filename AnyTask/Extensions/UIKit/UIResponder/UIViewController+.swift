@@ -15,21 +15,20 @@ extension UIViewController {
     
     func insert(_ child: UIViewController, at index: Int, frame: CGRect? = nil) {
         addChild(child)
-
+        
         if let frame = frame {
             child.view.frame = frame
         }
-
+        
         view.insertSubview(child.view, at: index)
         child.didMove(toParent: self)
     }
-
-    func remove() {
+    
+    @objc func remove() {
         willMove(toParent: nil)
         view.removeFromSuperview()
         removeFromParent()
     }
-    
     
     #if DEBUG
     

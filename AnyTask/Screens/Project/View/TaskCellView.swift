@@ -89,7 +89,7 @@ class TaskCellView: UITableViewCell {
             .topBottom(ViewModel.backgroundTopButton)
             .activate
         
-        backgroundView.layer.cornerRadius = ViewModel.cornerRadius
+        backgroundView.set(cornerRadius: ViewModel.cornerRadius)
     }
     
     private func setupViewConstraints() {

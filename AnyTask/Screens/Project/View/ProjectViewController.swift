@@ -77,8 +77,8 @@ class ProjectViewController: UIViewController {
     }
     
     private func configureConstraints() {
-        tableView.pin(superView: view).all().activate
-        topBarView.pin(superView: view).top().sides().activate
+        tableView.pin(super: view).all().activate
+        topBarView.pin(super: view).top().sides().activate
     }
 }
 

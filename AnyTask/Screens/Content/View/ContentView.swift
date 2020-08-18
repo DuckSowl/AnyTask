@@ -85,18 +85,18 @@ class ContentView: UIViewController {
         button.tintColor = .white
         button.backgroundColor = backgroundColor
         
-        button.layer.cornerRadius = 15
+        button.set(cornerRadius: 15)
         button.clipsToBounds = true
         button.addTarget(self, action: action, for: .touchUpInside)
                 
         button.imageView?.pin.aspectRatio(1).width(30).activate
-        pin(button.pin(superView: view)).activate
+        pin(button.pin(super: view)).activate
     }
     
     // MARK: - Actions
     
     @objc func addTask() {
-        add(AddTaskViewController(), frame: view.frame)
+        add(AddTaskViewController(AddTaskViewModel(projectViewController?.viewModel)), frame: view.frame)
     }
 }
 

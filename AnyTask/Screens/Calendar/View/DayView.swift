@@ -32,7 +32,7 @@ final class DayView: UIView {
     
     private func setupView() {
         backgroundColor = viewModel.backgroundColor
-        layer.cornerRadius = viewModel.cornerRadius
+        set(cornerRadius: viewModel.cornerRadius)
         
         let weekSymbolLabel = createLabel(text: viewModel.weekSymbol,
                                           ofSize: viewModel.weekSymbolFontSize)

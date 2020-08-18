@@ -68,8 +68,8 @@ class ProjectsViewController: UIViewController {
     }
     
     private func configureConstraints() {
-        tableView.pin(superView: view).all().activate
-        topBarView.pin(superView: view).top(to: view).sides().activate
+        tableView.pin(super: view).all().activate
+        topBarView.pin(super: view).top(to: view).sides().activate
     }
     
     // MARK: - Private Methods
