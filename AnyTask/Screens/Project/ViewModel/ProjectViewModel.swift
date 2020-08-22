@@ -12,7 +12,8 @@ struct ProjectViewModel {
     
     // MARK: - Properties
     
-    private let project: Project
+    // TODO: Restrict access
+    let project: Project
     private let taskDataManager: TaskCoreDataManager
     
     weak var backDelegate: ProjectsDelegate?

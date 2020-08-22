@@ -14,6 +14,9 @@ protocol ProjectsDelegate: AnyObject {
 
 class ProjectsViewModel {
     
+    let maxProjectNameLength: UInt = 32
+    let minProlectNameLength: UInt = 6
+    
     // MARK: - Properties
     
     var projectDataManager: ProjectCoreDataManager
@@ -36,6 +39,16 @@ class ProjectsViewModel {
     
     var projects: [ProjectViewModel] {
         projectDataManager.getAll().map { ProjectViewModel(project: $0, taskDataManager: projectDataManager.taskDataManager) }
+    }
+    
+    func addProject(withName projectName: String) -> ProjectViewModel? {
+        if projectName.count > minProlectNameLength {
+            let project = Project(name: projectName)
+            projectDataManager.add(project)
+            return ProjectViewModel(project: project,
+                                    taskDataManager: projectDataManager.taskDataManager)
+        }
+        return nil
     }
 }
 

@@ -14,27 +14,73 @@ protocol AddTaskViewModelDelegate: AnyObject {
 
 class AddTaskViewModel {
     
+    // MARK: - Constants
+    
+    static let minTitleLength = 6
+    static let maxTitleLength = 128
+    
     // MARK: - Properties
     
-    let projectViewModel: ProjectViewModel?
+    let projectsViewModel: ProjectsViewModel
     
     weak var delegate: AddTaskViewModelDelegate?
     
-    var items = AddTaskCollectionItemModel.ItemType.allCases.map {
-        AddTaskCollectionItemViewModel(.init(type: $0,
-                                             chosen: Bool.random(),
-                                             comment: "\($0.rawValue)"))
-        } {
-        didSet {
-            delegate?.itemsDidChange()
-        }
+    var items: [AddTaskCollectionItemViewModel] {
+        [.init(type: .project,
+               chosen: project != nil,
+               comment: project?.name ?? ""),
+         commentAdded ? nil :
+            .init(type: .comment,
+                  chosen: false,
+                  comment: ""),
+         .init(type: .deadline,
+               chosen: deadline != nil,
+               comment: deadline != nil ? "\(deadline!.formatted)" : "")]
+            .compactMap { $0 }
+            .map { .init($0) }
     }
     
-    static let maxTitleLength = 128
+    // MARK: - Private Properties
+    
+    private var project: ProjectViewModel?
+    private var commentAdded = false
+    private var deadline: Date?
     
     // MARK: - Initializers
     
-    init(_ viewModel: ProjectViewModel?) {
-        projectViewModel = viewModel
+    init(_ viewModel: ProjectsViewModel) {
+        projectsViewModel = viewModel
+    }
+    
+    // MARK: - Methods
+
+    func add(project: ProjectViewModel) {
+        self.project = project
+        delegate?.itemsDidChange()
+    }
+    
+    func add(deadline: Date) {
+        self.deadline = deadline
+        delegate?.itemsDidChange()
+    }
+    
+    func addComment() {
+        commentAdded = true
+        delegate?.itemsDidChange()
+    }
+    
+    func addTask(title: String, comment: String?) -> Bool {
+        if (Self.minTitleLength...Self.maxTitleLength).contains(title.count) {
+            let task = Task(title: title, comment: comment, deadline: deadline,
+                            project: project?.project, time: .init())
+            projectsViewModel.projectDataManager.taskDataManager.add(task)
+            return true
+        }
+        return false
+    }
+    
+    var wrongLengthAlertMessage: String {
+        "Title should be from \(Self.minTitleLength) " +
+        "to \(Self.maxTitleLength)."
     }
 }

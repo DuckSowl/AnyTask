@@ -25,7 +25,7 @@ class AddTaskViewController: BottomExpandingViewController {
         static let topOffset: CGFloat = 50
         static let contentInset: CGFloat = 12
         static let spacer: CGFloat = 8
-        static let collectionViewHeight: CGFloat = 44
+        static let collectionViewHeight: CGFloat = 50
     }
     
     // MARK: - Properties
@@ -51,19 +51,7 @@ class AddTaskViewController: BottomExpandingViewController {
         return titleTextView
     }()
     
-    private let addTaskButton: UIButton = {
-        let addTaskButton = UIButton()
-        addTaskButton.backgroundColor = .red
-        addTaskButton.set(cornerRadius: Constants.cornerRadius)
-        addTaskButton.clipsToBounds = true
-        
-        addTaskButton.setImage(Constants.plusButtonImage.withRenderingMode(.alwaysTemplate),
-                        for: .normal)
-        addTaskButton.imageEdgeInsets = .init(same: Constants.plusButtonImageInset)
-        addTaskButton.tintColor = .white
-        
-        return addTaskButton
-    }()
+    private let addTaskButton = Button.with(type: .plus)
     
     let collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
@@ -78,7 +66,7 @@ class AddTaskViewController: BottomExpandingViewController {
                                 forCellWithReuseIdentifier: Constants.cellId)
         
         // TODO: Rework to Color manager
-        collectionView.backgroundColor = .white
+        collectionView.backgroundColor = .clear
         collectionView.alwaysBounceHorizontal = true
         collectionView.showsHorizontalScrollIndicator = false
         
@@ -115,7 +103,11 @@ class AddTaskViewController: BottomExpandingViewController {
     override func viewDidLayoutSubviews() {
         updateContentHeight()
     }
-        
+
+    override func viewWillAppear(_ animated: Bool) {
+        maxHeight = view.frame.maxY - Constants.topOffset
+    }
+            
     // MARK: - View Configuration
     
     private func configureSubviews() {
@@ -147,21 +139,9 @@ class AddTaskViewController: BottomExpandingViewController {
         addTaskButton.pin(super: contentView)
             .vCenter(of: collectionView)
             .after(collectionView, Constants.spacer)
-            .size(Constants.plusButtonSize)
+            .height(40)
             .right(Constants.contentInset)
             .activate
-    }
-    
-    private var backgroundContentHeight: CGFloat {
-        [titleTextView, commentTextView]
-            .compactMap { $0 }
-            .map { $0.sizeThatFits($0.frame.size).height }
-            .withAppend(Constants.contentInset * 2,
-                        Constants.spacer,
-                        Constants.collectionViewHeight)
-            .withAppend(commentTextView != nil ? [Constants.spacer] : [])
-            .print()
-            .reduce(0, +)
     }
     
     // MARK: - Private Methods
@@ -179,8 +159,14 @@ class AddTaskViewController: BottomExpandingViewController {
     }
     
     private func updateContentHeight() {
-        let maxContentHeight = view.frame.maxY - Constants.topOffset
-        contentHeight = min(backgroundContentHeight, maxContentHeight)
+        contentHeight = [titleTextView, commentTextView]
+            .compactMap { $0 }
+            .map { $0.sizeThatFits($0.frame.size).height }
+            .withAppend(Constants.contentInset * 2,
+                        Constants.spacer,
+                        Constants.collectionViewHeight)
+            .withAppend(commentTextView != nil ? [Constants.spacer] : [])
+            .reduce(0, +)
     }
     
     private func addCommentView() {
@@ -210,10 +196,43 @@ class AddTaskViewController: BottomExpandingViewController {
             .activate
     }
     
+    // MARK: - Private Methods
+    
+    private func didSelect(item: AddTaskCollectionItemModel.ItemType) {
+        switch item {
+            case .comment:
+                viewModel.addComment()
+                addCommentView()
+            case .project:
+                let projectPickerViewController =
+                    ProjectPickerViewController(viewModel.projectsViewModel)
+                projectPickerViewController.delegate = self
+                add(projectPickerViewController, frame: view.bounds)
+            case .deadline:
+                let deadlinePickerViewController = DatePickerViewController()
+                deadlinePickerViewController.delegate = self
+                resignFirstResponders()
+                add(deadlinePickerViewController, frame: UIScreen.main.bounds)
+            default:
+                notImplementedAlert()
+        }
+    }
+    
+    private func resignFirstResponders() {
+        [titleTextView, commentTextView].forEach { $0?.resignFirstResponder() }
+    }
+    
     // MARK: - Actions
     
     @objc private func addTask() {
-        notImplementedAlert()
+        if let title = titleTextView.text {
+            if viewModel.addTask(title: title,
+                                 comment: commentTextView?.text) {
+                remove()
+            } else {
+                showAlert(title: "Wrong title length", message: viewModel.wrongLengthAlertMessage)
+            }
+        }
     }
 }
 
@@ -235,11 +254,7 @@ extension AddTaskViewController: UITextViewDelegate {
 
 extension AddTaskViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        viewModel.items[indexPath.row].chosen.toggle()
-        
-        if viewModel.items[indexPath.row].type == .comment {
-            addCommentView()
-        }
+        didSelect(item: viewModel.items[indexPath.row].type)
     }
 }
 
@@ -278,3 +293,16 @@ extension AddTaskViewController {
     }
 }
 
+extension AddTaskViewController: ProjectPickerDelegate {
+    func didSelect(project: ProjectViewModel) {
+        titleTextView.becomeFirstResponder()
+        viewModel.add(project: project)
+    }
+}
+
+extension AddTaskViewController: DatePickerDelegate {
+    func didSelect(deadline: Date) {
+        titleTextView.becomeFirstResponder()
+        viewModel.add(deadline: deadline)
+    }
+}

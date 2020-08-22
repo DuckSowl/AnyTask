@@ -18,9 +18,9 @@ struct TaskCellViewModel {
     
     var title: String { task.title }
     var comment: String? { task.comment }
-    var deadline: String { task.deadline?.description ?? "No deadline" }
+    var deadline: String { task.deadline?.formatted ?? "No deadline" }
     var project: String { task.project?.name ?? "Inbox" }
-    var estimatedTime: String { "\(task.time.expected ?? 0)" }
+    var estimatedTime: String { "\(notNil: task.time.expected)" }
     
     // TODO: - Move to font manager
     

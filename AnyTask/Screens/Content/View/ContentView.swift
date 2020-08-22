@@ -61,11 +61,13 @@ class ContentView: UIViewController {
         projectsViewController.delegate = self
         insertProjectsView()
         
-        guard let plusImage = UIImage(named: "plus") else { return }
-        addButton(with: plusImage,
-                  backgroundColor: .red,
-                  action: #selector(addTask),
-                  pin: { $0.size(60).bottom(16).right(16) })
+        let addButton = Button.with(type: .plus)
+        addButton.addTarget(self, action: #selector(addTask),
+                            for: .touchUpInside)
+        
+        addButton.pin(super: view)
+            .size(60).bottom(16).right(16)
+            .activate
     }
     
     // MARK: - View Configuration
@@ -75,28 +77,12 @@ class ContentView: UIViewController {
         projectsView.pin.allSafe().activate
     }
     
-    private func addButton(with image: UIImage,
-                        backgroundColor: UIColor,
-                        action: Selector,
-                        pin: ((Pin) -> (Pin))) {
-        let button = UIButton()
-        button.setImage(image.withRenderingMode(.alwaysTemplate),
-                        for: .normal)
-        button.tintColor = .white
-        button.backgroundColor = backgroundColor
-        
-        button.set(cornerRadius: 15)
-        button.clipsToBounds = true
-        button.addTarget(self, action: action, for: .touchUpInside)
-                
-        button.imageView?.pin.aspectRatio(1).width(30).activate
-        pin(button.pin(super: view)).activate
-    }
-    
     // MARK: - Actions
     
     @objc func addTask() {
-        add(AddTaskViewController(AddTaskViewModel(projectViewController?.viewModel)), frame: view.frame)
+        let addTaskViewModel = AddTaskViewModel(viewModel.projectsViewModel)
+        let addTaskViewController = AddTaskViewController(addTaskViewModel)
+        add(addTaskViewController, frame: view.frame)
     }
 }
 

@@ -33,12 +33,16 @@ extension UIViewController {
     #if DEBUG
     
     func notImplementedAlert() {
-        let alert = UIAlertController(title: "Not implemented!", message: nil,
-                                      preferredStyle: .alert)
+        showAlert(title: "Not implemented!", message: nil)
+    }
+    
+    func showAlert(title: String, message: String?) {
+        let showAlert = UIAlertController(title: title, message: message,
+                                          preferredStyle: .alert)
         
-        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        showAlert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
         
-        present(alert, animated: true)
+        present(showAlert, animated: true)
     }
     
     #endif

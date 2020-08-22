@@ -14,11 +14,11 @@ class ItemCollectionViewCell: UICollectionViewCell {
     
     private enum Constants {
         static let borderWidth: CGFloat = 1.6
-        static let cornerRadius: CGFloat = 10
+        static let cornerRadius: CGFloat = 12
         
         static let inset: CGFloat = 6
         static let spacer: CGFloat = 10
-        static let imageHeight: CGFloat = 30
+        static let imageHeight: CGFloat = 24
     }
     
     // MARK: - Properties
@@ -29,6 +29,13 @@ class ItemCollectionViewCell: UICollectionViewCell {
             
             imageView.image = viewModel.image
             textView.text = viewModel.comment
+            
+            // TODO: Rework to Color manager
+            if #available(iOS 13.0, *) {
+                contentView.backgroundColor = viewModel.chosen
+                    ? .systemGray5 : .clear
+            }
+            
             configureConstraints(chosen: viewModel.chosen)
         }
     }
@@ -56,8 +63,8 @@ class ItemCollectionViewCell: UICollectionViewCell {
     // MARK: - View Configuration
     
     private func configureView() {
-        set(cornerRadius: Constants.cornerRadius)
         textView.textAlignment = .center
+        contentView.set(cornerRadius: Constants.cornerRadius)
     }
         
     private func configureConstraints(chosen: Bool) {

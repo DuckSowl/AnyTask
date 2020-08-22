@@ -14,6 +14,14 @@
 		3A6EF27024EC298E0088BD75 /* AddTaskCollectionItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A6EF26F24EC298E0088BD75 /* AddTaskCollectionItemModel.swift */; };
 		3A6EF27224EC29D10088BD75 /* AddTaskCollectionItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A6EF27124EC29D10088BD75 /* AddTaskCollectionItemViewModel.swift */; };
 		3A6EF27424EC2A2F0088BD75 /* OnlySelfTapGestureRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A6EF27324EC2A2F0088BD75 /* OnlySelfTapGestureRecognizer.swift */; };
+		3A6EF27624EC500F0088BD75 /* ProjectPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A6EF27524EC500F0088BD75 /* ProjectPickerViewController.swift */; };
+		3A6EF27924EE4DCF0088BD75 /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A6EF27824EE4DCF0088BD75 /* TextField.swift */; };
+		3A6EF27B24EE87E20088BD75 /* ButtonFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A6EF27A24EE87E20088BD75 /* ButtonFactory.swift */; };
+		3A6EF27D24EEA8E80088BD75 /* AddTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A6EF27C24EEA8E80088BD75 /* AddTextView.swift */; };
+		3A6EF27F24EEB60A0088BD75 /* DatePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A6EF27E24EEB60A0088BD75 /* DatePickerViewController.swift */; };
+		3A6EF28124F046F60088BD75 /* Date+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A6EF28024F046F60088BD75 /* Date+.swift */; };
+		3A6EF28324F0F9E90088BD75 /* StringInterpolation+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A6EF28224F0F9E90088BD75 /* StringInterpolation+.swift */; };
+		3A6EF28524F0FA330088BD75 /* ProjectsTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A6EF28424F0FA330088BD75 /* ProjectsTableView.swift */; };
 		3A742AEF24D063D500C37684 /* Int+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A742AEE24D063D500C37684 /* Int+.swift */; };
 		3A742AF124D0645C00C37684 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A742AF024D0645C00C37684 /* Color.swift */; };
 		3A7A898224DBD41D009C7D3D /* Task(MO)+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7A898124DBD41D009C7D3D /* Task(MO)+.swift */; };
@@ -82,6 +90,14 @@
 		3A6EF26F24EC298E0088BD75 /* AddTaskCollectionItemModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTaskCollectionItemModel.swift; sourceTree = "<group>"; };
 		3A6EF27124EC29D10088BD75 /* AddTaskCollectionItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTaskCollectionItemViewModel.swift; sourceTree = "<group>"; };
 		3A6EF27324EC2A2F0088BD75 /* OnlySelfTapGestureRecognizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnlySelfTapGestureRecognizer.swift; sourceTree = "<group>"; };
+		3A6EF27524EC500F0088BD75 /* ProjectPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectPickerViewController.swift; sourceTree = "<group>"; };
+		3A6EF27824EE4DCF0088BD75 /* TextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextField.swift; sourceTree = "<group>"; };
+		3A6EF27A24EE87E20088BD75 /* ButtonFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ButtonFactory.swift; path = AnyTask/Screens/Content/View/ButtonFactory.swift; sourceTree = SOURCE_ROOT; };
+		3A6EF27C24EEA8E80088BD75 /* AddTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AddTextView.swift; path = AnyTask/Screens/Projects/ViewModel/AddTextView.swift; sourceTree = SOURCE_ROOT; };
+		3A6EF27E24EEB60A0088BD75 /* DatePickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerViewController.swift; sourceTree = "<group>"; };
+		3A6EF28024F046F60088BD75 /* Date+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Date+.swift"; path = "AnyTask/Screens/AddTask/View/Date+.swift"; sourceTree = SOURCE_ROOT; };
+		3A6EF28224F0F9E90088BD75 /* StringInterpolation+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "StringInterpolation+.swift"; path = "AnyTask/Screens/Project/ViewModel/StringInterpolation+.swift"; sourceTree = SOURCE_ROOT; };
+		3A6EF28424F0FA330088BD75 /* ProjectsTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectsTableView.swift; sourceTree = "<group>"; };
 		3A742AEE24D063D500C37684 /* Int+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Int+.swift"; sourceTree = "<group>"; };
 		3A742AF024D0645C00C37684 /* Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		3A7A898124DBD41D009C7D3D /* Task(MO)+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Task(MO)+.swift"; sourceTree = "<group>"; };
@@ -219,6 +235,16 @@
 			path = AnyTask;
 			sourceTree = "<group>";
 		};
+		3A6EF27724EE4DB50088BD75 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				3A6EF27C24EEA8E80088BD75 /* AddTextView.swift */,
+				3A6EF27A24EE87E20088BD75 /* ButtonFactory.swift */,
+				3A6EF27824EE4DCF0088BD75 /* TextField.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		3A7A898024DBD3BD009C7D3D /* TaskCoreDataManager */ = {
 			isa = PBXGroup;
 			children = (
@@ -287,6 +313,7 @@
 			isa = PBXGroup;
 			children = (
 				3A7A89A124DBEAA9009C7D3D /* ProjectsViewController.swift */,
+				3A6EF28424F0FA330088BD75 /* ProjectsTableView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -311,6 +338,7 @@
 		3A7A89C024E12F39009C7D3D /* All */ = {
 			isa = PBXGroup;
 			children = (
+				3A6EF27724EE4DB50088BD75 /* Views */,
 				3A7A89C124E12F4F009C7D3D /* TopBar */,
 				3A7A89B924E1224A009C7D3D /* Delegates */,
 			);
@@ -458,6 +486,8 @@
 			children = (
 				3A7A89E624E2E906009C7D3D /* ItemCollectionViewCell.swift */,
 				3AAB33DF24D2972A00586F99 /* AddTaskViewController.swift */,
+				3A6EF27524EC500F0088BD75 /* ProjectPickerViewController.swift */,
+				3A6EF27E24EEB60A0088BD75 /* DatePickerViewController.swift */,
 				3A7A89E824E3F5BD009C7D3D /* BottomExpandingView.swift */,
 			);
 			path = View;
@@ -509,6 +539,8 @@
 		3AEEFFCA24B351A4006251C8 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				3A6EF28224F0F9E90088BD75 /* StringInterpolation+.swift */,
+				3A6EF28024F046F60088BD75 /* Date+.swift */,
 				3AAB33F224D2977500586F99 /* Array+.swift */,
 				3AEEFFC824B3519C006251C8 /* Date+Week.swift */,
 				3A742AEE24D063D500C37684 /* Int+.swift */,
@@ -615,6 +647,7 @@
 				3AAB33E424D2972A00586F99 /* CalendarViewModel.swift in Sources */,
 				3A7A898224DBD41D009C7D3D /* Task(MO)+.swift in Sources */,
 				3A7A899824DBE318009C7D3D /* TopBarView.swift in Sources */,
+				3A6EF27924EE4DCF0088BD75 /* TextField.swift in Sources */,
 				3A7A898724DBD828009C7D3D /* CoreDataManageable.swift in Sources */,
 				3A7A89B824DF1BA8009C7D3D /* ContentViewModel.swift in Sources */,
 				3A7A89A224DBEAA9009C7D3D /* ProjectsViewController.swift in Sources */,
@@ -626,8 +659,12 @@
 				3AAB33E324D2972A00586F99 /* DayViewModel.swift in Sources */,
 				3A7BF95D24BE429B00558675 /* Task.swift in Sources */,
 				3A7A89DF24E197E8009C7D3D /* ProjectViewSelectionDelegate.swift in Sources */,
+				3A6EF28124F046F60088BD75 /* Date+.swift in Sources */,
 				3AAB340924D2AA0200586F99 /* ProjectCoreDataManager.swift in Sources */,
 				3A95C34724BC8B69003A52B9 /* DataManageable.swift in Sources */,
+				3A6EF27F24EEB60A0088BD75 /* DatePickerViewController.swift in Sources */,
+				3A6EF27624EC500F0088BD75 /* ProjectPickerViewController.swift in Sources */,
+				3A6EF27B24EE87E20088BD75 /* ButtonFactory.swift in Sources */,
 				3A7A89DD24E197CC009C7D3D /* UIButton+.swift in Sources */,
 				3AAB33E024D2972A00586F99 /* TaskCellViewModel.swift in Sources */,
 				3A95C34324BC8A62003A52B9 /* UUID+.swift in Sources */,
@@ -636,6 +673,7 @@
 				3A7A89DB24E1979D009C7D3D /* UIImage+.swift in Sources */,
 				3A9B9D3724C1DDB10092DC25 /* UIEdgeInsets+.swift in Sources */,
 				3A7A89A624DBEAFB009C7D3D /* ProjectViewModel.swift in Sources */,
+				3A6EF28524F0FA330088BD75 /* ProjectsTableView.swift in Sources */,
 				3A742AF124D0645C00C37684 /* Color.swift in Sources */,
 				3A7A898F24DBE23B009C7D3D /* UIView+.swift in Sources */,
 				3A7A89D924E18736009C7D3D /* ProjectsViewControllerDelegate.swift in Sources */,
@@ -644,12 +682,14 @@
 				3A7A89A424DBEAD7009C7D3D /* ProjectsViewModel.swift in Sources */,
 				3AAB33E624D2972A00586F99 /* WeekCellView.swift in Sources */,
 				3AEEFFC924B3519C006251C8 /* Date+Week.swift in Sources */,
+				3A6EF27D24EEA8E80088BD75 /* AddTextView.swift in Sources */,
 				3AAB33F124D2972A00586F99 /* AddTaskViewController.swift in Sources */,
 				3A7A89CA24E14336009C7D3D /* ProjectMO+CoreDataProperties.swift in Sources */,
 				3A7A89E324E198F1009C7D3D /* VerticalInsets.swift in Sources */,
 				3A7BF96324BE42EA00558675 /* Tab.swift in Sources */,
 				3A7A899B24DBE428009C7D3D /* UIViewController+.swift in Sources */,
 				3AAB33E124D2972A00586F99 /* TaskCellView.swift in Sources */,
+				3A6EF28324F0F9E90088BD75 /* StringInterpolation+.swift in Sources */,
 				3A7A89BB24E1226A009C7D3D /* BackDelegate.swift in Sources */,
 				3A6EF27424EC2A2F0088BD75 /* OnlySelfTapGestureRecognizer.swift in Sources */,
 				3AAB33F324D2977500586F99 /* Array+.swift in Sources */,

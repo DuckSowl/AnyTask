@@ -13,7 +13,7 @@ class BottomExpandingViewController: UIViewController {
     // MARK: - Constants
 
     private enum Constants {
-        static let cornerRadius: CGFloat = 10
+        static let cornerRadius: CGFloat = 16
     }
 
     // MARK: - Properties
@@ -21,16 +21,12 @@ class BottomExpandingViewController: UIViewController {
     private var topConstraint: NSLayoutConstraint!
     private var heightConstraint: NSLayoutConstraint!
     
+    var maxHeight: CGFloat? {
+        didSet { updateHeight() }
+    }
+    
     var contentHeight: CGFloat? {
-        didSet {
-            if let contentHeight = contentHeight {
-                heightConstraint.constant = contentHeight
-            }
-            
-            let intrinsicContentSize = contentHeight == nil
-            topConstraint.isActive = intrinsicContentSize
-            heightConstraint.isActive = !intrinsicContentSize
-        }
+        didSet { updateHeight() }
     }
 
     // MARK: - Subviews
@@ -41,8 +37,6 @@ class BottomExpandingViewController: UIViewController {
         // TODO: Rework to Color manager
         if #available(iOS 13.0, *) {
             contentView.backgroundColor = UIColor.systemGray6
-        } else {
-            // Fallback on earlier versions
         }
         contentView.clipsToBounds = true
         contentView.set(cornerRadius: Constants.cornerRadius, for: .top)
@@ -85,5 +79,28 @@ class BottomExpandingViewController: UIViewController {
             .sides().bottom()
             .add(topConstraint)
             .activate
+    }
+    
+    private func updateHeight() {
+        if let contentHeight = contentHeight {
+            heightConstraint.constant =
+                min(contentHeight, maxHeight ?? view.fixedSafeHeight)
+        }
+        
+        let intrinsicContentSize = contentHeight == nil
+        topConstraint.isActive = intrinsicContentSize
+        heightConstraint.isActive = !intrinsicContentSize
+    }
+}
+
+fileprivate extension UIView {
+    var fixedSafeHeight: CGFloat {
+        let fixedCoordinates = convert(frame,
+                                       to: UIScreen.main.fixedCoordinateSpace)
+        var safeHeight = fixedCoordinates.height + fixedCoordinates.origin.y
+        if #available(iOS 11.0, *) {
+            safeHeight -= safeAreaInsets.top
+        }
+        return safeHeight
     }
 }

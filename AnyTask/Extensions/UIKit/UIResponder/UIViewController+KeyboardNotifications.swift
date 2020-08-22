@@ -20,7 +20,7 @@ extension UIViewController {
                          object: nil)
     }
         
-    @objc func keyboardWillShow(notification: NSNotification) {
+    @objc private func keyboardWillShow(notification: NSNotification) {
         if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
             if view.frame.origin.y == 0 {
                 self.view.frame.origin.y -= keyboardSize.height
@@ -28,7 +28,7 @@ extension UIViewController {
         }
     }
 
-    @objc func keyboardWillHide(notification: NSNotification) {
+    @objc private func keyboardWillHide(notification: NSNotification) {
         if view.frame.origin.y != 0 {
             self.view.frame.origin.y = 0
         }

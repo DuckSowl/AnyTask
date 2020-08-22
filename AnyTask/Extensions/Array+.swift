@@ -6,7 +6,7 @@
 //  Copyright © 2020 Anton Tolstov. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 extension Array {
     func withAppend(_ elements: [Element]) -> Array {
@@ -26,3 +26,16 @@ extension Array {
     
     #endif
 }
+
+extension Array where Element == UIView {
+    func sizeThatFitsSelf() -> [CGSize] {
+        map { $0.sizeThatFitsSelf }
+    }
+}
+
+extension Array where Element: Numeric {
+    func sum() -> Element {
+        self.reduce(0, +)
+    }
+}
+

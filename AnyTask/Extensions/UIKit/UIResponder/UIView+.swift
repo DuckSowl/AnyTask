@@ -43,14 +43,23 @@ extension UIView {
     func unpin() -> Pin {
         self.pin.unpin()
     }
+    
+    var sizeThatFitsSelf: CGSize {
+        sizeThatFits(self.frame.size)
+    }
 
     #if DEBUG
     
     func notImplementedAlert() {
-        UIApplication
-            .shared.windows.first?
-            .rootViewController?
-            .notImplementedAlert()
+        rootVC?.notImplementedAlert()
+    }
+    
+    func showAlert(title: String, message: String?) {
+        rootVC?.showAlert(title: title, message: message)
+    }
+    
+    var rootVC: UIViewController? {
+        UIApplication.shared.windows.first?.rootViewController
     }
     
     #endif
