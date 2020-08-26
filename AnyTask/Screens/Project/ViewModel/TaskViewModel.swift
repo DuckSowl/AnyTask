@@ -1,5 +1,5 @@
 //
-//  TaskCellViewModel.swift
+//  TaskViewModel.swift
 //  AnyTask
 //
 //  Created by Anton Tolstov on 14.07.2020.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-struct TaskCellViewModel {
+struct TaskViewModel {
     
     // MARK: - Properties
     

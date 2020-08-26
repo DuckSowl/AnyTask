@@ -8,27 +8,26 @@
 
 import UIKit
 
-protocol AddTaskViewModelDelegate: AnyObject {
-    func itemsDidChange()
+protocol AddTaskDelegate: Delegate {
+    func taskAdded()
 }
 
-class AddTaskViewModel {
+struct AddTaskViewModel {
     
     // MARK: - Constants
     
-    static let minTitleLength = 6
-    static let maxTitleLength = 128
+    let titleLength = (4...128)
     
     // MARK: - Properties
     
+    weak var delegate: AddTaskDelegate?
+    
     let projectsViewModel: ProjectsViewModel
-    
-    weak var delegate: AddTaskViewModelDelegate?
-    
+        
     var items: [AddTaskCollectionItemViewModel] {
         [.init(type: .project,
-               chosen: project != nil,
-               comment: project?.name ?? ""),
+               chosen: projectVM != nil,
+               comment: projectVM?.name ?? ""),
          commentAdded ? nil :
             .init(type: .comment,
                   chosen: false,
@@ -42,7 +41,7 @@ class AddTaskViewModel {
     
     // MARK: - Private Properties
     
-    private var project: ProjectViewModel?
+    private var projectVM: ProjectViewModel?
     private var commentAdded = false
     private var deadline: Date?
     
@@ -54,33 +53,29 @@ class AddTaskViewModel {
     
     // MARK: - Methods
 
-    func add(project: ProjectViewModel) {
-        self.project = project
-        delegate?.itemsDidChange()
+    mutating func add(project: ProjectViewModel) {
+        self.projectVM = project
     }
     
-    func add(deadline: Date) {
+    mutating func add(deadline: Date) {
         self.deadline = deadline
-        delegate?.itemsDidChange()
     }
     
-    func addComment() {
+    mutating func addComment() {
         commentAdded = true
-        delegate?.itemsDidChange()
     }
     
     func addTask(title: String, comment: String?) -> Bool {
-        if (Self.minTitleLength...Self.maxTitleLength).contains(title.count) {
-            let task = Task(title: title, comment: comment, deadline: deadline,
-                            project: project?.project, time: .init())
-            projectsViewModel.projectDataManager.taskDataManager.add(task)
-            return true
-        }
-        return false
+        guard titleLength.contains(title.count) else { return false }
+        
+        let project = projectVM ?? projectsViewModel.nilProject
+        project.addTask(title: title, comment: comment, deadline: deadline, time: .init())
+        delegate?.taskAdded()
+        return true
     }
     
     var wrongLengthAlertMessage: String {
-        "Title should be from \(Self.minTitleLength) " +
-        "to \(Self.maxTitleLength)."
+        "Title should be from \(notNil: titleLength.min()) " +
+        "to \(notNil: titleLength.max())."
     }
 }

@@ -32,7 +32,11 @@ class AddTaskViewController: BottomExpandingViewController {
     
     typealias ViewModel = AddTaskViewModel
     
-    private let viewModel: AddTaskViewModel
+    private var viewModel: AddTaskViewModel {
+        didSet {
+            collectionView.reloadData()
+        }
+    }
     
     private var titleBottomConstraint: NSLayoutConstraint? = nil
     
@@ -81,8 +85,6 @@ class AddTaskViewController: BottomExpandingViewController {
         self.viewModel = viewModel
                 
         super.init()
-        
-        viewModel.delegate = self
     }
     
     required init?(coder: NSCoder) {
@@ -241,7 +243,7 @@ extension AddTaskViewController: UITextViewDelegate {
         return textView == titleTextView
             ? !text.contains("\n") && (textView.text as NSString)
                 .replacingCharacters(in: range, with: text)
-                .count < ViewModel.maxTitleLength
+                .count < viewModel.titleLength.max()!
             : true
     }
     
@@ -277,14 +279,6 @@ extension AddTaskViewController: UICollectionViewDataSource {
     }
 }
 
-// MARK: - AddTaskViewModelDelegate
-
-extension AddTaskViewController: AddTaskViewModelDelegate {
-    func itemsDidChange() {
-        collectionView.reloadData()
-    }
-}
-
 // MARK: - UITraitCollection
 
 extension AddTaskViewController {
@@ -306,3 +300,4 @@ extension AddTaskViewController: DatePickerDelegate {
         viewModel.add(deadline: deadline)
     }
 }
+

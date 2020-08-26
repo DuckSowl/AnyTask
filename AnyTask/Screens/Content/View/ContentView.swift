@@ -32,6 +32,8 @@ class ContentView: UIViewController {
     
     private var projectViewController: ProjectViewController!
     
+    private var selectedProject: ProjectViewModel?
+    
     var bottomContentInset: CGFloat {
         var bottomContentInset = Constants.buttonSize.height + Constants.bottomConstant
         if #available(iOS 11.0, *) {
@@ -61,12 +63,21 @@ class ContentView: UIViewController {
         projectsViewController.delegate = self
         insertProjectsView()
         
+        // TODO: Remove code repetitions
         let addButton = Button.with(type: .plus)
         addButton.addTarget(self, action: #selector(addTask),
                             for: .touchUpInside)
         
         addButton.pin(super: view)
             .size(60).bottom(16).right(16)
+            .activate
+        
+        let pomodoroButton = Button.with(type: .pomodoro)
+        pomodoroButton.addTarget(self, action: #selector(pomodoroAction),
+                            for: .touchUpInside)
+        
+        pomodoroButton.pin(super: view)
+            .size(60).bottom(16).left(16)
             .activate
     }
     
@@ -80,16 +91,32 @@ class ContentView: UIViewController {
     // MARK: - Actions
     
     @objc func addTask() {
-        let addTaskViewModel = AddTaskViewModel(viewModel.projectsViewModel)
+        var addTaskViewModel = AddTaskViewModel(viewModel.projectsViewModel)
+        addTaskViewModel.delegate = self
+        if let selectedProject = selectedProject {
+            if let permanentProjectViewModel = selectedProject as? PermanentProjectViewModel {
+                if permanentProjectViewModel.kind == .today {
+                    addTaskViewModel.add(deadline: Date())
+                }
+            } else {
+                addTaskViewModel.add(project: selectedProject)
+            }
+        }
         let addTaskViewController = AddTaskViewController(addTaskViewModel)
         add(addTaskViewController, frame: view.frame)
+    }
+    
+    @objc func pomodoroAction() {
+        notImplementedAlert()
     }
 }
 
 // MARK: - ProjectsViewControllerDelegate
 
 extension ContentView: ProjectsViewControllerDelegate {
-    func didSelect(project projectViewModel: ProjectViewModel) {
+    func didSelect(projectVM projectViewModel: ProjectViewModel) {
+        selectedProject = projectViewModel
+        
         projectViewController =
             ProjectViewController(projectViewModel,
                                   bottomContentInset: bottomContentInset)
@@ -117,6 +144,8 @@ extension ContentView: ProjectViewControllerDelegate {
     func back() {
         insertProjectsView()
         
+        selectedProject = nil
+        
         UIView.animate(withDuration: 0.5, animations: {
             self.projectsView.alpha = 1
             self.projectViewController.tableView.transform =
@@ -124,3 +153,10 @@ extension ContentView: ProjectViewControllerDelegate {
         }, completion:  { _ in self.projectViewController.remove() })
     }
 }
+
+extension ContentView: AddTaskDelegate {
+    func taskAdded() {
+        projectViewController?.reloadData()
+    }
+}
+

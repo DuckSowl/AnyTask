@@ -8,54 +8,58 @@
 
 import Foundation
 
-protocol ProjectsDelegate: AnyObject {
-    func didSelect(project: ProjectViewModel)
-}
+protocol ProjectsDelegate: UpdateDelegate { }
 
 class ProjectsViewModel {
     
-    let maxProjectNameLength: UInt = 32
-    let minProlectNameLength: UInt = 6
+    // MARK: - Constants
+    
+    let projectNameLengthRange = 6...32
     
     // MARK: - Properties
     
-    var projectDataManager: ProjectCoreDataManager
-    
     weak var delegate: ProjectsDelegate?
+    let nilProject: PermanentProjectViewModel
+    
+    // MARK: - Private Properties
+    
+    private var projectDataManager: ProjectCoreDataManager
     
     // MARK: - Initializers
     
     init(_ projectDataManager: ProjectCoreDataManager) {
         self.projectDataManager = projectDataManager
+        nilProject = .init(.noProject, projectDataManager: projectDataManager)
+    }
+    
+    func tableViewModel(withStyle style: ProjectsTableViewModel.Style)
+        -> ProjectsTableViewModel {
+        let tableViewModel = ProjectsTableViewModel(style: style, projectDataManager: projectDataManager)
+        tableViewModel.delegate = self
+        return tableViewModel
     }
     
     // MARK: - View Model
     
-    private(set) lazy var permanentProjects: [ProjectViewModel] = PermanentProjects.allCases.map {
-        ProjectViewModel(project: Project(id: UUID(),
-                                          name: $0.rawValue),
-                         taskDataManager: projectDataManager.taskDataManager)
-    }
-    
-    var projects: [ProjectViewModel] {
-        projectDataManager.getAll().map { ProjectViewModel(project: $0, taskDataManager: projectDataManager.taskDataManager) }
-    }
-    
-    func addProject(withName projectName: String) -> ProjectViewModel? {
-        if projectName.count > minProlectNameLength {
+    func addProject(withName projectName: String) -> UserDefinedProjectViewModel? {
+        if projectNameLengthRange.contains(projectName.count) {
             let project = Project(name: projectName)
             projectDataManager.add(project)
-            return ProjectViewModel(project: project,
-                                    taskDataManager: projectDataManager.taskDataManager)
+            delegate?.update()
+            return UserDefinedProjectViewModel(project: project,
+                                               projectDataManager: projectDataManager)
         }
         return nil
     }
+    
+    var wrongNameMessage: String {
+        .object("Project", shouldBeInRange: projectNameLengthRange)
+    }
 }
 
-// TODO: - Rework as ProjectVM subclass
-
-enum PermanentProjects: String, CaseIterable {
-    case today = "Today"
-    case upcoming = "Upcoming"
-    case inbox = "Inbox"
+extension ProjectsViewModel: ProjectsTableDelegate {
+    func delete(projectVM: UserDefinedProjectViewModel) {
+        projectVM.delete()
+        delegate?.update()
+    }
 }

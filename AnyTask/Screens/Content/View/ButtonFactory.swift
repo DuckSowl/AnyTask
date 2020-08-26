@@ -13,7 +13,8 @@ enum Button {
     // MARK: - Constants
     
     private enum Constants {
-        static let addButtonImage = UIImage(named: "plus")!
+        static let plusImage = UIImage(named: "plus")!
+        static let pomodoroImage = UIImage(named: "pomodoro")!
     }
     
     // MARK: - Factory
@@ -22,11 +23,10 @@ enum Button {
         switch type {
             case .plus:
                 return plusButton
+            case .pomodoro:
+                return pomodoroButton
             case .text(let text):
                 return button(with: text)
-            default:
-                print("Not Implemented button!")
-                return UIButton()
         }
     }
     
@@ -41,7 +41,7 @@ enum Button {
         return button
     }
     
-    private static func makeSquareButton() -> UIButton {
+    private static func makeSquareButton(image: UIImage?, color: UIColor) -> UIButton {
         let button = makeButton()
         
         button.pin.aspectRatio(1).activate
@@ -49,23 +49,24 @@ enum Button {
             .constraint(equalTo: button.heightAnchor,
                         multiplier: 0.6).isActive = true
         
+        button.setImage(image, for: .normal)
+        button.backgroundColor = color
+        
         return button
     }
     
     private static var plusButton: UIButton {
-        let addButton = makeSquareButton()
-        
-        // TODO: Rework to Color manager
-        addButton.backgroundColor = .red
-        
-        addButton.setImage(Constants.addButtonImage.template, for: .normal)
-                
-        return addButton
+        makeSquareButton(image: Constants.plusImage.template, color: .red)
+    }
+    
+    private static var pomodoroButton: UIButton {
+        makeSquareButton(image: Constants.pomodoroImage.template, color: .green)
     }
     
     private static func button(with text: String) -> UIButton {
         let button = makeButton()
         button.setTitle(text, for: .normal)
+        button.setTitleColor(.gray, for: . highlighted)
         return button
     }
     

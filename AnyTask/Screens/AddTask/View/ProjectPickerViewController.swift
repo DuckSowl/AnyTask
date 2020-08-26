@@ -26,6 +26,7 @@ class ProjectPickerViewController: BottomExpandingViewController {
     weak var delegate: ProjectPickerDelegate?
     
     var viewModel: ProjectsViewModel
+    let tableViewModel: ProjectsTableViewModel
     
     // MARK: - Subviews
     
@@ -37,8 +38,9 @@ class ProjectPickerViewController: BottomExpandingViewController {
     
     init(_ viewModel: ProjectsViewModel) {
         self.viewModel = viewModel
-        projectsTableView = .init(viewModel)
-        addTextView = .init(maxTextLength: viewModel.maxProjectNameLength)
+        tableViewModel = viewModel.tableViewModel(withStyle: .onlyUserDefined)
+        projectsTableView = .init(tableViewModel)
+        addTextView = .init(maxTextLength: UInt(viewModel.projectNameLengthRange.max()!))
         
         super.init()
         
@@ -68,10 +70,6 @@ class ProjectPickerViewController: BottomExpandingViewController {
             + projectsTableView.intrinsicContentSize.height
             + Constants.spacer
             + Constants.contentInset * 2
-        
-        print("Fp:\(contentView.frame) ",
-            "Bp:\(contentView.bounds)")
-        print(contentView.convert(contentView.frame, to: UIScreen.main.fixedCoordinateSpace))
     }
     
     // MARK: - View Configuration
@@ -110,7 +108,8 @@ extension ProjectPickerViewController: AddTextDelegate {
             let projectViewModel = viewModel.addProject(withName: projectName) {
             selectAndDismiss(project: projectViewModel)
         } else {
-            showAlert(title: "Wrong Project Name", message: "Name should be from  \(viewModel.minProlectNameLength) to \(viewModel.maxProjectNameLength) symbols.")
+            showAlert(title: "Wrong Project Name",
+                      message: viewModel.wrongNameMessage)
         }
     }
     
@@ -124,6 +123,6 @@ extension ProjectPickerViewController: AddTextDelegate {
 
 extension ProjectPickerViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        selectAndDismiss(project: viewModel.projects[indexPath.row])
+        selectAndDismiss(project: tableViewModel.projects[indexPath.row])
     }
 }

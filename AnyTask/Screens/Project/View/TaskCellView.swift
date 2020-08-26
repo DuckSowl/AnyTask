@@ -12,9 +12,9 @@ class TaskCellView: UITableViewCell {
     
     // MARK: - ViewModel
     
-    typealias ViewModel = TaskCellViewModel
+    typealias ViewModel = TaskViewModel
     
-    var viewModel: TaskCellViewModel? {
+    var viewModel: TaskViewModel? {
         didSet {
             guard let viewModel = viewModel else { return }
                 

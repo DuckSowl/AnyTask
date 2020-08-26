@@ -61,7 +61,7 @@ class TopBarView: UIView {
         
         // TODO: Rework to Color manager
         if #available(iOS 13.0, *) {
-            backgroundColor = .systemGray6
+            backgroundColor = .systemGray5
         }
         
         configureConstraints()

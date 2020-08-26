@@ -80,6 +80,10 @@ class ProjectViewController: UIViewController {
         tableView.pin(super: view).all().activate
         topBarView.pin(super: view).top().sides().activate
     }
+    
+    func reloadData() {
+        tableView.reloadData()
+    }
 }
 
 // MARK: - UITableViewDelegate
