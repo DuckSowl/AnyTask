@@ -56,29 +56,29 @@ class TopBarView: UIView {
     // MARK: - View Configuration
     
     private func configureSubviews() {
-        setCorner(radius: Constants.cornerRadius, for: [.bottom])
+        set(cornerRadius: Constants.cornerRadius, for: [.bottom])
         clipsToBounds = true
         
         // TODO: Rework to Color manager
         if #available(iOS 13.0, *) {
-            backgroundColor = .systemGray6
+            backgroundColor = .systemGray5
         }
         
         configureConstraints()
     }
     
     private func configureConstraints() {
-        contentView.pin(superView: self)
+        contentView.pin(super: self)
             .allSafe().height(contentHeight).activate
         
         rightButtonsStack
-            .pin(superView: contentView)
+            .pin(super: contentView)
             .vCenter().height(Constants.buttonHeight)
             .right(Constants.horizontalSpacing)
             .activate
         
         searchButton
-            .pin(superView: contentView)
+            .pin(super: contentView)
             .vCenter().height(Constants.buttonHeight)
             .before(rightButtonsStack, 20)
             .aspectRatio(1)

@@ -6,14 +6,36 @@
 //  Copyright © 2020 Anton Tolstov. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 extension Array {
-    func withAppend<S>(contentsOf newElements: S) -> Array where Element == S.Element, S : Sequence {
-        return self + newElements
+    func withAppend(_ elements: [Element]) -> Array {
+        return self + elements
     }
     
-    func withAppend(_ newElement: Element) -> Array {
-        return self + [newElement]
+    func withAppend(_ elements: Element...) -> Array {
+        withAppend(elements)
+    }
+    
+    #if DEBUG
+    
+    func print() -> Array {
+        Swift.print(self)
+        return self
+    }
+    
+    #endif
+}
+
+extension Array where Element == UIView {
+    func sizeThatFitsSelf() -> [CGSize] {
+        map { $0.sizeThatFitsSelf }
     }
 }
+
+extension Array where Element: Numeric {
+    func sum() -> Element {
+        self.reduce(0, +)
+    }
+}
+

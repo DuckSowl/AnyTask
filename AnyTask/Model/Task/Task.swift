@@ -21,7 +21,9 @@ struct Task: Identifiable {
     
     var time: Time
     
-    internal init(id: UUID = UUID(), title: String, comment: String, deadline: Date? = nil, project: Project, completed: Bool, time: Task.Time) {
+    internal init(id: UUID = UUID(), title: String, comment: String?,
+                  deadline: Date? = nil, project: Project?,
+                  completed: Bool = false, time: Task.Time) {
         self.id = id
         self.title = title
         self.comment = comment

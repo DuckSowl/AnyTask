@@ -8,32 +8,74 @@
 
 import UIKit
 
-enum AddTaskViewModel {
-    static let backgroundColor = Color.background
-    static let shadeColor = Color.shade
+protocol AddTaskDelegate: Delegate {
+    func taskAdded()
+}
+
+struct AddTaskViewModel {
     
-    static let titleFont = UIFont
-        .preferredFont(forTextStyle: .title3)
-        .roundedIfAvailable()
+    // MARK: - Constants
     
-    static let smallFont = UIFont
-        .preferredFont(forTextStyle: .subheadline)
-        .roundedIfAvailable()
+    let titleLength = (4...128)
     
-    static let textColor = UIColor.black
-   
+    // MARK: - Properties
     
-    static let addButtonText = "Add"
-    static let addButtonCornerRadius = CGFloat(10)
-    static let addButtonContentEdgeInsets = UIEdgeInsets(same: 5)
-    static let cornerRadius = CGFloat(10)
+    weak var delegate: AddTaskDelegate?
     
-    static let secondColor = Color.background
+    let projectsViewModel: ProjectsViewModel
+        
+    var items: [AddTaskCollectionItemViewModel] {
+        [.init(type: .project,
+               chosen: projectVM != nil,
+               comment: projectVM?.name ?? ""),
+         commentAdded ? nil :
+            .init(type: .comment,
+                  chosen: false,
+                  comment: ""),
+         .init(type: .deadline,
+               chosen: deadline != nil,
+               comment: deadline != nil ? "\(deadline!.formatted)" : "")]
+            .compactMap { $0 }
+            .map { .init($0) }
+    }
     
-    static let textSeparatorAnchor = CGFloat(5)
-    static let sideAnchor = CGFloat(15)
-    static let topAnchor = CGFloat(15)
-    static let bottomAnchor = CGFloat(15)
+    // MARK: - Private Properties
     
-    static let topOffset = CGFloat(50)
+    private var projectVM: ProjectViewModel?
+    private var commentAdded = false
+    private var deadline: Date?
+    
+    // MARK: - Initializers
+    
+    init(_ viewModel: ProjectsViewModel) {
+        projectsViewModel = viewModel
+    }
+    
+    // MARK: - Methods
+
+    mutating func add(project: ProjectViewModel) {
+        self.projectVM = project
+    }
+    
+    mutating func add(deadline: Date) {
+        self.deadline = deadline
+    }
+    
+    mutating func addComment() {
+        commentAdded = true
+    }
+    
+    func addTask(title: String, comment: String?) -> Bool {
+        guard titleLength.contains(title.count) else { return false }
+        
+        let project = projectVM ?? projectsViewModel.nilProject
+        project.addTask(title: title, comment: comment, deadline: deadline, time: .init())
+        delegate?.taskAdded()
+        return true
+    }
+    
+    var wrongLengthAlertMessage: String {
+        "Title should be from \(notNil: titleLength.min()) " +
+        "to \(notNil: titleLength.max())."
+    }
 }

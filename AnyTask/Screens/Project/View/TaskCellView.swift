@@ -12,9 +12,9 @@ class TaskCellView: UITableViewCell {
     
     // MARK: - ViewModel
     
-    typealias ViewModel = TaskCellViewModel
+    typealias ViewModel = TaskViewModel
     
-    var viewModel: TaskCellViewModel? {
+    var viewModel: TaskViewModel? {
         didSet {
             guard let viewModel = viewModel else { return }
                 
@@ -89,7 +89,7 @@ class TaskCellView: UITableViewCell {
             .topBottom(ViewModel.backgroundTopButton)
             .activate
         
-        backgroundView.layer.cornerRadius = ViewModel.cornerRadius
+        backgroundView.set(cornerRadius: ViewModel.cornerRadius)
     }
     
     private func setupViewConstraints() {

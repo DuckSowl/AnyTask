@@ -35,8 +35,12 @@ extension TaskCoreDataManager: DataManageable {
         saveContext()
     }
     
-    func getAll(for project: Project) -> [Task] {
-        getAll().filter { $0.project?.id == project.id }
+    func getAll(for project: Project?) -> [Task] {
+        getAll().filter {
+            guard let project = project else { return $0.project == nil }
+            
+            return $0.project?.id == project.id
+        }
     }
     
     func update(_ newTask: Task) {

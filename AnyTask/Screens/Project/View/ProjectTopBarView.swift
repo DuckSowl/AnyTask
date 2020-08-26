@@ -67,11 +67,11 @@ final class ProjectTopBarView: TopBarView {
     private func configureConstraints() {
         moreButton.pin.aspectRatio(1).activate
         
-        backButton.pin(superView: contentView)
+        backButton.pin(super: contentView)
             .left(10).topBottom(12).aspectRatio(1)
             .activate
         
-        projectLabel.pin(superView: contentView)
+        projectLabel.pin(super: contentView)
             .after(backButton).vCenter().before(searchButton)
             .activate
     }

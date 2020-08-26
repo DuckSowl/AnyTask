@@ -32,6 +32,8 @@ class ContentView: UIViewController {
     
     private var projectViewController: ProjectViewController!
     
+    private var selectedProject: ProjectViewModel?
+    
     var bottomContentInset: CGFloat {
         var bottomContentInset = Constants.buttonSize.height + Constants.bottomConstant
         if #available(iOS 11.0, *) {
@@ -61,11 +63,22 @@ class ContentView: UIViewController {
         projectsViewController.delegate = self
         insertProjectsView()
         
-        guard let plusImage = UIImage(named: "plus") else { return }
-        addButton(with: plusImage,
-                  backgroundColor: .red,
-                  action: #selector(addTask),
-                  pin: { $0.size(60).bottom(16).right(16) })
+        // TODO: Remove code repetitions
+        let addButton = Button.with(type: .plus)
+        addButton.addTarget(self, action: #selector(addTask),
+                            for: .touchUpInside)
+        
+        addButton.pin(super: view)
+            .size(60).bottom(16).right(16)
+            .activate
+        
+        let pomodoroButton = Button.with(type: .pomodoro)
+        pomodoroButton.addTarget(self, action: #selector(pomodoroAction),
+                            for: .touchUpInside)
+        
+        pomodoroButton.pin(super: view)
+            .size(60).bottom(16).left(16)
+            .activate
     }
     
     // MARK: - View Configuration
@@ -75,35 +88,35 @@ class ContentView: UIViewController {
         projectsView.pin.allSafe().activate
     }
     
-    private func addButton(with image: UIImage,
-                        backgroundColor: UIColor,
-                        action: Selector,
-                        pin: ((Pin) -> (Pin))) {
-        let button = UIButton()
-        button.setImage(image.withRenderingMode(.alwaysTemplate),
-                        for: .normal)
-        button.tintColor = .white
-        button.backgroundColor = backgroundColor
-        
-        button.layer.cornerRadius = 15
-        button.clipsToBounds = true
-        button.addTarget(self, action: action, for: .touchUpInside)
-                
-        button.imageView?.pin.aspectRatio(1).width(30).activate
-        pin(button.pin(superView: view)).activate
-    }
-    
     // MARK: - Actions
     
     @objc func addTask() {
-        add(AddTaskViewController(), frame: view.frame)
+        var addTaskViewModel = AddTaskViewModel(viewModel.projectsViewModel)
+        addTaskViewModel.delegate = self
+        if let selectedProject = selectedProject {
+            if let permanentProjectViewModel = selectedProject as? PermanentProjectViewModel {
+                if permanentProjectViewModel.kind == .today {
+                    addTaskViewModel.add(deadline: Date())
+                }
+            } else {
+                addTaskViewModel.add(project: selectedProject)
+            }
+        }
+        let addTaskViewController = AddTaskViewController(addTaskViewModel)
+        add(addTaskViewController, frame: view.frame)
+    }
+    
+    @objc func pomodoroAction() {
+        notImplementedAlert()
     }
 }
 
 // MARK: - ProjectsViewControllerDelegate
 
 extension ContentView: ProjectsViewControllerDelegate {
-    func didSelect(project projectViewModel: ProjectViewModel) {
+    func didSelect(projectVM projectViewModel: ProjectViewModel) {
+        selectedProject = projectViewModel
+        
         projectViewController =
             ProjectViewController(projectViewModel,
                                   bottomContentInset: bottomContentInset)
@@ -131,6 +144,8 @@ extension ContentView: ProjectViewControllerDelegate {
     func back() {
         insertProjectsView()
         
+        selectedProject = nil
+        
         UIView.animate(withDuration: 0.5, animations: {
             self.projectsView.alpha = 1
             self.projectViewController.tableView.transform =
@@ -138,3 +153,10 @@ extension ContentView: ProjectViewControllerDelegate {
         }, completion:  { _ in self.projectViewController.remove() })
     }
 }
+
+extension ContentView: AddTaskDelegate {
+    func taskAdded() {
+        projectViewController?.reloadData()
+    }
+}
+

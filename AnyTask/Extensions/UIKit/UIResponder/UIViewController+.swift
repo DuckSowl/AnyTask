@@ -15,31 +15,34 @@ extension UIViewController {
     
     func insert(_ child: UIViewController, at index: Int, frame: CGRect? = nil) {
         addChild(child)
-
+        
         if let frame = frame {
             child.view.frame = frame
         }
-
+        
         view.insertSubview(child.view, at: index)
         child.didMove(toParent: self)
     }
-
-    func remove() {
+    
+    @objc func remove() {
         willMove(toParent: nil)
         view.removeFromSuperview()
         removeFromParent()
     }
     
-    
     #if DEBUG
     
     func notImplementedAlert() {
-        let alert = UIAlertController(title: "Not implemented!", message: nil,
-                                      preferredStyle: .alert)
+        showAlert(title: "Not implemented!", message: nil)
+    }
+    
+    func showAlert(title: String, message: String?) {
+        let showAlert = UIAlertController(title: title, message: message,
+                                          preferredStyle: .alert)
         
-        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        showAlert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
         
-        present(alert, animated: true)
+        present(showAlert, animated: true)
     }
     
     #endif

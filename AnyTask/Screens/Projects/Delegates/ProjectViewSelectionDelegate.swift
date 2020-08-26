@@ -7,5 +7,5 @@
 //
 
 protocol ProjectViewSelectionDelegate: AnyObject {
-    func didSelect(project: ProjectViewModel)
+    func didSelect(projectVM: ProjectViewModel)
 }

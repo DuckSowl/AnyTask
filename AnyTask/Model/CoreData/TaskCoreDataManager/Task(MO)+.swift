@@ -16,9 +16,12 @@ extension Task: ManagedObjectInitializable {
     init(managedObject taskMO: TaskMO) {
         id = taskMO.id.unsafeUUID()
         title = taskMO.title
-        comment = taskMO.comment!
+        comment = taskMO.comment
         deadline = taskMO.deadline
-        project = Project(managedObject: taskMO.project!)
+        // TODO: Fix force unwrap
+        if let projectMO = taskMO.project {
+            project = Project(managedObject: projectMO)
+        }
         completed = taskMO.completed
         time = Time(expected: taskMO.expectedTime,
                     spent: taskMO.spentTime)
