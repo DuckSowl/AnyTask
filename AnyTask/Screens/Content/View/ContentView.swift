@@ -116,6 +116,7 @@ class ContentView: UIViewController {
 extension ContentView: ProjectsViewControllerDelegate {
     func didSelect(projectVM projectViewModel: ProjectViewModel) {
         selectedProject = projectViewModel
+        selectedProject?.delegate = self
         
         projectViewController =
             ProjectViewController(projectViewModel,
@@ -160,3 +161,8 @@ extension ContentView: AddTaskDelegate {
     }
 }
 
+extension ContentView: ProjectViewModelDelegate {
+    func update() {
+        projectViewController?.reloadData()
+    }
+}

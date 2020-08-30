@@ -8,54 +8,66 @@
 
 import UIKit
 
-class TaskCellView: UITableViewCell {
+class TaskCellView: SwipeableTableViewCell {
     
-    // MARK: - ViewModel
+    // MARK: - Constants
     
-    typealias ViewModel = TaskViewModel
-    
-    var viewModel: TaskViewModel? {
-        didSet {
-            guard let viewModel = viewModel else { return }
-                
-            titleLabel.text = viewModel.title
-            commentLabel.text = viewModel.comment
-            expectedTimeLabel.text = viewModel.estimatedTime
-            projectLabel.text = viewModel.project
-            deadlineLabel.text = viewModel.deadline
-        }
+    private enum Constants {
+        static let checkmarkImage = UIImage(named: "checkmark")!
+        static let trashImage = UIImage(named: "trash")!
+        static let swipeViewImageHeight: CGFloat = 32
+        static let imageSideOffset: CGFloat = 20
+        
+        static let cornerRadius: CGFloat = 14
+        
+        static let spacer: CGFloat = 8
+        static let cellInsets = UIEdgeInsets(top: 4, left: 8, bottom: 4, right: 8)
+        static let contentInset: CGFloat = 12
+        
+        // TODO: - Move to font manager
+        static let titleFont = UIFont.preferredFont(forTextStyle: .title3).roundedIfAvailable()
+        static let smallFont = UIFont.preferredFont(forTextStyle: .subheadline).roundedIfAvailable()
     }
     
     // MARK: - Properties
     
-    private lazy var titleLabel: UILabel = {
-        let titleLabel = makeLabel(font: ViewModel.titleFont)
+    var viewModel: TaskViewModel? {
+        didSet { configureFromViewModel() }
+    }
+    
+    // MARK: - Subviews
+    
+    private let titleLabel: UILabel = {
+        let titleLabel = makeLabel(font: Constants.titleFont)
         titleLabel.numberOfLines = 0
         return titleLabel
     }()
     
-    private lazy var projectLabel: UILabel = {
-        makeLabel(font: ViewModel.smallFont)
-    }()
+    private let projectLabel = makeLabel(font: Constants.smallFont)
     
-    private lazy var deadlineLabel: UILabel = {
-        makeLabel(font: ViewModel.smallFont)
-    }()
+    private let deadlineLabel = makeLabel(font: Constants.smallFont)
     
-    private lazy var commentLabel: UILabel = {
-        let commentLabel = makeLabel(font: ViewModel.smallFont)
+    private let commentLabel: UILabel = {
+        let commentLabel = makeLabel(font: Constants.smallFont)
         commentLabel.numberOfLines = 0
         return commentLabel
     }()
     
-    private lazy var expectedTimeLabel: UILabel = {
-        makeLabel(font: ViewModel.smallFont)
-    }()
+    private let expectedTimeLabel = makeLabel(font: Constants.smallFont)
+    
+    private let deletionView = UIView()
+        .with(backgroundColor: .red)
+        .with(cornerRadius: Constants.cornerRadius)
+    
+    private let completionView = UIView()
+        .with(backgroundColor: 0x2B9E72.color)
+        .with(cornerRadius: Constants.cornerRadius)
     
     // MARK: - Initializers
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
+        
         setupView()
     }
     
@@ -68,59 +80,48 @@ class TaskCellView: UITableViewCell {
     private func setupView() {
         selectionStyle = .none
         
-        setupBackgroundView()
-        setupViewConstraints()
+        configureBackgroundView()
+        configureContentConstraints()
+        configureCompletionDeletionViews()
     }
     
-    private func setupBackgroundView() {
-        backgroundView = UIView()
-        
-        backgroundColor = Color.clear
-        
-        guard let backgroundView = backgroundView else { return }
-        
+    private func configureBackgroundView() {
         // TODO: Rework to Color manager
         if #available(iOS 13.0, *) {
-            backgroundView.backgroundColor = UIColor.systemGray5
+            swipableContentView.backgroundColor = UIColor.systemGray5
         }
         
-        backgroundView.pin
-            .sides(ViewModel.backgroundSides)
-            .topBottom(ViewModel.backgroundTopButton)
-            .activate
-        
-        backgroundView.set(cornerRadius: ViewModel.cornerRadius)
+        swipableContentView.set(cornerRadius: Constants.cornerRadius)
     }
     
-    private func setupViewConstraints() {
-        guard let backgroundView = backgroundView else { return }
-           
-        titleLabel.pin
-            .top(ViewModel.topAnchor)
-            .left(ViewModel.sideAnchor)
-            .before(expectedTimeLabel, be: .less, -ViewModel.sideAnchor)
+    private func configureContentConstraints() {
+        titleLabel.pin(super: swipableContentView)
+            .top(Constants.contentInset)
+            .left(Constants.contentInset)
             .activate
         
-        expectedTimeLabel.pin
-            .top(ViewModel.topAnchor)
-            .right(ViewModel.sideAnchor)
+        expectedTimeLabel.pin(super: swipableContentView)
+            .top(Constants.spacer)
+            .right(Constants.contentInset)
+            .after(titleLabel, be: .less, -Constants.spacer)
             .activate
         
-        commentLabel.pin
-            .sides(to: backgroundView, ViewModel.sideAnchor)
-            .below(titleLabel, ViewModel.topAnchor)
-            .above(deadlineLabel, ViewModel.bottomAnchor)
+        commentLabel.pin(super: swipableContentView)
+            .sides(Constants.contentInset)
+            .height(be: .less, 100)
+            .below(titleLabel, Constants.spacer)
             .activate
         
-        deadlineLabel.pin
-            .left(ViewModel.sideAnchor)
-            .bottom(ViewModel.bottomAnchor)
-            .before(projectLabel, be: .less, -ViewModel.sideAnchor)
+        deadlineLabel.pin(super: swipableContentView)
+            .left(Constants.contentInset)
+            .below(commentLabel, Constants.spacer)
+            .bottom(Constants.contentInset)
             .activate
         
-        projectLabel.pin
-            .right(ViewModel.sideAnchor)
-            .bottom(ViewModel.bottomAnchor)
+        projectLabel.pin(super: swipableContentView)
+            .right(Constants.contentInset)
+            .bottom(Constants.contentInset)
+            .after(deadlineLabel, be: .greater, -Constants.spacer)
             .activate
                 
         // Prevent expectedTimeLabel from shrinking
@@ -128,17 +129,65 @@ class TaskCellView: UITableViewCell {
             .setContentCompressionResistancePriority(.required, for: .horizontal)
     }
     
+    private func configureCompletionDeletionViews() {
+        completionView.pin(super: swipableContentView).all().activate
+        makeImageView(with: Constants.checkmarkImage)
+            .pin(super: completionView)
+            .height(Constants.swipeViewImageHeight)
+            .left(Constants.imageSideOffset)
+            .vCenter()
+            .activate
+        
+        deletionView.pin(super: swipableContentView).all().activate
+        makeImageView(with: Constants.trashImage)
+            .pin(super: deletionView)
+            .height(Constants.swipeViewImageHeight)
+            .right(Constants.imageSideOffset)
+            .vCenter()
+            .activate
+    }
+    
     // MARK: - Private Methods
+    
+    private func configureFromViewModel() {
+        guard let viewModel = viewModel else { return }
+        
+        titleLabel.text = viewModel.title
+        commentLabel.text = viewModel.comment
+        expectedTimeLabel.text = viewModel.estimatedTime
+        
+        projectLabel.text = viewModel.project
+        projectLabel.isHidden = viewModel.style == .noProject
+        
+        deadlineLabel.text = viewModel.deadline
+        deadlineLabel.isHidden = viewModel.style == .noDeadline
+    }
 
-    private func makeLabel(font: UIFont) -> UILabel {
+    private static func makeLabel(font: UIFont) -> UILabel {
         let label = UILabel()
         label.font = font
         
         label.adjustsFontForContentSizeCategory = true
-
-        backgroundView?.addSubview(label)
         return label
     }
+    
+    private func makeImageView(with image: UIImage) -> UIImageView {
+        let imageView = UIImageView(image: image)
+        imageView.contentMode = .scaleAspectFill
+        imageView.tintColor = .white
+        return imageView
+    }
+    
+    override func swipeChanged(offset: CGFloat) {
+        if offset <= -1 {
+            viewModel?.complete()
+        }
+        
+        if offset >= 1 {
+            viewModel?.delete()
+        }
+        
+        deletionView.alpha = offset * 7
+        completionView.alpha = -offset * 7
+    }
 }
-
-

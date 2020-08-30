@@ -25,22 +25,26 @@ class ProjectPickerViewController: BottomExpandingViewController {
     
     weak var delegate: ProjectPickerDelegate?
     
-    var viewModel: ProjectsViewModel
-    let tableViewModel: ProjectsTableViewModel
+    private let viewModel: ProjectsViewModel
+    private let tableViewModel: ProjectsTableViewModel
+    
+    private let style: Style
     
     // MARK: - Subviews
     
-    let projectsTableView: ProjectsTableView
+    private let projectsTableView: ProjectsTableView
     
-    let addTextView: AddTextView
+    private let addTextView: AddTextView
     
     // MARK: - Initializers
     
-    init(_ viewModel: ProjectsViewModel) {
+    init(_ viewModel: ProjectsViewModel, style: Style) {
         self.viewModel = viewModel
         tableViewModel = viewModel.tableViewModel(withStyle: .onlyUserDefined)
         projectsTableView = .init(tableViewModel)
         addTextView = .init(maxTextLength: UInt(viewModel.projectNameLengthRange.max()!))
+        
+        self.style = style
         
         super.init()
         
@@ -62,14 +66,14 @@ class ProjectPickerViewController: BottomExpandingViewController {
         projectsTableView.delegate = self
         
         configureSubviews()
+        if style == .add { setupKeyboardNotifications() }
     }
     
     override func viewWillLayoutSubviews() {
-        contentHeight =
-            addTextView.frame.height
-            + projectsTableView.intrinsicContentSize.height
-            + Constants.spacer
-            + Constants.contentInset * 2
+        contentHeight = addTextView.frame.height + Constants.contentInset * 2
+            + (style == .add ? 0
+            : projectsTableView.intrinsicContentSize.height
+            + Constants.spacer)
     }
     
     // MARK: - View Configuration
@@ -99,6 +103,11 @@ class ProjectPickerViewController: BottomExpandingViewController {
             .withAppend(Constants.contentInset * 2,
                         Constants.spacer)
             .reduce(0, +)
+    }
+    
+    enum Style {
+        case add
+        case pick
     }
 }
 

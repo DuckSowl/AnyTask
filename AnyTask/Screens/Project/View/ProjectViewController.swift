@@ -33,6 +33,18 @@ class ProjectViewController: UIViewController {
     
     let topBarView: ProjectTopBarView
     
+    let noTasksLabel: UILabel = {
+        let noTasksLabel = UILabel()
+        noTasksLabel.text = "No Tasks"
+        noTasksLabel.alpha = 0
+        
+        UIView.animate(withDuration: 0.6) {
+            noTasksLabel.alpha = 1
+        }
+        
+        return noTasksLabel
+    }()
+    
     // MARK: - Initializers
     
     init(_ viewModel: ProjectViewModel, bottomContentInset: CGFloat) {
@@ -79,6 +91,7 @@ class ProjectViewController: UIViewController {
     private func configureConstraints() {
         tableView.pin(super: view).all().activate
         topBarView.pin(super: view).top().sides().activate
+        noTasksLabel.pin(super: view).center().activate
     }
     
     func reloadData() {
@@ -114,7 +127,13 @@ extension ProjectViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return section == 1 ? viewModel.tasks.count : 0
+        guard section == 1 else { return 0 }
+        
+        UIView.animate(withDuration: 0.6) {
+            self.noTasksLabel.isHidden = self.viewModel.tasks.count != 0
+        }
+        
+        return viewModel.tasks.count
     }
     
     func tableView(_ tableView: UITableView,
@@ -130,6 +149,7 @@ extension ProjectViewController: UITableViewDataSource {
 
 extension ProjectViewController: ProjectTopBarDelegate {
     func back() {
+        noTasksLabel.alpha = 0
         delegate?.back()
     }
 }

@@ -176,8 +176,8 @@ final class ProjectsViewController: UIViewController {
     
     @objc private func addProject() {
         let projectPickerViewController =
-            ProjectPickerViewController(viewModel)
-        add(projectPickerViewController, frame: view.bounds)
+            ProjectPickerViewController(viewModel, style: .add)
+        add(projectPickerViewController, frame: view.superview?.bounds)
     }
     
 }

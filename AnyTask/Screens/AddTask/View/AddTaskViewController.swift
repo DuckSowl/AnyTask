@@ -103,11 +103,8 @@ class AddTaskViewController: BottomExpandingViewController {
     }
     
     override func viewDidLayoutSubviews() {
-        updateContentHeight()
-    }
-
-    override func viewWillAppear(_ animated: Bool) {
         maxHeight = view.frame.maxY - Constants.topOffset
+        updateContentHeight()
     }
             
     // MARK: - View Configuration
@@ -207,7 +204,7 @@ class AddTaskViewController: BottomExpandingViewController {
                 addCommentView()
             case .project:
                 let projectPickerViewController =
-                    ProjectPickerViewController(viewModel.projectsViewModel)
+                    ProjectPickerViewController(viewModel.projectsViewModel, style: .pick)
                 projectPickerViewController.delegate = self
                 add(projectPickerViewController, frame: view.bounds)
             case .deadline:

@@ -8,31 +8,60 @@
 
 import UIKit
 
+protocol TaskViewModelDelegate: UpdateDelegate { }
+
 struct TaskViewModel {
+    
+    // MARK: - Style
+    
+    enum Style {
+        case normal
+        case noProject
+        case noDeadline
+    }
     
     // MARK: - Properties
     
-    let task: Task
+    weak var delegate: TaskViewModelDelegate?
+    
+    // MARK: - Private Properties
+    
+    private let task: Task
+    private let taskDataManager: TaskCoreDataManager
+    
+    // MARK: - Initializers
+    
+    init(task: Task, taskDataManager: TaskCoreDataManager, style: Style = .normal) {
+        self.task = task
+        self.taskDataManager = taskDataManager
+        self.style = style
+    }
     
     // MARK: - View Model
     
+    let style: Style
     var title: String { task.title }
     var comment: String? { task.comment }
-    var deadline: String { task.deadline?.formatted ?? "No deadline" }
-    var project: String { task.project?.name ?? "Inbox" }
+    
+    var project: String {
+        style != .noProject ? (task.project?.name ?? "Inbox") : ""
+    }
+    
+    var deadline: String {
+        style != .noDeadline ? task.deadline?.formatted ?? "No deadline" : ""
+    }
+        
     var estimatedTime: String { "\(notNil: task.time.expected)" }
     
-    // TODO: - Move to font manager
+    func delete() {
+        taskDataManager.delete(task)
+        delegate?.update()
+    }
     
-    static let titleFont = UIFont.preferredFont(forTextStyle: .title3).roundedIfAvailable()
-    static let smallFont = UIFont.preferredFont(forTextStyle: .subheadline).roundedIfAvailable()
-    
-    // TODO: - Move constants to view
-    
-    static let sideAnchor = CGFloat(15)
-    static let topAnchor = CGFloat(10)
-    static let bottomAnchor = CGFloat(10)
-    static let backgroundSides = CGFloat(10)
-    static let backgroundTopButton = CGFloat(5)
-    static let cornerRadius = CGFloat(14)
+    func complete() {
+        var newTask = task
+        newTask.completed = true
+        taskDataManager.update(newTask)
+        delegate?.update()
+    }
 }

@@ -8,9 +8,13 @@
 
 import UIKit
 
+protocol ProjectViewModelDelegate: UpdateDelegate { }
+
 protocol ProjectViewModel {
     var name: String { get}
     var tasks: [TaskViewModel] { get }
+    
+    var delegate: ProjectViewModelDelegate? { get set }
     
     func addTask(title: String, comment: String?, deadline: Date?, time: Task.Time)
 }
@@ -20,6 +24,8 @@ class ProjectViewModelDataManager {
     // MARK: - Properties
     
     fileprivate let projectDataManager: ProjectCoreDataManager
+    
+    weak var delegate: ProjectViewModelDelegate?
     
     // MARK: - Initializers
     
@@ -31,7 +37,14 @@ class ProjectViewModelDataManager {
     
     fileprivate func tasks(for project: Project?) -> [TaskViewModel] {
         projectDataManager.taskDataManager
-            .getAll(for: project).map { TaskViewModel(task: $0) }
+            .getAll(for: project).compactMap {
+                guard !$0.completed else { return nil }
+                var taskViewModel = TaskViewModel(task: $0,
+                                                  taskDataManager: projectDataManager.taskDataManager,
+                                                  style: .noProject)
+                taskViewModel.delegate = self
+                return taskViewModel
+        }
     }
     
     fileprivate func addTask(title: String, comment: String?,
@@ -100,20 +113,34 @@ final class PermanentProjectViewModel: ProjectViewModelDataManager, ProjectViewM
     
     var name: String { kind.rawValue }
     var tasks: [TaskViewModel] {
+        var tasks: [TaskViewModel]
         switch kind {
             case .today:
-                return projectDataManager.taskDataManager.getAll().filter {
+                tasks = projectDataManager.taskDataManager.getAll().filter {
                     $0.deadline != nil ? $0.deadline! < Date().addingTimeInterval(.init(10000)) : false
-                }.map { TaskViewModel(task: $0) }
+                }.compactMap {
+                    guard !$0.completed else { return nil }
+                    return .init(task: $0,
+                                 taskDataManager: projectDataManager.taskDataManager,
+                                 style: .noDeadline)
+                }
             case .all:
-                return projectDataManager.taskDataManager.getAll().map {
-                    TaskViewModel(task: $0)
-            }
+                tasks = projectDataManager.taskDataManager.getAll().compactMap {
+                    guard !$0.completed else { return nil }
+                    return .init(task: $0,
+                                 taskDataManager: projectDataManager.taskDataManager)
+                }
             case .upcoming:
                 return []
             case .noProject:
-                return super.tasks(for: nil)
-        }        
+                tasks = super.tasks(for: nil)
+        }
+        
+        return tasks.map {
+            var task = $0
+            task.delegate = self
+            return task
+        }
     }
     
     func addTask(title: String, comment: String?,
@@ -124,5 +151,13 @@ final class PermanentProjectViewModel: ProjectViewModelDataManager, ProjectViewM
     
     static func all(projectDataManager: ProjectCoreDataManager) -> [PermanentProjectViewModel] {
         Kind.allCases.map { .init($0, projectDataManager: projectDataManager) }
+    }
+}
+
+// MARK: - TaskViewModelDelegate
+
+extension ProjectViewModelDataManager: TaskViewModelDelegate {
+    func update() {
+        delegate?.update()
     }
 }
