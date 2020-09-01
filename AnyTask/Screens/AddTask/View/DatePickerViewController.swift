@@ -1,5 +1,5 @@
 //
-//  DeadlinePickerViewController.swift
+//  DatePickerViewController.swift
 //  AnyTask
 //
 //  Created by Anton Tolstov on 20.08.2020.
@@ -37,10 +37,7 @@ class DatePickerViewController: BottomExpandingViewController {
     override init() {
         super.init()
         
-        // TODO: Rework to Color manager
-        if #available(iOS 13.0, *) {
-            contentView.backgroundColor = .systemGray6
-        }
+        contentView.backgroundColor = Color.gray
     }
     
     required init?(coder: NSCoder) {
@@ -71,8 +68,7 @@ class DatePickerViewController: BottomExpandingViewController {
         datePickerView.minimumDate = Date()
                 
         let button = Button.with(type: .text("Add Time"))
-        // TODO: Rework to Color manager
-        button.backgroundColor = .lightGray
+        button.backgroundColor = Color.alwaysDark
         button.addTarget(self, action: #selector(selectDate),
                          for: .touchUpInside)
         

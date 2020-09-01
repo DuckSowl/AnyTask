@@ -56,11 +56,11 @@ class TaskCellView: SwipeableTableViewCell {
     private let expectedTimeLabel = makeLabel(font: Constants.smallFont)
     
     private let deletionView = UIView()
-        .with(backgroundColor: .red)
+        .with(backgroundColor: Color.red)
         .with(cornerRadius: Constants.cornerRadius)
     
     private let completionView = UIView()
-        .with(backgroundColor: 0x2B9E72.color)
+        .with(backgroundColor: Color.green)
         .with(cornerRadius: Constants.cornerRadius)
     
     // MARK: - Initializers
@@ -86,11 +86,8 @@ class TaskCellView: SwipeableTableViewCell {
     }
     
     private func configureBackgroundView() {
-        // TODO: Rework to Color manager
-        if #available(iOS 13.0, *) {
-            swipableContentView.backgroundColor = UIColor.systemGray5
-        }
-        
+        backgroundColor = Color.clear
+        swipableContentView.backgroundColor = Color.gray
         swipableContentView.set(cornerRadius: Constants.cornerRadius)
     }
     
@@ -172,9 +169,9 @@ class TaskCellView: SwipeableTableViewCell {
     }
     
     private func makeImageView(with image: UIImage) -> UIImageView {
-        let imageView = UIImageView(image: image)
+        let imageView = UIImageView(image: image.template)
         imageView.contentMode = .scaleAspectFill
-        imageView.tintColor = .white
+        imageView.tintColor = Color.light
         return imageView
     }
     

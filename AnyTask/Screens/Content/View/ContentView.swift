@@ -58,7 +58,7 @@ class ContentView: UIViewController {
     
     override func loadView() {
         view = UIView()
-        view.backgroundColor = .white
+        view.backgroundColor = Color.light
         
         projectsViewController.delegate = self
         insertProjectsView()

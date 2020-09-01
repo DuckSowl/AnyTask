@@ -69,8 +69,7 @@ class AddTaskViewController: BottomExpandingViewController {
         collectionView.register(ItemCollectionViewCell.self,
                                 forCellWithReuseIdentifier: Constants.cellId)
         
-        // TODO: Rework to Color manager
-        collectionView.backgroundColor = .clear
+        collectionView.backgroundColor = Color.clear
         collectionView.alwaysBounceHorizontal = true
         collectionView.showsHorizontalScrollIndicator = false
         
@@ -148,8 +147,7 @@ class AddTaskViewController: BottomExpandingViewController {
     private static func makeTextView() -> UITextView {
         let textView = UITextView()
         
-        // TODO: Rework to Color manager
-        textView.backgroundColor = .white
+        textView.backgroundColor = Color.light
         textView.set(cornerRadius: Constants.cornerRadius)
         
         textView.adjustsFontForContentSizeCategory = true

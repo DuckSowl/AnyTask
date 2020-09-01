@@ -34,7 +34,7 @@ enum Button {
     
     private static func makeButton() -> UIButton {
         let button = QuaterCornerButton()
-        button.tintColor = .white
+        button.tintColor = Color.white
         
         button.imageView?.pin.aspectRatio(1).activate
         
@@ -56,17 +56,17 @@ enum Button {
     }
     
     private static var plusButton: UIButton {
-        makeSquareButton(image: Constants.plusImage.template, color: .red)
+        makeSquareButton(image: Constants.plusImage.template, color: Color.red)
     }
     
     private static var pomodoroButton: UIButton {
-        makeSquareButton(image: Constants.pomodoroImage.template, color: .green)
+        makeSquareButton(image: Constants.pomodoroImage.template, color: Color.alwaysDark)
     }
     
     private static func button(with text: String) -> UIButton {
         let button = makeButton()
         button.setTitle(text, for: .normal)
-        button.setTitleColor(.gray, for: . highlighted)
+        button.setTitleColor(Color.gray, for: . highlighted)
         return button
     }
     

@@ -86,19 +86,15 @@ final class ProjectsViewController: UIViewController {
     
     private func configureSubviews() {
         projectsTableView.delegate = self
-        projectsTableView.backgroundColor = .clear
+        projectsTableView.backgroundColor = Color.clear
         projectsTableView.showsVerticalScrollIndicator = false
         
-        addProjectButton.backgroundColor = .red
+        addProjectButton.backgroundColor = Color.red
         addProjectButton.addTarget(self, action: #selector(addProject),
                                    for: .touchUpInside)
         
         backgroundViews.forEach {
-            // TODO: Rework to Color manager
-            if #available(iOS 13.0, *) {
-                $0.backgroundColor = .systemGray6
-            }
-            
+            $0.backgroundColor = Color.gray
             $0.set(cornerRadius: Constants.cornerRadius)
             view.addSubview($0)
         }

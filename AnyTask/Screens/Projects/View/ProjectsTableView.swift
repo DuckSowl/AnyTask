@@ -88,7 +88,7 @@ extension ProjectsTableView: UITableViewDataSource {
                                                  for: indexPath)
 
         cell.textLabel?.text = project(at: indexPath).name
-        cell.backgroundColor = .clear
+        cell.backgroundColor = Color.clear
         cell.set(cornerRadius: viewModel.style == .all ? 10 : 0)
         cell.clipsToBounds = true
         

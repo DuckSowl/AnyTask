@@ -16,7 +16,7 @@ struct DayViewModel {
     }
     
     let cornerRadius = CGFloat(18)
-    let backgroundColor: UIColor = .darkGray
+    let backgroundColor = Color.gray
     
     let widthAnchorConstant = CGFloat(36)
     let stackInsets = UIEdgeInsets(top: 12, left: 10, bottom: 12, right: 10)

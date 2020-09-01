@@ -9,17 +9,28 @@
 import UIKit
 
 enum Color {
-    static let background = UIColor(light: 0xF5F5F5.color,
-                                     dark: 0x252525.color)
     
-    static let light = UIColor(light: 0xFFFFFF.color,
-                                dark: 0x111111.color)
+    static let white = 0xF5F5FA.color
     
-    static let dark = UIColor(light: 0x111111.color,
-                               dark: 0xFFFFFF.color)
+    static let light = UIColor(light: white,
+                                dark: 0x000000.color)
+        
+    static let gray = UIColor(light: 0xE2E2E9.color,
+                               dark: 0x1C1C1E.color)
+        
+    static let darkGray = UIColor(light: 0xD3D3DC.color,
+                                   dark: 0x2C2C2E.color)
     
-    static let gray = UIColor(light: 0x3E9483.color,
-                               dark: 0x404040.color)
+    static let alwaysDark = 0x3A3A3C.color
+    
+    static let dark = UIColor(light: alwaysDark,
+                               dark: white)
+    
+    static let red = UIColor(light: 0xD60020.color,
+                              dark: 0xA30018.color)
+    
+    static let green = UIColor(light: 0x208175.color,
+                                dark: 0x208175.color)
     
     static let shade = 0x000000.color(alpha: 0.2)
     

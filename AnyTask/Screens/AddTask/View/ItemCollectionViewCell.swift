@@ -27,14 +27,12 @@ class ItemCollectionViewCell: UICollectionViewCell {
         didSet {
             guard let viewModel = viewModel else { return }
             
-            imageView.image = viewModel.image
+            imageView.image = viewModel.image?.template
+            imageView.tintColor = Color.dark
             textView.text = viewModel.comment
             
-            // TODO: Rework to Color manager
-            if #available(iOS 13.0, *) {
-                contentView.backgroundColor = viewModel.chosen
-                    ? .systemGray5 : .clear
-            }
+            contentView.backgroundColor = viewModel.chosen ? Color.darkGray
+                                                           : Color.clear
             
             configureConstraints(chosen: viewModel.chosen)
         }

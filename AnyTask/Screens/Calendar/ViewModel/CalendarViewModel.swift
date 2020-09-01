@@ -9,5 +9,5 @@
 import UIKit
 
 struct CalendarViewModel {
-    let backgroundColor: UIColor = .gray
+    let backgroundColor = Color.gray
 }

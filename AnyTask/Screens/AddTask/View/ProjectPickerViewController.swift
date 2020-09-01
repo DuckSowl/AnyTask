@@ -48,10 +48,7 @@ class ProjectPickerViewController: BottomExpandingViewController {
         
         super.init()
         
-        // Rework to Color manager
-        if #available(iOS 13.0, *) {
-            contentView.backgroundColor = .systemGray5
-        }
+        contentView.backgroundColor = Color.gray
     }
     
     required init?(coder: NSCoder) {

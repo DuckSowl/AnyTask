@@ -59,10 +59,7 @@ class TopBarView: UIView {
         set(cornerRadius: Constants.cornerRadius, for: [.bottom])
         clipsToBounds = true
         
-        // TODO: Rework to Color manager
-        if #available(iOS 13.0, *) {
-            backgroundColor = .systemGray5
-        }
+        backgroundColor = Color.darkGray
         
         configureConstraints()
     }
@@ -87,7 +84,8 @@ class TopBarView: UIView {
     
     static func button(with image: UIImage?) -> UIButton {
         let button = UIButton()
-        button.setImage(image?.original, for: .normal)
+        button.setImage(image?.template, for: .normal)
+        button.tintColor = Color.dark
         button.imageView?.contentMode = .scaleAspectFit
         return button
     }

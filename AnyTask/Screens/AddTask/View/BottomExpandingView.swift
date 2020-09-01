@@ -34,10 +34,8 @@ class BottomExpandingViewController: UIViewController {
     let contentView: UIView = {
         let contentView = UIView()
         
-        // TODO: Rework to Color manager
-        if #available(iOS 13.0, *) {
-            contentView.backgroundColor = UIColor.systemGray6
-        }
+        contentView.backgroundColor = Color.gray
+
         contentView.clipsToBounds = true
         contentView.set(cornerRadius: Constants.cornerRadius, for: .top)
 
@@ -60,8 +58,7 @@ class BottomExpandingViewController: UIViewController {
     // MARK: - View Configuration
     
     private func configureView() {
-        // TODO: Rework to Color manager
-        view.backgroundColor = UIColor.black.withAlphaComponent(0.2)
+        view.backgroundColor = Color.shade
         
         let tap = OnlySelfTapGestureRecognizer(target: self,
                                                action: #selector(remove))

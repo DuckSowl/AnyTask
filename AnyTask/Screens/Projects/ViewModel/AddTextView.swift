@@ -62,8 +62,7 @@ class AddTextView: UIView {
     // MARK: - View Configuration
     
     private func configureSubviews() {
-        // TODO: Rework to Color manager
-        textField.backgroundColor = . white
+        textField.backgroundColor = Color.light
         textField.delegate = self
         
         addTextButton.addTarget(self, action: #selector(addText), for: .touchUpInside)
