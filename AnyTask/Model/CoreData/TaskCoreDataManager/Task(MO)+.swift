@@ -18,7 +18,6 @@ extension Task: ManagedObjectInitializable {
         title = taskMO.title
         comment = taskMO.comment
         deadline = taskMO.deadline
-        // TODO: Fix force unwrap
         if let projectMO = taskMO.project {
             project = Project(managedObject: projectMO)
         }

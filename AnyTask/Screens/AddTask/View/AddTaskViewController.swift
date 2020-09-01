@@ -46,10 +46,7 @@ class AddTaskViewController: BottomExpandingViewController {
         let titleTextView = makeTextView()
         titleTextView.isScrollEnabled = false
         
-        // TODO: Rework to Font manager
-        titleTextView.font = UIFont
-            .preferredFont(forTextStyle: .title3)
-            .roundedIfAvailable()
+        titleTextView.font = Font.subtitle
         
         titleTextView.becomeFirstResponder()
         return titleTextView
@@ -169,10 +166,7 @@ class AddTaskViewController: BottomExpandingViewController {
     private func addCommentView() {
         commentTextView = Self.makeTextView()
         
-        // TODO: Rework to Font manager
-        commentTextView?.font = UIFont
-            .preferredFont(forTextStyle: .subheadline)
-            .roundedIfAvailable()
+        commentTextView?.font = Font.body
         
         commentTextView?.delegate = self
         
@@ -186,8 +180,7 @@ class AddTaskViewController: BottomExpandingViewController {
             commentTextView?.pin.below(titleTextView, Constants.spacer).constraints.first
         
         commentTextView?.pin(super: contentView)
-            // TODO: Fix force unwrap in LittlePin
-            .add(titleBottomConstraint!)
+            .add(titleBottomConstraint)
             .above(collectionView, Constants.spacer)
             .sides(Constants.contentInset)
             .activate

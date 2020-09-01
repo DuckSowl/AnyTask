@@ -71,11 +71,6 @@ extension UIView {
         // Time lost 0.01779345s
     }
     
-    // TODO: - Move to Little Pin
-    func unpin() -> Pin {
-        self.pin.unpin()
-    }
-    
     // MARK: - Alerts
 
     #if DEBUG

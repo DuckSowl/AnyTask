@@ -22,23 +22,13 @@ final class DayView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    private func createLabel(text: String, ofSize size: CGFloat) -> UILabel {
-        let label = UILabel()
-        label.textAlignment = .center
-        label.font = .boldSystemFont(ofSize: size)
-        label.text = text
-        return label
-    }
-    
     private func setupView() {
         backgroundColor = viewModel.backgroundColor
         set(cornerRadius: viewModel.cornerRadius)
         
-        let weekSymbolLabel = createLabel(text: viewModel.weekSymbol,
-                                          ofSize: viewModel.weekSymbolFontSize)
+        let weekSymbolLabel = UILabel(text: viewModel.weekSymbol, font: Font.body)
+        let dayLabel =  UILabel(text: viewModel.dateString, font: Font.body)
         
-        let dayLabel = createLabel(text: viewModel.dateString,
-                                   ofSize: viewModel.dateStringFontSize)
         dayLabel.adjustsFontSizeToFitWidth = true
         
         let stack = UIStackView(arrangedSubviews: [weekSymbolLabel, dayLabel])

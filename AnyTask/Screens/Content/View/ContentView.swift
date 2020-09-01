@@ -63,29 +63,26 @@ class ContentView: UIViewController {
         projectsViewController.delegate = self
         insertProjectsView()
         
-        // TODO: Remove code repetitions
-        let addButton = Button.with(type: .plus)
-        addButton.addTarget(self, action: #selector(addTask),
-                            for: .touchUpInside)
+        add(button: Button.with(type: .plus),
+            action: #selector(addTask),
+            pin: { $0.size(60).bottom(16).right(16) })
         
-        addButton.pin(super: view)
-            .size(60).bottom(16).right(16)
-            .activate
-        
-        let pomodoroButton = Button.with(type: .pomodoro)
-        pomodoroButton.addTarget(self, action: #selector(pomodoroAction),
-                            for: .touchUpInside)
-        
-        pomodoroButton.pin(super: view)
-            .size(60).bottom(16).left(16)
-            .activate
+        add(button: Button.with(type: .pomodoro),
+            action: #selector(pomodoroAction),
+            pin: { $0.size(60).bottom(16).left(16) })
     }
+
     
     // MARK: - View Configuration
     
     private func insertProjectsView() {
         self.insert(projectsViewController, at: 0)
         projectsView.pin.allSafe().activate
+    }
+    
+    private func add(button: UIButton, action: Selector, pin: (Pin)->(Pin)) {
+        button.addTarget(self, action: action, for: .touchUpInside)
+        pin(button.pin(super: view)).activate
     }
     
     // MARK: - Actions

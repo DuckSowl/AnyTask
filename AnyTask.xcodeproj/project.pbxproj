@@ -62,6 +62,8 @@
 		3A95C34724BC8B69003A52B9 /* DataManageable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A95C34624BC8B69003A52B9 /* DataManageable.swift */; };
 		3A9B9D3724C1DDB10092DC25 /* UIEdgeInsets+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9B9D3624C1DDB10092DC25 /* UIEdgeInsets+.swift */; };
 		3AA7D83D24FE4070003713E6 /* SwipeableTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AA7D83C24FE4070003713E6 /* SwipeableTableViewCell.swift */; };
+		3AA7D84124FE83AF003713E6 /* Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AA7D84024FE83AF003713E6 /* Font.swift */; };
+		3AA7D84324FE8568003713E6 /* UILabel+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AA7D84224FE8568003713E6 /* UILabel+.swift */; };
 		3AAB33E024D2972A00586F99 /* TaskViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AAB33C324D2972A00586F99 /* TaskViewModel.swift */; };
 		3AAB33E124D2972A00586F99 /* TaskCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AAB33C524D2972A00586F99 /* TaskCellView.swift */; };
 		3AAB33E224D2972A00586F99 /* ProjectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AAB33C624D2972A00586F99 /* ProjectViewController.swift */; };
@@ -142,6 +144,8 @@
 		3A95C34624BC8B69003A52B9 /* DataManageable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManageable.swift; sourceTree = "<group>"; };
 		3A9B9D3624C1DDB10092DC25 /* UIEdgeInsets+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIEdgeInsets+.swift"; sourceTree = "<group>"; };
 		3AA7D83C24FE4070003713E6 /* SwipeableTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwipeableTableViewCell.swift; sourceTree = "<group>"; };
+		3AA7D84024FE83AF003713E6 /* Font.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Font.swift; sourceTree = SOURCE_ROOT; };
+		3AA7D84224FE8568003713E6 /* UILabel+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+.swift"; sourceTree = SOURCE_ROOT; };
 		3AAB33C324D2972A00586F99 /* TaskViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskViewModel.swift; sourceTree = "<group>"; };
 		3AAB33C524D2972A00586F99 /* TaskCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskCellView.swift; sourceTree = "<group>"; };
 		3AAB33C624D2972A00586F99 /* ProjectViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectViewController.swift; sourceTree = "<group>"; };
@@ -204,6 +208,7 @@
 		3A1B1BFC24AB66FA004D024C /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				3AA7D84024FE83AF003713E6 /* Font.swift */,
 				3A7BF96224BE42EA00558675 /* Tab.swift */,
 				3A742AF024D0645C00C37684 /* Color.swift */,
 				3A6EF26F24EC298E0088BD75 /* AddTaskCollectionItemModel.swift */,
@@ -516,6 +521,7 @@
 		3AAB33F524D2981E00586F99 /* UIKit */ = {
 			isa = PBXGroup;
 			children = (
+				3AA7D84224FE8568003713E6 /* UILabel+.swift */,
 				3A7A89DC24E197CC009C7D3D /* UIButton+.swift */,
 				3AAB33F624D2984A00586F99 /* UIColor+.swift */,
 				3A9B9D3624C1DDB10092DC25 /* UIEdgeInsets+.swift */,
@@ -660,6 +666,7 @@
 				3A7A89E724E2E906009C7D3D /* ItemCollectionViewCell.swift in Sources */,
 				3A742AEF24D063D500C37684 /* Int+.swift in Sources */,
 				3A09D73E24F3E79D0029A5E0 /* Delegate.swift in Sources */,
+				3AA7D84124FE83AF003713E6 /* Font.swift in Sources */,
 				3AAB33E424D2972A00586F99 /* CalendarViewModel.swift in Sources */,
 				3A7A898224DBD41D009C7D3D /* Task(MO)+.swift in Sources */,
 				3A7A899824DBE318009C7D3D /* TopBarView.swift in Sources */,
@@ -709,6 +716,7 @@
 				3A7A89BB24E1226A009C7D3D /* BackDelegate.swift in Sources */,
 				3A6EF27424EC2A2F0088BD75 /* OnlySelfTapGestureRecognizer.swift in Sources */,
 				3AAB33F324D2977500586F99 /* Array+.swift in Sources */,
+				3AA7D84324FE8568003713E6 /* UILabel+.swift in Sources */,
 				3AAB33F724D2984A00586F99 /* UIColor+.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

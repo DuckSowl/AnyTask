@@ -37,7 +37,7 @@ final class ProjectTopBarView: TopBarView {
     
     let projectLabel: UILabel = {
         let projectLabel = UILabel()
-        projectLabel.font = .preferredFont(forTextStyle: .title1)
+        projectLabel.font = Font.title
         return projectLabel
     }()
 

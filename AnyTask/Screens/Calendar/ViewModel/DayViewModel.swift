@@ -21,9 +21,6 @@ struct DayViewModel {
     let widthAnchorConstant = CGFloat(36)
     let stackInsets = UIEdgeInsets(top: 12, left: 10, bottom: 12, right: 10)
     
-    let weekSymbolFontSize = CGFloat(15)
-    let dateStringFontSize = CGFloat(12)
-    
     var dateString: String { "\(Calendar.current.component(.day, from: date))" }
     var weekSymbol: String {
         let dateFormetter = DateFormatter()

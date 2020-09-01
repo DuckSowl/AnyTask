@@ -66,7 +66,7 @@ class ItemCollectionViewCell: UICollectionViewCell {
     }
         
     private func configureConstraints(chosen: Bool) {
-        [imageView, textView].forEach { $0.unpin().activate }
+        [imageView, textView].forEach { $0.unpin.activate }
         
         if chosen {
             imageView.pin(super: contentView)

@@ -23,10 +23,6 @@ class TaskCellView: SwipeableTableViewCell {
         static let spacer: CGFloat = 8
         static let cellInsets = UIEdgeInsets(top: 4, left: 8, bottom: 4, right: 8)
         static let contentInset: CGFloat = 12
-        
-        // TODO: - Move to font manager
-        static let titleFont = UIFont.preferredFont(forTextStyle: .title3).roundedIfAvailable()
-        static let smallFont = UIFont.preferredFont(forTextStyle: .subheadline).roundedIfAvailable()
     }
     
     // MARK: - Properties
@@ -38,22 +34,22 @@ class TaskCellView: SwipeableTableViewCell {
     // MARK: - Subviews
     
     private let titleLabel: UILabel = {
-        let titleLabel = makeLabel(font: Constants.titleFont)
+        let titleLabel = makeLabel(font: Font.subtitle)
         titleLabel.numberOfLines = 0
         return titleLabel
     }()
     
-    private let projectLabel = makeLabel(font: Constants.smallFont)
+    private let projectLabel = makeLabel(font: Font.body)
     
-    private let deadlineLabel = makeLabel(font: Constants.smallFont)
+    private let deadlineLabel = makeLabel(font: Font.body)
     
     private let commentLabel: UILabel = {
-        let commentLabel = makeLabel(font: Constants.smallFont)
+        let commentLabel = makeLabel(font: Font.body)
         commentLabel.numberOfLines = 0
         return commentLabel
     }()
     
-    private let expectedTimeLabel = makeLabel(font: Constants.smallFont)
+    private let expectedTimeLabel = makeLabel(font: Font.body)
     
     private let deletionView = UIView()
         .with(backgroundColor: Color.red)
