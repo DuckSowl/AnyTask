@@ -51,6 +51,25 @@ extension UIView {
         self as! UIView
     }
     
+    // MARK: - Conrner Radius Cases
+    
+    func set(cornerRadius: CornerRadius.Cases, for corners: [Corner] = [.all]) {
+        set(cornerRadius: cornerRadius.rawValue, for: corners)
+    }
+    
+    func set(cornerRadius: CornerRadius.Cases, for corners: Corner...) {
+        set(cornerRadius: cornerRadius.rawValue, for: corners)
+    }
+    
+    func with(cornerRadius: CornerRadius.Cases, for corners: Corner...) -> UIView {
+        with(cornerRadius: cornerRadius.rawValue, for: corners)
+    }
+    
+    func with(cornerRadius: CornerRadius.Cases, for corners: [Corner] = [.all]) -> UIView {
+        set(cornerRadius: cornerRadius.rawValue, for: corners)
+        return self
+    }
+    
     // MARK: - Constraints
     
     var sizeThatFitsSelf: CGSize {
@@ -75,8 +94,8 @@ extension UIView {
 
     #if DEBUG
     
-    func notImplementedAlert() {
-        rootVC?.notImplementedAlert()
+    func showNotImplementedAlert() {
+        rootVC?.showNotImplementedAlert()
     }
     
     func showAlert(title: String, message: String?) {
