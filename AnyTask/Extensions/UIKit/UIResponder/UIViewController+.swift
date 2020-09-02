@@ -32,7 +32,7 @@ extension UIViewController {
     
     #if DEBUG
     
-    func notImplementedAlert() {
+    func showNotImplementedAlert() {
         showAlert(title: "Not implemented!", message: nil)
     }
     
