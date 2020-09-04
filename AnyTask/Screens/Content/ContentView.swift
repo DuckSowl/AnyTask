@@ -163,6 +163,10 @@ extension ContentView: AddTaskDelegate {
 }
 
 extension ContentView: ProjectViewModelDelegate {
+    func edit(taskVM: TaskViewModel) {
+        showNotImplementedAlert()
+    }
+    
     func update() {
         projectViewController?.reloadData()
     }

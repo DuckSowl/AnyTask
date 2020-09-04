@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TaskCellView: SwipeableTableViewCell {
+class TaskCellView: SwipeableCellView {
     
     // MARK: - Constants
     
@@ -72,6 +72,7 @@ class TaskCellView: SwipeableTableViewCell {
     private func setupView() {
         selectionStyle = .none
         
+        configureCellTap()
         configureBackgroundView()
         configureContentConstraints()
         configureCompletionDeletionViews()
@@ -81,6 +82,12 @@ class TaskCellView: SwipeableTableViewCell {
         backgroundColor = Color.clear
         swipableContentView.backgroundColor = Color.gray
         swipableContentView.set(cornerRadius: .medium)
+    }
+    
+    private func configureCellTap() {
+        let tapGesture = UITapGestureRecognizer(target: self,
+                                                action: #selector(tap))
+        swipableContentView.addGestureRecognizer(tapGesture)
     }
     
     private func configureContentConstraints() {
@@ -179,4 +186,24 @@ class TaskCellView: SwipeableTableViewCell {
         deletionView.alpha = offset * 7
         completionView.alpha = -offset * 7
     }
+    
+    // MARK: - Actions
+    
+    @objc private func tap() {
+        guard let viewModel = viewModel,
+            let superview = superview?.superview?.superview else { return }
+        
+        let taskDetailsView = TaskDetailsView(viewModel)
+        taskDetailsView.pin(super: superview).all().activate
+
+        taskDetailsView.contentView.frame =
+            swipableContentView.convert(swipableContentView.bounds,
+                                        to: taskDetailsView)
+        taskDetailsView.layoutIfNeeded()
+        UIView.animate(withDuration: 0.4) {
+            taskDetailsView.configureContentConstraints()
+            taskDetailsView.layoutIfNeeded()
+        }
+    }
 }
+

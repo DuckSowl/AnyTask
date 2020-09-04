@@ -25,6 +25,8 @@ enum Button {
                 return plusButton
             case .pomodoro:
                 return pomodoroButton
+            case .image(let image):
+                return button(with: image)
             case .text(let text):
                 return button(with: text)
         }
@@ -66,8 +68,13 @@ enum Button {
     private static func button(with text: String) -> UIButton {
         let button = makeButton()
         button.setTitle(text, for: .normal)
-        button.setTitleColor(Color.gray, for: . highlighted)
+        button.setTitleColor(Color.contrast, for: . highlighted)
+        button.backgroundColor = Color.alwaysDark
         return button
+    }
+    
+    private static func button(with image: UIImage) -> UIButton {
+        makeSquareButton(image: image.template, color: Color.alwaysDark)
     }
     
     // MARK: - Enums
@@ -75,6 +82,7 @@ enum Button {
     enum ButtonType {
         case plus
         case text(String)
+        case image(UIImage)
         case pomodoro
     }
 }

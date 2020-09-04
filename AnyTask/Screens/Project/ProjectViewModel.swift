@@ -8,7 +8,9 @@
 
 import UIKit
 
-protocol ProjectViewModelDelegate: UpdateDelegate { }
+protocol ProjectViewModelDelegate: UpdateDelegate {
+    func edit(taskVM: TaskViewModel)
+}
 
 protocol ProjectViewModel {
     var name: String { get}
@@ -159,5 +161,9 @@ final class PermanentProjectViewModel: ProjectViewModelDataManager, ProjectViewM
 extension ProjectViewModelDataManager: TaskViewModelDelegate {
     func update() {
         delegate?.update()
+    }
+    
+    func edit(taskVM: TaskViewModel) {
+        delegate?.edit(taskVM: taskVM)
     }
 }

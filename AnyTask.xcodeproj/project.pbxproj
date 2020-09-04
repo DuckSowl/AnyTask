@@ -49,12 +49,13 @@
 		3AAB340C24D3056A00586F99 /* IdentifiableObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AAB340B24D3056A00586F99 /* IdentifiableObject.swift */; };
 		3AAB340E24D30E7600586F99 /* ManagedObjectInitializable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AAB340D24D30E7600586F99 /* ManagedObjectInitializable.swift */; };
 		3ABA240124E6CE790007DC87 /* UIViewController+KeyboardNotifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ABA240024E6CE790007DC87 /* UIViewController+KeyboardNotifications.swift */; };
+		3AC84B202502277200780FD3 /* Tapable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AC84B1F2502277200780FD3 /* Tapable.swift */; };
 		3AD587D124FF904000502ABC /* ProjectsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD587AC24FF904000502ABC /* ProjectsViewController.swift */; };
 		3AD587D224FF904000502ABC /* ProjectsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD587AD24FF904000502ABC /* ProjectsViewModel.swift */; };
 		3AD587D324FF904000502ABC /* ProjectsTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD587AF24FF904000502ABC /* ProjectsTableView.swift */; };
 		3AD587D424FF904000502ABC /* ProjectsTableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD587B024FF904000502ABC /* ProjectsTableViewModel.swift */; };
 		3AD587D524FF904000502ABC /* ButtonFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD587B324FF904000502ABC /* ButtonFactory.swift */; };
-		3AD587D624FF904000502ABC /* SwipeableTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD587B424FF904000502ABC /* SwipeableTableViewCell.swift */; };
+		3AD587D624FF904000502ABC /* SwipeableCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD587B424FF904000502ABC /* SwipeableCellView.swift */; };
 		3AD587D724FF904000502ABC /* AddTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD587B524FF904000502ABC /* AddTextView.swift */; };
 		3AD587D824FF904000502ABC /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD587B624FF904000502ABC /* TextField.swift */; };
 		3AD587D924FF904000502ABC /* BottomExpandingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD587B724FF904000502ABC /* BottomExpandingView.swift */; };
@@ -77,6 +78,8 @@
 		3AD587EA24FF904000502ABC /* ProjectPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD587D024FF904000502ABC /* ProjectPickerViewController.swift */; };
 		3AD587ED24FF90D800502ABC /* Date+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD587EB24FF90D700502ABC /* Date+.swift */; };
 		3AD587EE24FF90D800502ABC /* StringInterpolation+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD587EC24FF90D700502ABC /* StringInterpolation+.swift */; };
+		3AD587F124FFA92D00502ABC /* TaskDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD587F024FFA92C00502ABC /* TaskDetailsView.swift */; };
+		3AD587F324FFAC7C00502ABC /* DismissibleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD587F224FFAC7C00502ABC /* DismissibleView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -129,12 +132,13 @@
 		3AAB340B24D3056A00586F99 /* IdentifiableObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdentifiableObject.swift; sourceTree = "<group>"; };
 		3AAB340D24D30E7600586F99 /* ManagedObjectInitializable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManagedObjectInitializable.swift; sourceTree = "<group>"; };
 		3ABA240024E6CE790007DC87 /* UIViewController+KeyboardNotifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+KeyboardNotifications.swift"; sourceTree = "<group>"; };
+		3AC84B1F2502277200780FD3 /* Tapable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tapable.swift; sourceTree = "<group>"; };
 		3AD587AC24FF904000502ABC /* ProjectsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectsViewController.swift; sourceTree = "<group>"; };
 		3AD587AD24FF904000502ABC /* ProjectsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectsViewModel.swift; sourceTree = "<group>"; };
 		3AD587AF24FF904000502ABC /* ProjectsTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectsTableView.swift; sourceTree = "<group>"; };
 		3AD587B024FF904000502ABC /* ProjectsTableViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectsTableViewModel.swift; sourceTree = "<group>"; };
 		3AD587B324FF904000502ABC /* ButtonFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonFactory.swift; sourceTree = "<group>"; };
-		3AD587B424FF904000502ABC /* SwipeableTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwipeableTableViewCell.swift; sourceTree = "<group>"; };
+		3AD587B424FF904000502ABC /* SwipeableCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwipeableCellView.swift; sourceTree = "<group>"; };
 		3AD587B524FF904000502ABC /* AddTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddTextView.swift; sourceTree = "<group>"; };
 		3AD587B624FF904000502ABC /* TextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextField.swift; sourceTree = "<group>"; };
 		3AD587B724FF904000502ABC /* BottomExpandingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BottomExpandingView.swift; sourceTree = "<group>"; };
@@ -157,6 +161,8 @@
 		3AD587D024FF904000502ABC /* ProjectPickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectPickerViewController.swift; sourceTree = "<group>"; };
 		3AD587EB24FF90D700502ABC /* Date+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date+.swift"; sourceTree = "<group>"; };
 		3AD587EC24FF90D700502ABC /* StringInterpolation+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "StringInterpolation+.swift"; sourceTree = "<group>"; };
+		3AD587F024FFA92C00502ABC /* TaskDetailsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskDetailsView.swift; sourceTree = "<group>"; };
+		3AD587F224FFAC7C00502ABC /* DismissibleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DismissibleView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -392,6 +398,7 @@
 				3AD587AB24FF904000502ABC /* Projects */,
 				3AD587BF24FF904000502ABC /* Project */,
 				3AD587C824FF904000502ABC /* AddTask */,
+				3AD587EF24FFA91500502ABC /* TaskDetails */,
 				3AD587B124FF904000502ABC /* Other */,
 			);
 			name = Screens;
@@ -432,7 +439,8 @@
 				3AD587B524FF904000502ABC /* AddTextView.swift */,
 				3AD587B724FF904000502ABC /* BottomExpandingView.swift */,
 				3AD587B324FF904000502ABC /* ButtonFactory.swift */,
-				3AD587B424FF904000502ABC /* SwipeableTableViewCell.swift */,
+				3AD587F224FFAC7C00502ABC /* DismissibleView.swift */,
+				3AD587B424FF904000502ABC /* SwipeableCellView.swift */,
 				3AD587B624FF904000502ABC /* TextField.swift */,
 			);
 			path = CustomViews;
@@ -443,6 +451,7 @@
 			children = (
 				3AD587BA24FF904000502ABC /* Delegate.swift */,
 				3AD587B924FF904000502ABC /* BackDelegate.swift */,
+				3AC84B1F2502277200780FD3 /* Tapable.swift */,
 				3AD587BB24FF904000502ABC /* UpdateDelegate.swift */,
 			);
 			path = Delegates;
@@ -512,6 +521,14 @@
 				3AD587D024FF904000502ABC /* ProjectPickerViewController.swift */,
 			);
 			path = Pickers;
+			sourceTree = "<group>";
+		};
+		3AD587EF24FFA91500502ABC /* TaskDetails */ = {
+			isa = PBXGroup;
+			children = (
+				3AD587F024FFA92C00502ABC /* TaskDetailsView.swift */,
+			);
+			path = TaskDetails;
 			sourceTree = "<group>";
 		};
 		3AEEFFCA24B351A4006251C8 /* Extensions */ = {
@@ -617,6 +634,7 @@
 				3A309BBA24AA0BB1000C103B /* AppDelegate.swift in Sources */,
 				3A09D76224F6AB5A0029A5E0 /* String+.swift in Sources */,
 				3AD587E224FF904000502ABC /* ProjectViewController.swift in Sources */,
+				3AC84B202502277200780FD3 /* Tapable.swift in Sources */,
 				3AAB340C24D3056A00586F99 /* IdentifiableObject.swift in Sources */,
 				3AA7D98A24FF7B0D003713E6 /* Font.swift in Sources */,
 				3A742AEF24D063D500C37684 /* Int+.swift in Sources */,
@@ -643,13 +661,15 @@
 				3AD587E824FF904000502ABC /* AddTaskViewController.swift in Sources */,
 				3A95C34324BC8A62003A52B9 /* UUID+.swift in Sources */,
 				3AA7D98924FF7B0D003713E6 /* CornerRadius.swift in Sources */,
-				3AD587D624FF904000502ABC /* SwipeableTableViewCell.swift in Sources */,
+				3AD587D624FF904000502ABC /* SwipeableCellView.swift in Sources */,
 				3AD587EA24FF904000502ABC /* ProjectPickerViewController.swift in Sources */,
 				3AAB340724D2A94E00586F99 /* CoreDataManager.swift in Sources */,
 				3AAB340E24D30E7600586F99 /* ManagedObjectInitializable.swift in Sources */,
 				3AD587E524FF904000502ABC /* TaskItemCellView.swift in Sources */,
+				3AD587F124FFA92D00502ABC /* TaskDetailsView.swift in Sources */,
 				3A7A89DB24E1979D009C7D3D /* UIImage+.swift in Sources */,
 				3AD587E424FF904000502ABC /* ProjectTopBarView.swift in Sources */,
+				3AD587F324FFAC7C00502ABC /* DismissibleView.swift in Sources */,
 				3A9B9D3724C1DDB10092DC25 /* UIEdgeInsets+.swift in Sources */,
 				3A7A898F24DBE23B009C7D3D /* UIView+.swift in Sources */,
 				3A7BF96124BE42C900558675 /* UIFont+.swift in Sources */,

@@ -32,7 +32,11 @@ enum Color {
     static let green = UIColor(light: 0x208175.color,
                                 dark: 0x208175.color)
     
-    static let shade = 0x000000.color(alpha: 0.2)
+    static let contrast = UIColor(light: 0x555555.color,
+                                   dark: 0x777777.color)
+    
+    static let shade = UIColor(light: 0x000000.color(alpha: 0.3),
+                                dark: 0x000000.color(alpha: 0.6))
     
     static let clear = UIColor.clear
     
