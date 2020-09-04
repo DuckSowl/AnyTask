@@ -9,7 +9,7 @@
 import UIKit
 import Pin
 
-class SwipeableTableViewCell: UITableViewCell {
+class SwipeableCellView: UITableViewCell {
     
     // MARK: Subviews
     
@@ -78,7 +78,7 @@ class SwipeableTableViewCell: UITableViewCell {
 
 // MARK: - UIScrollViewDelegate
 
-extension SwipeableTableViewCell: UIScrollViewDelegate  {
+extension SwipeableCellView: UIScrollViewDelegate  {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         swipeChanged(offset: (scrollView.contentOffset.x / scrollView.frame.width) - 1.0)
     }

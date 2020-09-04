@@ -8,7 +8,9 @@
 
 import UIKit
 
-protocol TaskViewModelDelegate: UpdateDelegate { }
+protocol TaskViewModelDelegate: UpdateDelegate {
+    func edit(taskVM: TaskViewModel)
+}
 
 struct TaskViewModel {
     
@@ -63,5 +65,9 @@ struct TaskViewModel {
         newTask.completed = true
         taskDataManager.update(newTask)
         delegate?.update()
+    }
+    
+    func edit() {
+        delegate?.edit(taskVM: self)
     }
 }
