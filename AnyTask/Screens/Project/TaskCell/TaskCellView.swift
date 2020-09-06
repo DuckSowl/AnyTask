@@ -206,4 +206,3 @@ class TaskCellView: SwipeableCellView {
         }
     }
 }
-

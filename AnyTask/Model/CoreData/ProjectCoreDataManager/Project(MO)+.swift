@@ -20,4 +20,3 @@ extension Project: ManagedObjectInitializable {
 // MARK: ProjectMO Extensions
 
 extension ProjectMO: IdentifiableObject { }
-

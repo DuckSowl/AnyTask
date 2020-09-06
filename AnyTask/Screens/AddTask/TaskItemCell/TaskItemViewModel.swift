@@ -33,5 +33,3 @@ struct TaskItemViewModel {
     
     var type: TaskItem.ItemType { return model.type }
 }
-
-

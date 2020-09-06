@@ -43,6 +43,11 @@ class SwipeableCellView: UITableViewCell {
         centrateScrollView()
     }
     
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        self.centrateScrollView()
+    }
+    
     // MARK: - View configuration
     
     private func configureSubviews() {
@@ -60,10 +65,6 @@ class SwipeableCellView: UITableViewCell {
             stackView.widthAnchor.constraint(equalTo: scrollView.widthAnchor,
                                              multiplier: 3)
         ])
-        
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.001) {
-            self.centrateScrollView()
-        }
     }
     
     private func centrateScrollView() {
@@ -83,5 +84,3 @@ extension SwipeableCellView: UIScrollViewDelegate  {
         swipeChanged(offset: (scrollView.contentOffset.x / scrollView.frame.width) - 1.0)
     }
 }
-
-

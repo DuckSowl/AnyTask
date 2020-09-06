@@ -12,5 +12,3 @@ enum Layout {
     static let contentInset: CGFloat = 12
     static let spacer: CGFloat = 8
 }
-
-

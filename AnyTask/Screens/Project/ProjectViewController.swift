@@ -153,4 +153,3 @@ extension ProjectViewController: ProjectTopBarDelegate {
         delegate?.back()
     }
 }
-

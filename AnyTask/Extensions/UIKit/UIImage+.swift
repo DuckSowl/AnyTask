@@ -17,5 +17,3 @@ extension UIImage {
         self.withRenderingMode(.alwaysTemplate)
     }
 }
-
-

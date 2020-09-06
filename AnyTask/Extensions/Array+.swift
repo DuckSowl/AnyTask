@@ -38,4 +38,3 @@ extension Array where Element: Numeric {
         self.reduce(0, +)
     }
 }
-

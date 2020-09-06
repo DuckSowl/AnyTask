@@ -108,4 +108,3 @@ extension ProjectsTableView: UITableViewDataSource {
         }
     }
 }
-

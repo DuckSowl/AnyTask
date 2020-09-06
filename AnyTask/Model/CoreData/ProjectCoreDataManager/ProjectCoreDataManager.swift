@@ -42,4 +42,3 @@ extension ProjectCoreDataManager: DataManageable {
         saveContext()
     }
 }
-
