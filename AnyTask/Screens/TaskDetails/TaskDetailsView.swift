@@ -186,6 +186,7 @@ class TaskDetailsView: DismissibleView {
             addTaskViewModel.add(deadline: deadline)
         }
         addTaskViewController.titleTextView.text = viewModel.title
+        dismiss()
     }
     
     @objc private func deleteTask() {
