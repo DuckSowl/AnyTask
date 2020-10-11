@@ -9,6 +9,10 @@
 import UIKit
 
 enum Font {
+    static let large = UIFont
+        .systemFont(ofSize: 40)
+        .roundedIfAvailable()
+    
     static let title = UIFont
         .preferredFont(forTextStyle: .title1)
         .roundedIfAvailable()

@@ -30,12 +30,6 @@ extension UIViewController {
         removeFromParent()
     }
     
-    #if DEBUG
-    
-    func showNotImplementedAlert() {
-        showAlert(title: "Not implemented!", message: nil)
-    }
-    
     func showAlert(title: String, message: String?) {
         let showAlert = UIAlertController(title: title, message: message,
                                           preferredStyle: .alert)
@@ -45,5 +39,11 @@ extension UIViewController {
         present(showAlert, animated: true)
     }
     
-    #endif
+//    #if DEBUG
+//
+//    func showNotImplementedAlert() {
+//        showAlert(title: "Not implemented!", message: nil)
+//    }
+//
+//    #endif
 }

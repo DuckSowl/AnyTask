@@ -18,6 +18,10 @@ class CoreDataManager<ManagedObject, Object>: CoreDataManageable where
     // MARK: - Properties
     
     let context: NSManagedObjectContext
+    var getContext: NSManagedObjectContext {
+        context.automaticallyMergesChangesFromParent = true
+        return context
+    }
     let saveContext: () -> ()
     
     // MARK: - Initializers
@@ -35,7 +39,7 @@ class CoreDataManager<ManagedObject, Object>: CoreDataManageable where
     
     func fetchAll() -> [ManagedObject]? {
         let fetchRequest: NSFetchRequest = ManagedObject.fetchRequest()
-        return try? context.fetch(fetchRequest) as? [ManagedObject]
+        return try? getContext.fetch(fetchRequest) as? [ManagedObject]
     }
 
     func fetch(with id: UUID) -> ManagedObject? {

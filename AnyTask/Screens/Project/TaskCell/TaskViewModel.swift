@@ -28,7 +28,7 @@ struct TaskViewModel {
     
     // MARK: - Private Properties
     
-    private let task: Task
+    let task: Task
     private let taskDataManager: TaskCoreDataManager
     
     // MARK: - Initializers

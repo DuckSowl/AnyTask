@@ -28,7 +28,7 @@ final class ProjectCoreDataManager: CoreDataManager<ProjectMO, Project> {
 
 extension ProjectCoreDataManager: DataManageable {
     func add(_ project: Project) {
-        let newProjectMO = ProjectMO(context: context)
+        let newProjectMO = ProjectMO(context: getContext)
         newProjectMO.id = project.id.data
         newProjectMO.title = project.name
         

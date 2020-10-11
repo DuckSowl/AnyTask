@@ -32,9 +32,9 @@ class TopBarView: UIView {
         return rightButtonsStack
     }()
     
-    let searchButton =
-        button(with: Constants.searchImage)
-            .withTarget(self, action: #selector(search), for: .touchUpInside)
+//    let searchButton =
+//        button(with: Constants.searchImage)
+//            .withTarget(self, action: #selector(search), for: .touchUpInside)
     
     // MARK: - Initializers
     
@@ -69,12 +69,12 @@ class TopBarView: UIView {
             .right(Constants.horizontalSpacing)
             .activate
         
-        searchButton
-            .pin(super: contentView)
-            .vCenter().height(Constants.buttonHeight)
-            .before(rightButtonsStack, 20)
-            .aspectRatio(1)
-            .activate
+//        searchButton
+//            .pin(super: contentView)
+//            .vCenter().height(Constants.buttonHeight)
+//            .before(rightButtonsStack, 20)
+//            .aspectRatio(1)
+//            .activate
     }
     
     static func button(with image: UIImage?) -> UIButton {
@@ -87,5 +87,5 @@ class TopBarView: UIView {
     
     // MARK: - Actions
     
-    @objc private func search() { showNotImplementedAlert() }
+//    @objc private func search() { showNotImplementedAlert() }
 }

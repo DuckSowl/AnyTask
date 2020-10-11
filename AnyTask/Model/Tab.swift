@@ -10,7 +10,6 @@ import Foundation
 
 enum Tab: String, CaseIterable {
     case projects
-    case upcoming
     case search
     case info
 }

@@ -45,6 +45,8 @@ class TaskCellView: SwipeableCellView {
         return commentLabel
     }()
     
+    let pomodoroButton = Button.with(type: .pomodoro)
+    
     private let expectedTimeLabel = makeLabel(font: Font.body)
     
     private let deletionView = UIView()
@@ -72,7 +74,7 @@ class TaskCellView: SwipeableCellView {
     private func setupView() {
         selectionStyle = .none
         
-        configureCellTap()
+        configureTaps()
         configureBackgroundView()
         configureContentConstraints()
         configureCompletionDeletionViews()
@@ -84,34 +86,44 @@ class TaskCellView: SwipeableCellView {
         swipableContentView.set(cornerRadius: .medium)
     }
     
-    private func configureCellTap() {
+    private func configureTaps() {
         let tapGesture = UITapGestureRecognizer(target: self,
                                                 action: #selector(tap))
         swipableContentView.addGestureRecognizer(tapGesture)
+        pomodoroButton.addTarget(self, action: #selector(openPomodoro),
+                                 for: .touchUpInside)
     }
-    
+        
     private func configureContentConstraints() {
         titleLabel.pin(super: swipableContentView)
             .top(Layout.contentInset)
             .left(Layout.contentInset)
             .activate
         
-        expectedTimeLabel.pin(super: swipableContentView)
-            .top(Layout.spacer)
+//        expectedTimeLabel.pin(super: swipableContentView)
+//            .top(Layout.spacer)
+//            .right(Layout.contentInset)
+//            .after(titleLabel, be: .less, -Layout.spacer)
+//            .activate
+        
+        pomodoroButton.pin(super: swipableContentView)
+            .size(40)
+            .top(Layout.contentInset)
             .right(Layout.contentInset)
-            .after(titleLabel, be: .less, -Layout.spacer)
+            .after(titleLabel, Layout.spacer)
             .activate
         
         commentLabel.pin(super: swipableContentView)
             .sides(Layout.contentInset)
             .height(be: .less, 100)
-            .below(titleLabel, Layout.spacer)
+            .below(pomodoroButton, Layout.spacer)
             .activate
         
         deadlineLabel.pin(super: swipableContentView)
             .left(Layout.contentInset)
             .below(commentLabel, Layout.spacer)
             .bottom(Layout.contentInset)
+//            .below(pomodoroButton, Layout.spacer)
             .activate
         
         projectLabel.pin(super: swipableContentView)
@@ -203,6 +215,15 @@ class TaskCellView: SwipeableCellView {
         UIView.animate(withDuration: 0.4) {
             taskDetailsView.configureContentConstraints()
             taskDetailsView.layoutIfNeeded()
+        }
+    }
+    
+    @objc private func openPomodoro() {
+        if let superview = self.superview?.superview, let viewModel = viewModel {
+            let pomodoroView = PomodoroView(viewModel)
+            UIView.animate(withDuration: 0.4) {
+                pomodoroView.pin(super: superview).all().activate
+            }
         }
     }
 }

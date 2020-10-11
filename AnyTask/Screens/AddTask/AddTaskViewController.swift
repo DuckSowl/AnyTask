@@ -38,7 +38,7 @@ class AddTaskViewController: BottomExpandingViewController {
     
     // MARK: - Subviews
     
-    private let titleTextView: UITextView = {
+    let titleTextView: UITextView = {
         let titleTextView = makeTextView()
         titleTextView.isScrollEnabled = false
         
@@ -69,7 +69,7 @@ class AddTaskViewController: BottomExpandingViewController {
         return collectionView
     }()
     
-    private var commentTextView: UITextView?
+    var commentTextView: UITextView?
     
     // MARK: - Initializers
     
@@ -159,7 +159,7 @@ class AddTaskViewController: BottomExpandingViewController {
             .reduce(0, +)
     }
     
-    private func addCommentView() {
+    func addCommentView() {
         commentTextView = Self.makeTextView()
         
         commentTextView?.font = Font.body
@@ -199,8 +199,7 @@ class AddTaskViewController: BottomExpandingViewController {
                 deadlinePickerViewController.delegate = self
                 resignFirstResponders()
                 add(deadlinePickerViewController, frame: UIScreen.main.bounds)
-            default:
-                showNotImplementedAlert()
+            default: break
         }
     }
     

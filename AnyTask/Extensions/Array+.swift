@@ -17,14 +17,14 @@ extension Array {
         withAppend(elements)
     }
     
-    #if DEBUG
-    
-    func print() -> Array {
-        Swift.print(self)
-        return self
-    }
-    
-    #endif
+//    #if DEBUG
+//    
+//    func print() -> Array {
+//        Swift.print(self)
+//        return self
+//    }
+//    
+//    #endif
 }
 
 extension Array where Element == UIView {
