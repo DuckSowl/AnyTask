@@ -94,7 +94,6 @@ final class PermanentProjectViewModel: ProjectViewModelDataManager, ProjectViewM
     enum Kind: String, CaseIterable {
         case today     = "Today"
         case all       = "All"
-        case upcoming  = "Upcoming"
         case noProject = "No Project"
         
     }
@@ -132,8 +131,6 @@ final class PermanentProjectViewModel: ProjectViewModelDataManager, ProjectViewM
                     return .init(task: $0,
                                  taskDataManager: projectDataManager.taskDataManager)
                 }
-            case .upcoming:
-                return []
             case .noProject:
                 tasks = super.tasks(for: nil)
         }

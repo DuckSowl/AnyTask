@@ -15,7 +15,7 @@ final class ProjectTopBarView: TopBarView {
     // MARK: - Constants
     
     private enum Constants {
-        static let moreButtonImage = UIImage(named: "more")
+//        static let moreButtonImage = UIImage(named: "more")
         static let backButtonImage = UIImage(named: "back")
     }
     
@@ -27,7 +27,7 @@ final class ProjectTopBarView: TopBarView {
     
     // MARK: - Subviews
     
-    let moreButton = button(with: Constants.moreButtonImage)
+//    let moreButton = button(with: Constants.moreButtonImage)
     
     let backButton: UIButton = {
         let newButton = button(with: Constants.backButtonImage)
@@ -57,22 +57,19 @@ final class ProjectTopBarView: TopBarView {
     
     private func configureSubviews() {
         projectLabel.text = viewModel.name
-        
-        rightButtonsStack.addArrangedSubview(moreButton)
-        moreButton.addTarget(self, action: #selector(more), for: .touchUpInside)
-        
+                
         configureConstraints()
     }
     
     private func configureConstraints() {
-        moreButton.pin.aspectRatio(1).activate
+//        moreButton.pin.aspectRatio(1).activate
         
         backButton.pin(super: contentView)
             .left(10).topBottom(12).aspectRatio(1)
             .activate
         
         projectLabel.pin(super: contentView)
-            .after(backButton).vCenter().before(searchButton)
+            .after(backButton).vCenter().before(rightButtonsStack)
             .activate
     }
     
@@ -81,6 +78,4 @@ final class ProjectTopBarView: TopBarView {
     @objc private func back() {
         delegate?.back()
     }
-    
-    @objc private func more() { showNotImplementedAlert() }
 }

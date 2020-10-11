@@ -43,14 +43,16 @@ class TaskDetailsView: DismissibleView {
      
     // MARK: - Initializers
     
-    init(_ viewModel: TaskViewModel) {
+    init(_ viewModel: TaskViewModel, info: Bool = false) {
         self.viewModel = viewModel
         
         super.init()
         
         updateFromViewModel()
-        configureView()
+        configureView(info: info)
     }
+    
+    var info: UIView { contentView }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
@@ -62,11 +64,17 @@ class TaskDetailsView: DismissibleView {
         
     // MARK: - View Configuration
     
-    private func configureView() {
+    private func configureView(info: Bool) {
         configureSubviews()
         configureConstraints()
         configureBackButton()
-        configureEditDeleteButtons()
+        if !info {
+            configureEditDeleteButtons()
+        } else {
+            projectLabel.pin
+                .bottom(to: contentView, Layout.contentInset)
+                .activate
+        }
         configureCommentTextViewScrollability()
     }
     
@@ -109,6 +117,7 @@ class TaskDetailsView: DismissibleView {
         let backButton = Button.with(type: .image(Constants.backButtonImage))
         backButton.addTarget(self, action: #selector(dismiss), for: .touchUpInside)
         backButton.pin(super: contentView)
+            .size(40)
             .after(titleLabel, be: .greater, Layout.spacer)
             .right(Layout.contentInset)
             .top(Layout.contentInset)
@@ -117,7 +126,6 @@ class TaskDetailsView: DismissibleView {
     
     private func configureDeadlineProjectConstraints() {
         let stack = UIStackView(arrangedSubviews: [deadlineLabel, projectLabel])
-        print(stack.distribution.rawValue)
         stack.distribution = .equalSpacing
         stack.spacing = Layout.spacer
         stack.pin(super: contentView)
@@ -159,10 +167,30 @@ class TaskDetailsView: DismissibleView {
     // MARK: - Actions
     
     @objc private func editTask() {
-        showNotImplementedAlert()
+        guard let projectDataManager = ProjectCoreDataManager() else { return }
+        let projectsViewModel = ProjectsViewModel(projectDataManager)
+        var addTaskViewModel = AddTaskViewModel(projectsViewModel)
+        if let project = viewModel.task.project {
+            addTaskViewModel.add(projectVM: UserDefinedProjectViewModel(project: project, projectDataManager: projectDataManager))
+        }
+        let addTaskViewController = AddTaskViewController(addTaskViewModel)
+        if let rootVC = self.rootVC {
+            rootVC.add(addTaskViewController, frame: rootVC.view.frame)
+        }
+        if let comment = viewModel.comment {
+            addTaskViewModel.addComment()
+            addTaskViewController.addCommentView()
+            addTaskViewController.commentTextView?.text = comment
+        }
+        if let deadline = viewModel.task.deadline {
+            addTaskViewModel.add(deadline: deadline)
+        }
+        addTaskViewController.titleTextView.text = viewModel.title
+        dismiss()
     }
     
     @objc private func deleteTask() {
-        showNotImplementedAlert()
+        viewModel.delete()
+        dismiss()
     }
 }

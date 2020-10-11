@@ -69,11 +69,11 @@ class ContentView: UIViewController {
                 .bottom(Constants.buttonOffset)
                 .right(Constants.buttonOffset) })
         
-        add(button: Button.with(type: .pomodoro),
-            action: #selector(pomodoroAction),
-            pin: { $0.size(Constants.buttonSize)
-                .bottom(Constants.buttonOffset)
-                .left(Constants.buttonOffset) })
+//        add(button: Button.with(type: .pomodoro),
+//            action: #selector(pomodoroAction),
+//            pin: { $0.size(Constants.buttonSize)
+//                .bottom(Constants.buttonOffset)
+//                .left(Constants.buttonOffset) })
     }
 
     
@@ -105,10 +105,6 @@ class ContentView: UIViewController {
         }
         let addTaskViewController = AddTaskViewController(addTaskViewModel)
         add(addTaskViewController, frame: view.frame)
-    }
-    
-    @objc func pomodoroAction() {
-        showNotImplementedAlert()
     }
 }
 
@@ -164,7 +160,7 @@ extension ContentView: AddTaskDelegate {
 
 extension ContentView: ProjectViewModelDelegate {
     func edit(taskVM: TaskViewModel) {
-        showNotImplementedAlert()
+//        showNotImplementedAlert()
     }
     
     func update() {

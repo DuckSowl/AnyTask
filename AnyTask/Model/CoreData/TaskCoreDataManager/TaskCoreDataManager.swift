@@ -16,7 +16,7 @@ final class TaskCoreDataManager: CoreDataManager<TaskMO, Task> {
 
 extension TaskCoreDataManager: DataManageable {
     func add(_ task: Task) {
-        let newTaskMO = TaskMO(context: context)
+        let newTaskMO = TaskMO(context: getContext)
         newTaskMO.id = task.id.data
         newTaskMO.title = task.title
         newTaskMO.comment = task.comment

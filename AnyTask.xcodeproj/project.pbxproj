@@ -19,6 +19,9 @@
 		3A309BBA24AA0BB1000C103B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A309BB924AA0BB1000C103B /* AppDelegate.swift */; };
 		3A309BC324AA0BB4000C103B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A309BC224AA0BB4000C103B /* Assets.xcassets */; };
 		3A309BC624AA0BB4000C103B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A309BC424AA0BB4000C103B /* LaunchScreen.storyboard */; };
+		3A4435FD2531BAB300091339 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A4435FC2531BAB300091339 /* CloudKit.framework */; };
+		3A4435FF2531D92B00091339 /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4435FE2531D92B00091339 /* TimerView.swift */; };
+		3A6D084F2528CEA8006F0331 /* PomodoroView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A6D084E2528CEA8006F0331 /* PomodoroView.swift */; };
 		3A6EF27024EC298E0088BD75 /* TaskItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A6EF26F24EC298E0088BD75 /* TaskItem.swift */; };
 		3A6EF27424EC2A2F0088BD75 /* OnlySelfTapGestureRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A6EF27324EC2A2F0088BD75 /* OnlySelfTapGestureRecognizer.swift */; };
 		3A742AEF24D063D500C37684 /* Int+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A742AEE24D063D500C37684 /* Int+.swift */; };
@@ -104,6 +107,10 @@
 		3A309BC224AA0BB4000C103B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3A309BC524AA0BB4000C103B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3A309BC724AA0BB4000C103B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3A4435FA2531BAA700091339 /* AnyTask.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = AnyTask.entitlements; sourceTree = "<group>"; };
+		3A4435FC2531BAB300091339 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
+		3A4435FE2531D92B00091339 /* TimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerView.swift; sourceTree = "<group>"; };
+		3A6D084E2528CEA8006F0331 /* PomodoroView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PomodoroView.swift; sourceTree = "<group>"; };
 		3A6EF26F24EC298E0088BD75 /* TaskItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskItem.swift; sourceTree = "<group>"; };
 		3A6EF27324EC2A2F0088BD75 /* OnlySelfTapGestureRecognizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnlySelfTapGestureRecognizer.swift; sourceTree = "<group>"; };
 		3A742AEE24D063D500C37684 /* Int+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Int+.swift"; sourceTree = "<group>"; };
@@ -179,6 +186,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3AAB33FA24D2997100586F99 /* Pin in Frameworks */,
+				3A4435FD2531BAB300091339 /* CloudKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -272,6 +280,7 @@
 			children = (
 				3A309BB824AA0BB1000C103B /* AnyTask */,
 				3A309BB724AA0BB1000C103B /* Products */,
+				3A4435FB2531BAB300091339 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -286,6 +295,7 @@
 		3A309BB824AA0BB1000C103B /* AnyTask */ = {
 			isa = PBXGroup;
 			children = (
+				3A4435FA2531BAA700091339 /* AnyTask.entitlements */,
 				3A1B1BFB24AB66D1004D024C /* Application */,
 				3AD587AA24FF904000502ABC /* Screens */,
 				3A1B1BFC24AB66FA004D024C /* Model */,
@@ -296,6 +306,23 @@
 				3AA7D98C24FF7C3A003713E6 /* Archived */,
 			);
 			path = AnyTask;
+			sourceTree = "<group>";
+		};
+		3A4435FB2531BAB300091339 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3A4435FC2531BAB300091339 /* CloudKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		3A6D084D2528CE7C006F0331 /* Pomodoro */ = {
+			isa = PBXGroup;
+			children = (
+				3A6D084E2528CEA8006F0331 /* PomodoroView.swift */,
+				3A4435FE2531D92B00091339 /* TimerView.swift */,
+			);
+			path = Pomodoro;
 			sourceTree = "<group>";
 		};
 		3A7A898024DBD3BD009C7D3D /* TaskCoreDataManager */ = {
@@ -418,6 +445,7 @@
 		3AD587AA24FF904000502ABC /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				3A6D084D2528CE7C006F0331 /* Pomodoro */,
 				3AD587C524FF904000502ABC /* TopBar */,
 				3AD587BC24FF904000502ABC /* Content */,
 				3AD587AB24FF904000502ABC /* Projects */,
@@ -600,7 +628,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1150;
-				LastUpgradeCheck = 1150;
+				LastUpgradeCheck = 1200;
 				ORGANIZATIONNAME = "Anton Tolstov";
 				TargetAttributes = {
 					3A309BB524AA0BB1000C103B = {
@@ -655,6 +683,7 @@
 				3A1B1C0224AB7772004D024C /* Project.swift in Sources */,
 				3AD587D324FF904000502ABC /* ProjectsTableView.swift in Sources */,
 				3ABA240124E6CE790007DC87 /* UIViewController+KeyboardNotifications.swift in Sources */,
+				3A6D084F2528CEA8006F0331 /* PomodoroView.swift in Sources */,
 				3A95C34124BC8838003A52B9 /* DataModel.xcdatamodeld in Sources */,
 				3AA7D98824FF7B0D003713E6 /* Layout.swift in Sources */,
 				3A1C8EC72504B24600AA3E65 /* WeekCellViewModel.swift in Sources */,
@@ -700,6 +729,7 @@
 				3A1C8ECB2504B24700AA3E65 /* CalendarView.swift in Sources */,
 				3AD587F124FFA92D00502ABC /* TaskDetailsView.swift in Sources */,
 				3A7A89DB24E1979D009C7D3D /* UIImage+.swift in Sources */,
+				3A4435FF2531D92B00091339 /* TimerView.swift in Sources */,
 				3AD587E424FF904000502ABC /* ProjectTopBarView.swift in Sources */,
 				3AD587F324FFAC7C00502ABC /* DismissibleView.swift in Sources */,
 				3A9B9D3724C1DDB10092DC25 /* UIEdgeInsets+.swift in Sources */,
@@ -766,6 +796,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -826,6 +857,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -858,15 +890,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = AnyTask/AnyTask.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = J3B68N99HN;
+				DEVELOPMENT_TEAM = FUD5CPHJR9;
 				INFOPLIST_FILE = "AnyTask/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.ducksowl.AnyTask;
+				PRODUCT_BUNDLE_IDENTIFIER = su.brf.apps.AnyTask;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -877,15 +910,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = AnyTask/AnyTask.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = J3B68N99HN;
+				DEVELOPMENT_TEAM = FUD5CPHJR9;
 				INFOPLIST_FILE = "AnyTask/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.ducksowl.AnyTask;
+				PRODUCT_BUNDLE_IDENTIFIER = su.brf.apps.AnyTask;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

@@ -92,19 +92,21 @@ extension UIView {
     
     // MARK: - Alerts
 
-    #if DEBUG
-    
-    func showNotImplementedAlert() {
-        rootVC?.showNotImplementedAlert()
-    }
-    
-    func showAlert(title: String, message: String?) {
-        rootVC?.showAlert(title: title, message: message)
-    }
+//    #if DEBUG
+//    
+//    func showNotImplementedAlert() {
+//        rootVC?.showNotImplementedAlert()
+//    }
+//    
+//    func showAlert(title: String, message: String?) {
+//        rootVC?.showAlert(title: title, message: message)
+//    }
+//    
+//
+//    
+//    #endif
     
     var rootVC: UIViewController? {
         UIApplication.shared.windows.first?.rootViewController
     }
-    
-    #endif
 }

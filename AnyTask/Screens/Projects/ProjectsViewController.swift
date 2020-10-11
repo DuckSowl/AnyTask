@@ -222,7 +222,7 @@ extension ProjectsViewController: UIScrollViewDelegate {
 
 extension ProjectsViewController: ProjectsDelegate {
     func didSelect(project: ProjectViewModel) {
-        showAlert(title: "didSelect", message: project.name)
+//        showAlert(title: "didSelect", message: project.name)
     }
     
     func update() {
